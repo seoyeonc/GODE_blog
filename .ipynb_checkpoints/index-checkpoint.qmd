@@ -1,0 +1,31 @@
+---
+title: "GODE blog"
+listing:
+  contents: posts
+  sort: [date desc,title]
+  type: table
+  categories: false
+  sort-ui: true
+  filter-ui: true
+  page-size: 9999
+page-layout: full
+title-block-banner: true
+---
+
+This blog indicates information of GODE.
+
+---
+
+**Some links related GODE**
+
+::: {.panel-tabset} 
+
+## Outlier Detection Techniques list
+
+- **ABOD**: <https://dl.acm.org/doi/pdf/10.1145/1401890.1401946?casa_token=pmckKllW3yoAAAAA:wVg0MPyNGwuAlRikSokULv7nwuCptNnPcVYm6V5WdbuvadwPaJb7The2KgfpafSr4hTu99GYxsWr> 
+
+## Real Data
+
+- **source**: <https://earthquake.usgs.gov/earthquakes/search/>
+
+:::
