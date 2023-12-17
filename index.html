@@ -70,9 +70,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: [{ data: ['index'] },{ data: ['categories'] }],
+      valueNames: ['listing-date','listing-title','listing-author',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
       
-      searchColumns: [],
+      searchColumns: ["listing-date","listing-title","listing-author"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -198,12 +198,12 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./3_table.html" class="sidebar-item-text sidebar-link"><strong>Result</strong></a>
+  <a href="./3_table.html" class="sidebar-item-text sidebar-link"><strong>Table</strong></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./4_figure.html" class="sidebar-item-text sidebar-link"><strong>Result</strong></a>
+  <a href="./4_figure.html" class="sidebar-item-text sidebar-link"><strong>Figure</strong></a>
   </div>
 </li>
       </ul>
@@ -245,6 +245,25 @@ ul.task-list li input[type="checkbox"] {
 
 <div class="quarto-listing quarto-listing-container-table" id="listing-listing">
 <div class="listing-actions-group">
+   <div class="input-group input-group-sm quarto-listing-sort">
+     <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
+     <select id="listing-listing-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-listing'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
+       <option value="" disabled="" selected="" hidden="">Order By</option>
+       <option value="index" data-direction="asc">Default</option>
+         <option value="listing-date-sort" data-direction="asc">
+          Date - Oldest
+        </option>
+         <option value="listing-date-sort" data-direction="desc">
+          Date - Newest
+        </option>
+         <option value="listing-title-sort" data-direction="asc">
+          Title
+        </option>
+         <option value="listing-author" data-direction="asc">
+          Author
+        </option>
+     </select>
+  </div>
     <div class="input-group input-group-sm quarto-listing-filter">
       <span class="input-group-text"><i class="bi bi-search"></i></span>
       <input type="text" class="search form-control" placeholder="Filter">
@@ -254,9 +273,205 @@ ul.task-list li input[type="checkbox"] {
 <table class="quarto-listing-table table">
 <thead>
 <tr>
+<th>
+<a class="sort" data-sort="listing-date-sort" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Date</a>
+</th>
+<th>
+<a class="sort" data-sort="listing-title-sort" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Title</a>
+</th>
+<th>
+<a class="sort" data-sort="listing-author" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Author</a>
+</th>
 </tr>
 </thead>
 <tbody class="list">
+<tr data-index="0" data-listing-date-sort="1701183600000" data-listing-file-modified-sort="1701334707000" data-listing-reading-time-sort="37.815" data-listing-title-sort="**[GODE]**GODE Other Methods" data-listing-filename-sort="2023-11-29-PR_Other Methods.ipynb">
+<td class="listing-date">
+Nov 29, 2023
+</td>
+<td class="listing-title">
+<a href="./posts/2_research/2023-11-29-PR_Other Methods.html" class="title"><strong>[GODE]</strong>GODE Other Methods</a>
+</td>
+<td class="listing-author">
+SEOYEON CHOI
+</td>
+</tr>
+<tr data-index="1" data-listing-date-sort="1701010800000" data-listing-file-modified-sort="1701317738000" data-listing-reading-time-sort="0.115" data-listing-title-sort="**[GODE]**Package Tutorial" data-listing-filename-sort="2023-11-27-GODE_Tutorial.ipynb">
+<td class="listing-date">
+Nov 27, 2023
+</td>
+<td class="listing-title">
+<a href="./posts/2_research/2023-11-27-GODE_Tutorial.html" class="title"><strong>[GODE]</strong>Package Tutorial</a>
+</td>
+<td class="listing-author">
+SEOYEON CHOI
+</td>
+</tr>
+<tr data-index="2" data-categories="GODE" data-listing-date-sort="1698937200000" data-listing-file-modified-sort="1701251176000" data-listing-reading-time-sort="0.055" data-listing-title-sort="[GODE]Final Graph code for GODE Paper" data-listing-filename-sort="2023-11-03-final_graph_code_for_paper.ipynb">
+<td class="listing-date">
+Nov 3, 2023
+</td>
+<td class="listing-title">
+<a href="./posts/Result/3_table/2023-11-03-final_graph_code_for_paper.html" class="title">[GODE]Final Graph code for GODE Paper</a>
+</td>
+<td class="listing-author">
+SEOYEON CHOI
+</td>
+</tr>
+<tr data-index="3" data-listing-date-sort="1697727600000" data-listing-file-modified-sort="1701222658000" data-listing-reading-time-sort="0.265" data-listing-title-sort="**[GODE]**final GODE code" data-listing-filename-sort="2023-10-20-final_GODE_code.ipynb">
+<td class="listing-date">
+Oct 20, 2023
+</td>
+<td class="listing-title">
+<a href="./posts/2_research/2023-10-20-final_GODE_code.html" class="title"><strong>[GODE]</strong>final GODE code</a>
+</td>
+<td class="listing-author">
+SEOYEON CHOI
+</td>
+</tr>
+<tr data-index="4" data-listing-date-sort="1692111600000" data-listing-file-modified-sort="1691485587000" data-listing-reading-time-sort="28.535" data-listing-title-sort="The options of Outlier Detection method" data-listing-filename-sort="2023-08-16-options.ipynb">
+<td class="listing-date">
+Aug 16, 2023
+</td>
+<td class="listing-title">
+<a href="./posts/2_research/2023-08-16-options.html" class="title">The options of Outlier Detection method</a>
+</td>
+<td class="listing-author">
+SEOYEON CHOI
+</td>
+</tr>
+<tr data-index="5" data-listing-date-sort="1692111600000" data-listing-file-modified-sort="1691482466916" data-listing-reading-time-sort="0.5" data-listing-title-sort="final GODE code(paper)" data-listing-filename-sort="2023-08-16-final GODE code(paper).ipynb">
+<td class="listing-date">
+Aug 16, 2023
+</td>
+<td class="listing-title">
+<a href="./posts/2_research/2023-08-16-final GODE code(paper).html" class="title">final GODE code(paper)</a>
+</td>
+<td class="listing-author">
+SEOYEON CHOI
+</td>
+</tr>
+<tr data-index="6" data-categories="GODE" data-listing-date-sort="1691161200000" data-listing-file-modified-sort="1691408726858" data-listing-reading-time-sort="8.735" data-listing-title-sort="Semifinal_Other Outlier Detection" data-listing-filename-sort="2023-08-05-semifinal_simulation_code.ipynb">
+<td class="listing-date">
+Aug 5, 2023
+</td>
+<td class="listing-title">
+<a href="./posts/2_research/2023-08-05-semifinal_simulation_code.html" class="title">Semifinal_Other Outlier Detection</a>
+</td>
+<td class="listing-author">
+SEOYEON CHOI
+</td>
+</tr>
+<tr data-index="7" data-categories="GODE" data-listing-date-sort="1688310000000" data-listing-file-modified-sort="1691224437574" data-listing-reading-time-sort="12.47" data-listing-title-sort="Other Outlier Detection" data-listing-filename-sort="2023-07-03-other_outlier_detection.ipynb">
+<td class="listing-date">
+Jul 3, 2023
+</td>
+<td class="listing-title">
+<a href="./posts/2_research/2023-07-03-other_outlier_detection.html" class="title">Other Outlier Detection</a>
+</td>
+<td class="listing-author">
+SEOYEON CHOI
+</td>
+</tr>
+<tr data-index="8" data-categories="GODE" data-listing-date-sort="1687791600000" data-listing-file-modified-sort="1689152440000" data-listing-reading-time-sort="0.06" data-listing-title-sort="Linear Graph code for Paper" data-listing-filename-sort="2023-06-27-Linear_graph_code_for_paper.ipynb">
+<td class="listing-date">
+Jun 27, 2023
+</td>
+<td class="listing-title">
+<a href="./posts/2_research/2023-06-27-Linear_graph_code_for_paper.html" class="title">Linear Graph code for Paper</a>
+</td>
+<td class="listing-author">
+SEOYEON CHOI
+</td>
+</tr>
+<tr data-index="9" data-categories="GODE" data-listing-date-sort="1687359600000" data-listing-file-modified-sort="1689152440000" data-listing-reading-time-sort="0.185" data-listing-title-sort="Comparison Results on Real Data" data-listing-filename-sort="2023-06-22-comparison_earthquake.ipynb">
+<td class="listing-date">
+Jun 22, 2023
+</td>
+<td class="listing-title">
+<a href="./posts/2_research/2023-06-22-comparison_earthquake.html" class="title">Comparison Results on Real Data</a>
+</td>
+<td class="listing-author">
+SEOYEON CHOI
+</td>
+</tr>
+<tr data-index="10" data-categories="DFT" data-listing-date-sort="1672066800000" data-listing-file-modified-sort="1689152440000" data-listing-reading-time-sort="0.295" data-listing-title-sort="Discrete Fourier Transform" data-listing-filename-sort="2022-12-27-DFT_study.ipynb">
+<td class="listing-date">
+Dec 27, 2022
+</td>
+<td class="listing-title">
+<a href="./posts/2_research/2022-12-27-DFT_study.html" class="title">Discrete Fourier Transform</a>
+</td>
+<td class="listing-author">
+SEOYEON CHOI
+</td>
+</tr>
+<tr data-index="11" data-listing-date-sort="1671116400000" data-listing-file-modified-sort="1693173127000" data-listing-reading-time-sort="0.02" data-listing-title-sort="linspace" data-listing-filename-sort="2022-12-16-linspace.ipynb">
+<td class="listing-date">
+Dec 16, 2022
+</td>
+<td class="listing-title">
+<a href="./posts/2_research/2022-12-16-linspace.html" class="title">linspace</a>
+</td>
+<td class="listing-author">
+SEOYEON CHOI
+</td>
+</tr>
+<tr data-index="12" data-categories="GODE" data-listing-date-sort="1669820400000" data-listing-file-modified-sort="1689152440000" data-listing-reading-time-sort="0.07" data-listing-title-sort="Graph code" data-listing-filename-sort="2022-12-01-graph_code_guebin.ipynb">
+<td class="listing-date">
+Dec 1, 2022
+</td>
+<td class="listing-title">
+<a href="./posts/2_research/2022-12-01-graph_code_guebin.html" class="title">Graph code</a>
+</td>
+<td class="listing-author">
+SEOYEON CHOI
+</td>
+</tr>
+<tr data-index="13" data-categories="GODE" data-listing-date-sort="1669215600000" data-listing-file-modified-sort="1689152440000" data-listing-reading-time-sort="1.385" data-listing-title-sort="Class code for Comparison Study" data-listing-filename-sort="2022-11-19-class_code_for_paper.ipynb">
+<td class="listing-date">
+Nov 24, 2022
+</td>
+<td class="listing-title">
+<a href="./posts/2_research/2022-11-19-class_code_for_paper.html" class="title">Class code for Comparison Study</a>
+</td>
+<td class="listing-author">
+SEOYEON CHOI
+</td>
+</tr>
+<tr data-index="14" data-categories="GODE" data-listing-date-sort="1669215600000" data-listing-file-modified-sort="1689152440000" data-listing-reading-time-sort="0.785" data-listing-title-sort="Earthquake" data-listing-filename-sort="2022-10-02-Earthquake_real.ipynb">
+<td class="listing-date">
+Nov 24, 2022
+</td>
+<td class="listing-title">
+<a href="./posts/2_research/2022-10-02-Earthquake_real.html" class="title">Earthquake</a>
+</td>
+<td class="listing-author">
+SEOYEON CHOI
+</td>
+</tr>
+<tr data-index="15" data-categories="GODE" data-listing-date-sort="1662044400000" data-listing-file-modified-sort="1689152440000" data-listing-reading-time-sort="1.245" data-listing-title-sort="Simulation" data-listing-filename-sort="2022-09-02-paper_simulation.ipynb">
+<td class="listing-date">
+Sep 2, 2022
+</td>
+<td class="listing-title">
+<a href="./posts/2_research/2022-09-02-paper_simulation.html" class="title">Simulation</a>
+</td>
+<td class="listing-author">
+SEOYEON CHOI
+</td>
+</tr>
+<tr data-index="16" data-categories="GODE" data-listing-date-sort="1661958000000" data-listing-file-modified-sort="1688987069000" data-listing-reading-time-sort="0.015" data-listing-title-sort="GODE" data-listing-filename-sort="index.qmd">
+<td class="listing-date">
+Sep 1, 2022
+</td>
+<td class="listing-title">
+<a href="./posts/2_research/index.html" class="title">GODE</a>
+</td>
+<td class="listing-author">
+SEOYEON CHOI
+</td>
+</tr>
 </tbody>
 
 </table>
