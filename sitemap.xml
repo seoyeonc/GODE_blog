@@ -1,19 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://seoyeonc.github.io/GODE_blog/posts/post-with-code/index.html</loc>
-    <lastmod>2023-12-16T23:59:55.155Z</lastmod>
+    <loc>https://seoyeonc.github.io/GODE_blog/4_figure.html</loc>
+    <lastmod>2023-12-17T00:11:10.614Z</lastmod>
   </url>
   <url>
-    <loc>https://seoyeonc.github.io/GODE_blog/posts/welcome/index.html</loc>
-    <lastmod>2023-12-16T23:59:55.557Z</lastmod>
+    <loc>https://seoyeonc.github.io/GODE_blog/2_research.html</loc>
+    <lastmod>2023-12-17T00:11:11.035Z</lastmod>
+  </url>
+  <url>
+    <loc>https://seoyeonc.github.io/GODE_blog/3_table.html</loc>
+    <lastmod>2023-12-17T00:11:11.483Z</lastmod>
   </url>
   <url>
     <loc>https://seoyeonc.github.io/GODE_blog/index.html</loc>
-    <lastmod>2023-12-16T23:59:55.989Z</lastmod>
+    <lastmod>2023-12-17T00:11:11.913Z</lastmod>
   </url>
   <url>
     <loc>https://seoyeonc.github.io/GODE_blog/about.html</loc>
-    <lastmod>2023-12-16T23:59:56.398Z</lastmod>
+    <lastmod>2023-12-17T00:11:12.422Z</lastmod>
+  </url>
+  <url>
+    <loc>https://seoyeonc.github.io/GODE_blog/1_studies.html</loc>
+    <lastmod>2023-12-17T00:11:12.837Z</lastmod>
   </url>
 </urlset>

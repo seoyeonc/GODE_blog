@@ -1,24 +1,31 @@
 [
   {
-    "objectID": "posts/post-with-code/index.html",
-    "href": "posts/post-with-code/index.html",
-    "title": "Post With Code",
+    "objectID": "4_figure.html",
+    "href": "4_figure.html",
+    "title": "Result",
     "section": "",
-    "text": "This is a post with executable code."
+    "text": "No matching items"
   },
   {
-    "objectID": "posts/welcome/index.html",
-    "href": "posts/welcome/index.html",
-    "title": "Welcome To My Blog",
+    "objectID": "2_research.html",
+    "href": "2_research.html",
+    "title": "Research",
     "section": "",
-    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
+    "text": "No matching items"
+  },
+  {
+    "objectID": "3_table.html",
+    "href": "3_table.html",
+    "title": "Result",
+    "section": "",
+    "text": "No matching items"
   },
   {
     "objectID": "index.html",
     "href": "index.html",
     "title": "GODE blog",
     "section": "",
-    "text": "This blog indicates information of GODE.\n\nSome links related GODE\n\nOutlier Detection Techniques listReal Data\n\n\n\nABOD: https://dl.acm.org/doi/pdf/10.1145/1401890.1401946?casa_token=pmckKllW3yoAAAAA:wVg0MPyNGwuAlRikSokULv7nwuCptNnPcVYm6V5WdbuvadwPaJb7The2KgfpafSr4hTu99GYxsWr\n\n\n\n\nsource: https://earthquake.usgs.gov/earthquakes/search/\n\n\n\n\n\n\n\n\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\nDate\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\nDec 17, 2023\n\n\nPost With Code\n\n\nHarlow Malloc\n\n\n\n\nDec 14, 2023\n\n\nWelcome To My Blog\n\n\nTristan O’Malley\n\n\n\n\n\n\nNo matching items"
+    "text": "This blog indicates information of GODE.\n\nSome links related GODE\n\nOutlier Detection Techniques listReal Data\n\n\n\nABOD: https://dl.acm.org/doi/pdf/10.1145/1401890.1401946?casa_token=pmckKllW3yoAAAAA:wVg0MPyNGwuAlRikSokULv7nwuCptNnPcVYm6V5WdbuvadwPaJb7The2KgfpafSr4hTu99GYxsWr\n\n\n\n\nsource: https://earthquake.usgs.gov/earthquakes/search/\n\n\n\n\n\n\n\n\n\n\n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "about.html",
@@ -26,5 +33,12 @@
     "title": "About",
     "section": "",
     "text": "This blog indicates GODE information."
+  },
+  {
+    "objectID": "1_studies.html",
+    "href": "1_studies.html",
+    "title": "Studies",
+    "section": "",
+    "text": "No matching items"
   }
 ]
