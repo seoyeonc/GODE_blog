@@ -2,7 +2,7 @@ project:
   type: website
 
 website:
-  title: "GODE_blog"
+  title: "GODE blog"
   
   page-footer:
     border: true
