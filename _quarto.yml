@@ -3,17 +3,42 @@ project:
 
 website:
   title: "GODE_blog"
+  
+  page-footer:
+    border: true
+    
   navbar:
+    left:
+      - text: Main_Blog
+        href: https://seoyeonc.github.io/sy_hub/
+        
     right:
       - about.qmd
       - icon: github
-        href: https://github.com/
-      - icon: twitter
-        href: https://twitter.com
+        href: https://github.com/seoyeonc
+        
+  sidebar:
+    style: "docked"
+    search: true
+    contents:
+      - 1_studies.qmd
+      - section: "**Research**"
+        contents:
+          - 2_research.qmd
+      - section: "**Result**"
+        contents:
+          - 3_table.qmd
+          - 4_figure.qmd
+
 format:
   html:
-    theme: cosmo
+    theme: 
+        light: flatly
     css: styles.css
+    toc: true
+    code-fold: false
+    code-line-numbers: false
+    code-copy: false
 
 
 
