@@ -1,5 +1,5 @@
 ---
-title: "**Result**"
+title: "**Figure**"
 listing:
   contents: posts/Result/4_figure
   sort: "date desc"

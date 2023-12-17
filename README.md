@@ -1,1 +1,1 @@
-# GODE_blog
+[GODE_blog](https://seoyeonc.github.io/GODE_blog/)
