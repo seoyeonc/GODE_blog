@@ -1,14 +1,15 @@
 [
   {
     "listing": "/4_figure.html",
-    "items": []
+    "items": [
+      "/posts/Result/4_figure/2023-11-03-final_graph_code_for_paper.html"
+    ]
   },
   {
     "listing": "/2_research.html",
     "items": [
       "/posts/2_research/2023-11-29-PR_Other Methods.html",
       "/posts/2_research/2023-11-27-GODE_Tutorial.html",
-      "/posts/2_research/2023-10-20-final_GODE_code.html",
       "/posts/2_research/2023-08-16-final GODE code(paper).html",
       "/posts/2_research/2023-08-16-options.html",
       "/posts/2_research/2023-08-05-semifinal_simulation_code.html",
@@ -27,7 +28,7 @@
   {
     "listing": "/3_table.html",
     "items": [
-      "/posts/Result/3_table/2023-11-03-final_graph_code_for_paper.html"
+      "/posts/Result/3_table/2023-10-20-final_GODE_code.html"
     ]
   },
   {
@@ -35,14 +36,17 @@
     "items": [
       "/posts/2_research/2023-11-29-PR_Other Methods.html",
       "/posts/2_research/2023-11-27-GODE_Tutorial.html",
-      "/posts/Result/3_table/2023-11-03-final_graph_code_for_paper.html",
-      "/posts/2_research/2023-10-20-final_GODE_code.html",
+      "/posts/Result/4_figure/2023-11-03-final_graph_code_for_paper.html",
+      "/posts/Result/3_table/2023-10-20-final_GODE_code.html",
       "/posts/2_research/2023-08-16-options.html",
       "/posts/2_research/2023-08-16-final GODE code(paper).html",
       "/posts/2_research/2023-08-05-semifinal_simulation_code.html",
       "/posts/2_research/2023-07-03-other_outlier_detection.html",
+      "/posts/1_studies/2023-07-01-graph_spectral_domain.html",
+      "/posts/1_studies/2023-07-01-NonEuclidean_data_of_GODE.html",
       "/posts/2_research/2023-06-27-Linear_graph_code_for_paper.html",
       "/posts/2_research/2023-06-22-comparison_earthquake.html",
+      "/posts/1_studies/2023-05-20-EbayesThresh toy ex.html",
       "/posts/2_research/2022-12-27-DFT_study.html",
       "/posts/2_research/2022-12-16-linspace.html",
       "/posts/2_research/2022-12-01-graph_code_guebin.html",
@@ -54,6 +58,10 @@
   },
   {
     "listing": "/1_studies.html",
-    "items": []
+    "items": [
+      "/posts/1_studies/2023-07-01-NonEuclidean_data_of_GODE.html",
+      "/posts/1_studies/2023-07-01-graph_spectral_domain.html",
+      "/posts/1_studies/2023-05-20-EbayesThresh toy ex.html"
+    ]
   }
 ]
