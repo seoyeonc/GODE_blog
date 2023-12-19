@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.269">
+<meta name="generator" content="quarto-1.4.527">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -17,7 +17,7 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
 </style>
@@ -47,7 +47,13 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -56,8 +62,10 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 <script>
@@ -90,53 +98,87 @@ ul.task-list li input[type="checkbox"] {
   })
   </script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
 
 <body class="nav-sidebar docked nav-fixed">
 
-
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">GODE blog</span>
     </a>
   </div>
+            <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="https://seoyeonc.github.io/sy_hub/">
- <span class="menu-text">Main_Blog</span></a>
+    <a class="nav-link" href="https://seoyeonc.github.io/sy_hub/"> 
+<span class="menu-text">Main_Blog</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./about.html">
- <span class="menu-text">About</span></a>
+    <a class="nav-link" href="./about.html"> 
+<span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/seoyeonc"><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/seoyeonc"> <i class="bi bi-github" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
 </ul>
-              <div id="quarto-search" class="" title="Search"></div>
           </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-    <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">GODE blog</h1>
-      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
-        <i class="bi bi-chevron-right"></i>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">GODE blog</li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
       </button>
     </div>
   </nav>
@@ -145,12 +187,12 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-page-right">
-      <h1 class="title d-none d-lg-block">GODE blog</h1>
+      <h1 class="title">GODE blog</h1>
                       </div>
   </div>
     
   
-  <div class="quarto-title-meta">
+  <div class="quarto-title-meta column-page-right">
 
       
     
@@ -160,50 +202,56 @@ ul.task-list li input[type="checkbox"] {
   
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
-      <div class="mt-2 flex-shrink-0 align-items-center">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+        <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
         <div id="quarto-search" class="" title="Search"></div>
         </div>
-      </div>
+        </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./1_studies.html" class="sidebar-item-text sidebar-link"><strong>Studies</strong></a>
+  <a href="./1_studies.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><strong>Studies</strong></span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true"><strong>Research</strong></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text"><strong>Research</strong></span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2_research.html" class="sidebar-item-text sidebar-link"><strong>Research</strong></a>
+  <a href="./2_research.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><strong>Research</strong></span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true"><strong>Result</strong></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text"><strong>Result</strong></span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./3_table.html" class="sidebar-item-text sidebar-link"><strong>Table</strong></a>
+  <a href="./3_table.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><strong>Table</strong></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./4_figure.html" class="sidebar-item-text sidebar-link"><strong>Figure</strong></a>
+  <a href="./4_figure.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><strong>Figure</strong></span></a>
   </div>
 </li>
       </ul>
@@ -211,6 +259,7 @@ ul.task-list li input[type="checkbox"] {
     </ul>
     </div>
 </nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
         
@@ -221,19 +270,20 @@ ul.task-list li input[type="checkbox"] {
 
 
 
+
 <p>This blog indicates information of GODE.</p>
 <hr>
 <p><strong>Some links related GODE</strong></p>
-<div class="panel-tabset">
+<div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" aria-current="page">Outlier Detection Techniques list</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Real Data</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <ul>
 <li><a href="https://dl.acm.org/doi/pdf/10.1145/342009.335388"><strong>LOF</strong></a></li>
 <li><a href="https://dl.acm.org/doi/pdf/10.1145/342009.335437"><strong>kNN</strong></a></li>
-<li><a href="https://www.sciencedirect.com/science/article/pii/S0167865503000035/pdf?crasolve=1&amp;r=8376d573abd33271&amp;ts=1702896510040&amp;rtype=https&amp;vrr=UKN&amp;redir=UKN&amp;redir_fr=UKN&amp;redir_arc=UKN&amp;vhash=UKN&amp;host=d3d3LnNjaWVuY2VkaXJlY3QuY29t&amp;tsoh=d3d3LnNjaWVuY2VkaXJlY3QuY29t&amp;rh=d3d3LnNjaWVuY2VkaXJlY3QuY29t&amp;re=X2JsYW5rXw%3D%3D&amp;ns_h=d3d3LnNjaWVuY2VkaXJlY3QuY29t&amp;ns_e=X2JsYW5rXw%3D%3D&amp;rh_fd=rrr"><strong>CBLOF</strong></a>n%5Ed%60i%5E%60_dm%60%5Eo)%5Ejh&amp;tsoh_fd=rrr)n%5Ed%60i%5E%60_dm%60%5Eo)%5Ejh&amp;iv=40f174008b824048f15bccbda49ae85a&amp;token=336434333839643538613666616132633861663232613437613936343631373065643931383964393866386132326238316239663436663139363963363761626633656434343435326432636364343538323a666163666232623838306162653638663964363336646431&amp;text=5f7ba3a4c5afa4d3ebf7cd3e1048f303f682928625f9eb72b99127bacf334fd9c06998a58a1e41c04ad1a6ce578e274009183df859fa6955f122eb89aec561ca19efd6f68013ad83be41be5f2bc206d5fa1e66c63272452ed80847a83597ce816b2195d3fa0cc3597e4ff05a6792fa06dabc7e794de59cc25b8d99e48e72e9cefd80f8ef6616891cb56818da6b320e247aee81cebd4d41a27939ef767b6082152c1b1244961908b32c14b2d6c49e6b1791cab5a8256675d6364effd3e30d9697c8aaf5c46e7604490095f43d9749521fe328ac20ed9618465bb54745b3caed9a1845fba1cd74d4eb22946e91cf2b4d7e1baa3308feb8536aaeaa445ae5822bb31105f7b6fa5f4f238224ed3d1a086da85638222d3635d49fd159cedc958227ecab3645056271f06c62d3de017bc2c7b2&amp;original=3f)</li>
+<li><a href="https://www.sciencedirect.com/science/article/abs/pii/S0167865503000035?fr=RR-1&amp;ref=cra_js_challenge"><strong>CBLOF</strong></a></li>
 <li><a href="https://www.jmlr.org/papers/volume2/manevitz01a/manevitz01a.pdf"><strong>OCSVM</strong></a></li>
-<li><a href="https://www.sciencedirect.com/science/article/pii/S0167947302002803/pdf?crasolve=1&amp;r=8376cd72cf353271&amp;ts=1702896182234&amp;rtype=https&amp;vrr=UKN&amp;redir=UKN&amp;redir_fr=UKN&amp;redir_arc=UKN&amp;vhash=UKN&amp;host=d3d3LnNjaWVuY2VkaXJlY3QuY29t&amp;tsoh=d3d3LnNjaWVuY2VkaXJlY3QuY29t&amp;rh=d3d3LnNjaWVuY2VkaXJlY3QuY29t&amp;re=X2JsYW5rXw%3D%3D&amp;ns_h=d3d3LnNjaWVuY2VkaXJlY3QuY29t&amp;ns_e=X2JsYW5rXw%3D%3D&amp;rh_fd=rrr"><strong>MCD</strong></a>n%5Ed%60i%5E%60_dm%60%5Eo)%5Ejh&amp;tsoh_fd=rrr)n%5Ed%60i%5E%60_dm%60%5Eo)%5Ejh&amp;iv=ee9a34d16602d7bc6da1ac57d9336cd3&amp;token=613637643434663363346266323264356534353734633165363036363466643632636539393834653737343831396662633632643136613838386430613435346435613966333566663666623861323234363a396264376633643561646239313037646537366238333536&amp;text=5f4fb60900f1bf12bf9a673f31ab42a6f7b0ba925e468efd86c67a228c6dcdab68a365179c76515469c88776655bd46af5dc8864b5388ef3cf71e9a15dfeee66697e0138110582fdfc98a6d7e787fdaf6c8ebc749a616455ec93ed7485d910f2eea7523ccf5461a632db8cedf51422027bd2ecd4169ffeb58273e3cdc7ab452e74408aa274d15dad57a643fbfe4c9e63979bbf6bfe3d61725beb9b9e913d1c82863a544bd2675eee9dd98ee1082dac2a5209410968892e6d01982398c96fff6f91d6cff8f9fd977c25565e8852de9cd6d9abcc1e9873957d73b0bfcd88e9e2b0af617b5d9b52fa552b82888b26cf46f55c860037fd12a830458ac88f1f6640ff466c6a755896c455bcfcf3db39a94f6b753ebebe2bdb90432ccbc300da517468549c850f4af74ad14e8ec938f77bcdda&amp;original=3f)</li>
+<li><a href="https://www.sciencedirect.com/science/article/abs/pii/S0167947302002803?fr=RR-1&amp;ref=cra_js_challenge"><strong>MCD</strong></a></li>
 <li><a href="https://dl.acm.org/doi/pdf/10.1145/1081870.1081891"><strong>Feature Bagging</strong></a></li>
 <li><a href="https://dl.acm.org/doi/pdf/10.1145/1401890.1401946?casa_token=pmckKllW3yoAAAAA:wVg0MPyNGwuAlRikSokULv7nwuCptNnPcVYm6V5WdbuvadwPaJb7The2KgfpafSr4hTu99GYxsWr"><strong>ABOD</strong></a></li>
 <li><a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=4781136"><strong>Isolation Forest</strong></a></li>
@@ -281,7 +331,6 @@ ul.task-list li input[type="checkbox"] {
       <input type="text" class="search form-control" placeholder="Filter">
     </div>
 </div>
-
 <table class="quarto-listing-table table">
 <thead>
 <tr>
@@ -297,228 +346,227 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 </thead>
 <tbody class="list">
-<tr data-index="0" data-listing-date-sort="1701183600000" data-listing-file-modified-sort="1701334707000" data-listing-reading-time-sort="37.815" data-listing-title-sort="**[GODE]**GODE Other Methods" data-listing-filename-sort="2023-11-29-PR_Other Methods.ipynb">
-<td class="listing-date">
-Nov 29, 2023
+<tr data-index="0" data-listing-date-sort="1701183600000" data-listing-file-modified-sort="1701418829370" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="38" data-listing-word-count-sort="7563" data-listing-title-sort="**[GODE]**GODE Other Methods" data-listing-filename-sort="2023-11-29-PR_Other Methods.ipynb">
+<td>
+<span class="listing-date">Nov 29, 2023</span>
 </td>
-<td class="listing-title">
-<a href="./posts/2_research/2023-11-29-PR_Other Methods.html" class="title"><strong>[GODE]</strong>GODE Other Methods</a>
+<td>
+<a href="./posts/2_research/2023-11-29-PR_Other Methods.html" class="title listing-title"><strong>[GODE]</strong>GODE Other Methods</a>
 </td>
-<td class="listing-author">
-SEOYEON CHOI
-</td>
-</tr>
-<tr data-index="1" data-listing-date-sort="1701010800000" data-listing-file-modified-sort="1701317738000" data-listing-reading-time-sort="0.115" data-listing-title-sort="**[GODE]**Package Tutorial" data-listing-filename-sort="2023-11-27-GODE_Tutorial.ipynb">
-<td class="listing-date">
-Nov 27, 2023
-</td>
-<td class="listing-title">
-<a href="./posts/2_research/2023-11-27-GODE_Tutorial.html" class="title"><strong>[GODE]</strong>Package Tutorial</a>
-</td>
-<td class="listing-author">
-SEOYEON CHOI
+<td>
+<span class="listing-author">SEOYEON CHOI</span>
 </td>
 </tr>
-<tr data-index="2" data-categories="GODE" data-listing-date-sort="1698937200000" data-listing-file-modified-sort="1701251176000" data-listing-reading-time-sort="0.055" data-listing-title-sort="[GODE]Final Graph code for GODE Paper" data-listing-filename-sort="2023-11-03-final_graph_code_for_paper.ipynb">
-<td class="listing-date">
-Nov 3, 2023
+<tr data-index="1" data-listing-date-sort="1701010800000" data-listing-file-modified-sort="1701418829370" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="23" data-listing-title-sort="**[GODE]**Package Tutorial" data-listing-filename-sort="2023-11-27-GODE_Tutorial.ipynb">
+<td>
+<span class="listing-date">Nov 27, 2023</span>
 </td>
-<td class="listing-title">
-<a href="./posts/Result/4_figure/2023-11-03-final_graph_code_for_paper.html" class="title">[GODE]Final Graph code for GODE Paper</a>
+<td>
+<a href="./posts/2_research/2023-11-27-GODE_Tutorial.html" class="title listing-title"><strong>[GODE]</strong>Package Tutorial</a>
 </td>
-<td class="listing-author">
-SEOYEON CHOI
-</td>
-</tr>
-<tr data-index="3" data-listing-date-sort="1697727600000" data-listing-file-modified-sort="1701222658000" data-listing-reading-time-sort="0.265" data-listing-title-sort="**[GODE]**final GODE code" data-listing-filename-sort="2023-10-20-final_GODE_code.ipynb">
-<td class="listing-date">
-Oct 20, 2023
-</td>
-<td class="listing-title">
-<a href="./posts/Result/3_table/2023-10-20-final_GODE_code.html" class="title"><strong>[GODE]</strong>final GODE code</a>
-</td>
-<td class="listing-author">
-SEOYEON CHOI
+<td>
+<span class="listing-author">SEOYEON CHOI</span>
 </td>
 </tr>
-<tr data-index="4" data-listing-date-sort="1692111600000" data-listing-file-modified-sort="1691485587000" data-listing-reading-time-sort="28.535" data-listing-title-sort="The options of Outlier Detection method" data-listing-filename-sort="2023-08-16-options.ipynb">
-<td class="listing-date">
-Aug 16, 2023
+<tr data-index="2" data-categories="GODE" data-listing-date-sort="1698937200000" data-listing-file-modified-sort="1701418829294" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="11" data-listing-title-sort="[GODE]Final Graph code for GODE Paper" data-listing-filename-sort="2023-11-03-final_graph_code_for_paper.ipynb">
+<td>
+<span class="listing-date">Nov 3, 2023</span>
 </td>
-<td class="listing-title">
-<a href="./posts/2_research/2023-08-16-options.html" class="title">The options of Outlier Detection method</a>
+<td>
+<a href="./posts/Result/4_figure/2023-11-03-final_graph_code_for_paper.html" class="title listing-title">[GODE]Final Graph code for GODE Paper</a>
 </td>
-<td class="listing-author">
-SEOYEON CHOI
-</td>
-</tr>
-<tr data-index="5" data-listing-date-sort="1692111600000" data-listing-file-modified-sort="1691482466916" data-listing-reading-time-sort="0.5" data-listing-title-sort="final GODE code(paper)" data-listing-filename-sort="2023-08-16-final GODE code(paper).ipynb">
-<td class="listing-date">
-Aug 16, 2023
-</td>
-<td class="listing-title">
-<a href="./posts/2_research/2023-08-16-final GODE code(paper).html" class="title">final GODE code(paper)</a>
-</td>
-<td class="listing-author">
-SEOYEON CHOI
+<td>
+<span class="listing-author">SEOYEON CHOI</span>
 </td>
 </tr>
-<tr data-index="6" data-categories="GODE" data-listing-date-sort="1691161200000" data-listing-file-modified-sort="1691408726858" data-listing-reading-time-sort="8.735" data-listing-title-sort="Semifinal_Other Outlier Detection" data-listing-filename-sort="2023-08-05-semifinal_simulation_code.ipynb">
-<td class="listing-date">
-Aug 5, 2023
+<tr data-index="3" data-listing-date-sort="1697727600000" data-listing-file-modified-sort="1701418829234" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="53" data-listing-title-sort="**[GODE]**final GODE code" data-listing-filename-sort="2023-10-20-final_GODE_code.ipynb">
+<td>
+<span class="listing-date">Oct 20, 2023</span>
 </td>
-<td class="listing-title">
-<a href="./posts/2_research/2023-08-05-semifinal_simulation_code.html" class="title">Semifinal_Other Outlier Detection</a>
+<td>
+<a href="./posts/Result/3_table/2023-10-20-final_GODE_code.html" class="title listing-title"><strong>[GODE]</strong>final GODE code</a>
 </td>
-<td class="listing-author">
-SEOYEON CHOI
-</td>
-</tr>
-<tr data-index="7" data-categories="GODE" data-listing-date-sort="1688310000000" data-listing-file-modified-sort="1691224437574" data-listing-reading-time-sort="12.47" data-listing-title-sort="Other Outlier Detection" data-listing-filename-sort="2023-07-03-other_outlier_detection.ipynb">
-<td class="listing-date">
-Jul 3, 2023
-</td>
-<td class="listing-title">
-<a href="./posts/2_research/2023-07-03-other_outlier_detection.html" class="title">Other Outlier Detection</a>
-</td>
-<td class="listing-author">
-SEOYEON CHOI
+<td>
+<span class="listing-author">SEOYEON CHOI</span>
 </td>
 </tr>
-<tr data-index="8" data-categories="Lebesgue decomposition theorem" data-listing-date-sort="1688137200000" data-listing-file-modified-sort="1702856427000" data-listing-reading-time-sort="2.265" data-listing-title-sort="Graph and Spectral domain" data-listing-filename-sort="2023-07-01-graph_spectral_domain.ipynb">
-<td class="listing-date">
-Jul 1, 2023
+<tr data-index="4" data-listing-date-sort="1692111600000" data-listing-file-modified-sort="1701418829226" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="29" data-listing-word-count-sort="5707" data-listing-title-sort="The options of Outlier Detection method" data-listing-filename-sort="2023-08-16-options.ipynb">
+<td>
+<span class="listing-date">Aug 16, 2023</span>
 </td>
-<td class="listing-title">
-<a href="./posts/1_studies/2023-07-01-graph_spectral_domain.html" class="title">Graph and Spectral domain</a>
+<td>
+<a href="./posts/2_research/2023-08-16-options.html" class="title listing-title">The options of Outlier Detection method</a>
 </td>
-<td class="listing-author">
-SEOYEON CHOI
-</td>
-</tr>
-<tr data-index="9" data-categories="GODE,Non-Euclidean" data-listing-date-sort="1688137200000" data-listing-file-modified-sort="1702856428000" data-listing-reading-time-sort="2.74" data-listing-title-sort="Non-Euclidean data of GODE" data-listing-filename-sort="2023-07-01-NonEuclidean_data_of_GODE.ipynb">
-<td class="listing-date">
-Jul 1, 2023
-</td>
-<td class="listing-title">
-<a href="./posts/1_studies/2023-07-01-NonEuclidean_data_of_GODE.html" class="title">Non-Euclidean data of GODE</a>
-</td>
-<td class="listing-author">
-SEOYEON CHOI
+<td>
+<span class="listing-author">SEOYEON CHOI</span>
 </td>
 </tr>
-<tr data-index="10" data-categories="GODE" data-listing-date-sort="1687791600000" data-listing-file-modified-sort="1689152440000" data-listing-reading-time-sort="0.06" data-listing-title-sort="Linear Graph code for Paper" data-listing-filename-sort="2023-06-27-Linear_graph_code_for_paper.ipynb">
-<td class="listing-date">
-Jun 27, 2023
+<tr data-index="5" data-listing-date-sort="1692111600000" data-listing-file-modified-sort="1701418829226" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="100" data-listing-title-sort="final GODE code(paper)" data-listing-filename-sort="2023-08-16-final GODE code(paper).ipynb">
+<td>
+<span class="listing-date">Aug 16, 2023</span>
 </td>
-<td class="listing-title">
-<a href="./posts/2_research/2023-06-27-Linear_graph_code_for_paper.html" class="title">Linear Graph code for Paper</a>
+<td>
+<a href="./posts/2_research/2023-08-16-final GODE code(paper).html" class="title listing-title">final GODE code(paper)</a>
 </td>
-<td class="listing-author">
-SEOYEON CHOI
-</td>
-</tr>
-<tr data-index="11" data-categories="GODE" data-listing-date-sort="1687359600000" data-listing-file-modified-sort="1689152440000" data-listing-reading-time-sort="0.185" data-listing-title-sort="Comparison Results on Real Data" data-listing-filename-sort="2023-06-22-comparison_earthquake.ipynb">
-<td class="listing-date">
-Jun 22, 2023
-</td>
-<td class="listing-title">
-<a href="./posts/2_research/2023-06-22-comparison_earthquake.html" class="title">Comparison Results on Real Data</a>
-</td>
-<td class="listing-author">
-SEOYEON CHOI
+<td>
+<span class="listing-author">SEOYEON CHOI</span>
 </td>
 </tr>
-<tr data-index="12" data-categories="Ebayesthresh" data-listing-date-sort="1684335600000" data-listing-file-modified-sort="1702856428000" data-listing-reading-time-sort="1.815" data-listing-title-sort="EbayesThresh Toy ex" data-listing-filename-sort="2023-05-20-EbayesThresh toy ex.ipynb">
-<td class="listing-date">
-May 18, 2023
+<tr data-index="6" data-categories="GODE" data-listing-date-sort="1691161200000" data-listing-file-modified-sort="1701418829218" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1747" data-listing-title-sort="Semifinal_Other Outlier Detection" data-listing-filename-sort="2023-08-05-semifinal_simulation_code.ipynb">
+<td>
+<span class="listing-date">Aug 5, 2023</span>
 </td>
-<td class="listing-title">
-<a href="./posts/1_studies/2023-05-20-EbayesThresh toy ex.html" class="title">EbayesThresh Toy ex</a>
+<td>
+<a href="./posts/2_research/2023-08-05-semifinal_simulation_code.html" class="title listing-title">Semifinal_Other Outlier Detection</a>
 </td>
-<td class="listing-author">
-SEOYEON CHOI
-</td>
-</tr>
-<tr data-index="13" data-categories="DFT" data-listing-date-sort="1672066800000" data-listing-file-modified-sort="1689152440000" data-listing-reading-time-sort="0.295" data-listing-title-sort="Discrete Fourier Transform" data-listing-filename-sort="2022-12-27-DFT_study.ipynb">
-<td class="listing-date">
-Dec 27, 2022
-</td>
-<td class="listing-title">
-<a href="./posts/2_research/2022-12-27-DFT_study.html" class="title">Discrete Fourier Transform</a>
-</td>
-<td class="listing-author">
-SEOYEON CHOI
+<td>
+<span class="listing-author">SEOYEON CHOI</span>
 </td>
 </tr>
-<tr data-index="14" data-listing-date-sort="1671116400000" data-listing-file-modified-sort="1693173127000" data-listing-reading-time-sort="0.02" data-listing-title-sort="linspace" data-listing-filename-sort="2022-12-16-linspace.ipynb">
-<td class="listing-date">
-Dec 16, 2022
+<tr data-index="7" data-categories="GODE" data-listing-date-sort="1688310000000" data-listing-file-modified-sort="1701418829214" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="13" data-listing-word-count-sort="2494" data-listing-title-sort="Other Outlier Detection" data-listing-filename-sort="2023-07-03-other_outlier_detection.ipynb">
+<td>
+<span class="listing-date">Jul 3, 2023</span>
 </td>
-<td class="listing-title">
-<a href="./posts/2_research/2022-12-16-linspace.html" class="title">linspace</a>
+<td>
+<a href="./posts/2_research/2023-07-03-other_outlier_detection.html" class="title listing-title">Other Outlier Detection</a>
 </td>
-<td class="listing-author">
-SEOYEON CHOI
-</td>
-</tr>
-<tr data-index="15" data-categories="GODE" data-listing-date-sort="1669820400000" data-listing-file-modified-sort="1689152440000" data-listing-reading-time-sort="0.07" data-listing-title-sort="Graph code" data-listing-filename-sort="2022-12-01-graph_code_guebin.ipynb">
-<td class="listing-date">
-Dec 1, 2022
-</td>
-<td class="listing-title">
-<a href="./posts/2_research/2022-12-01-graph_code_guebin.html" class="title">Graph code</a>
-</td>
-<td class="listing-author">
-SEOYEON CHOI
+<td>
+<span class="listing-author">SEOYEON CHOI</span>
 </td>
 </tr>
-<tr data-index="16" data-categories="GODE" data-listing-date-sort="1669215600000" data-listing-file-modified-sort="1689152440000" data-listing-reading-time-sort="1.385" data-listing-title-sort="Class code for Comparison Study" data-listing-filename-sort="2022-11-19-class_code_for_paper.ipynb">
-<td class="listing-date">
-Nov 24, 2022
+<tr data-index="8" data-categories="Lebesgue decomposition theorem" data-listing-date-sort="1688137200000" data-listing-file-modified-sort="1702856427389" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="453" data-listing-title-sort="Graph and Spectral domain" data-listing-filename-sort="2023-07-01-graph_spectral_domain.ipynb">
+<td>
+<span class="listing-date">Jul 1, 2023</span>
 </td>
-<td class="listing-title">
-<a href="./posts/2_research/2022-11-19-class_code_for_paper.html" class="title">Class code for Comparison Study</a>
+<td>
+<a href="./posts/1_studies/2023-07-01-graph_spectral_domain.html" class="title listing-title">Graph and Spectral domain</a>
 </td>
-<td class="listing-author">
-SEOYEON CHOI
-</td>
-</tr>
-<tr data-index="17" data-categories="GODE" data-listing-date-sort="1669215600000" data-listing-file-modified-sort="1689152440000" data-listing-reading-time-sort="0.785" data-listing-title-sort="Earthquake" data-listing-filename-sort="2022-10-02-Earthquake_real.ipynb">
-<td class="listing-date">
-Nov 24, 2022
-</td>
-<td class="listing-title">
-<a href="./posts/2_research/2022-10-02-Earthquake_real.html" class="title">Earthquake</a>
-</td>
-<td class="listing-author">
-SEOYEON CHOI
+<td>
+<span class="listing-author">SEOYEON CHOI</span>
 </td>
 </tr>
-<tr data-index="18" data-categories="GODE" data-listing-date-sort="1662044400000" data-listing-file-modified-sort="1689152440000" data-listing-reading-time-sort="1.245" data-listing-title-sort="Simulation" data-listing-filename-sort="2022-09-02-paper_simulation.ipynb">
-<td class="listing-date">
-Sep 2, 2022
+<tr data-index="9" data-categories="GODE,Non-Euclidean" data-listing-date-sort="1688137200000" data-listing-file-modified-sort="1702856428109" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="548" data-listing-title-sort="Non-Euclidean data of GODE" data-listing-filename-sort="2023-07-01-NonEuclidean_data_of_GODE.ipynb">
+<td>
+<span class="listing-date">Jul 1, 2023</span>
 </td>
-<td class="listing-title">
-<a href="./posts/2_research/2022-09-02-paper_simulation.html" class="title">Simulation</a>
+<td>
+<a href="./posts/1_studies/2023-07-01-NonEuclidean_data_of_GODE.html" class="title listing-title">Non-Euclidean data of GODE</a>
 </td>
-<td class="listing-author">
-SEOYEON CHOI
+<td>
+<span class="listing-author">SEOYEON CHOI</span>
 </td>
 </tr>
-<tr data-index="19" data-categories="GODE" data-listing-date-sort="1661958000000" data-listing-file-modified-sort="1688987069000" data-listing-reading-time-sort="0.015" data-listing-title-sort="GODE" data-listing-filename-sort="index.qmd">
-<td class="listing-date">
-Sep 1, 2022
+<tr data-index="10" data-categories="GODE" data-listing-date-sort="1687791600000" data-listing-file-modified-sort="1701418829214" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="12" data-listing-title-sort="Linear Graph code for Paper" data-listing-filename-sort="2023-06-27-Linear_graph_code_for_paper.ipynb">
+<td>
+<span class="listing-date">Jun 27, 2023</span>
 </td>
-<td class="listing-title">
-<a href="./posts/2_research/index.html" class="title">GODE</a>
+<td>
+<a href="./posts/2_research/2023-06-27-Linear_graph_code_for_paper.html" class="title listing-title">Linear Graph code for Paper</a>
 </td>
-<td class="listing-author">
-SEOYEON CHOI
+<td>
+<span class="listing-author">SEOYEON CHOI</span>
+</td>
+</tr>
+<tr data-index="11" data-categories="GODE" data-listing-date-sort="1687359600000" data-listing-file-modified-sort="1701418829214" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="37" data-listing-title-sort="Comparison Results on Real Data" data-listing-filename-sort="2023-06-22-comparison_earthquake.ipynb">
+<td>
+<span class="listing-date">Jun 22, 2023</span>
+</td>
+<td>
+<a href="./posts/2_research/2023-06-22-comparison_earthquake.html" class="title listing-title">Comparison Results on Real Data</a>
+</td>
+<td>
+<span class="listing-author">SEOYEON CHOI</span>
+</td>
+</tr>
+<tr data-index="12" data-categories="Ebayesthresh" data-listing-date-sort="1684335600000" data-listing-file-modified-sort="1702856428233" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="363" data-listing-title-sort="EbayesThresh Toy ex" data-listing-filename-sort="2023-05-20-EbayesThresh toy ex.ipynb">
+<td>
+<span class="listing-date">May 18, 2023</span>
+</td>
+<td>
+<a href="./posts/1_studies/2023-05-20-EbayesThresh toy ex.html" class="title listing-title">EbayesThresh Toy ex</a>
+</td>
+<td>
+<span class="listing-author">SEOYEON CHOI</span>
+</td>
+</tr>
+<tr data-index="13" data-categories="DFT" data-listing-date-sort="1672066800000" data-listing-file-modified-sort="1701418829210" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="59" data-listing-title-sort="Discrete Fourier Transform" data-listing-filename-sort="2022-12-27-DFT_study.ipynb">
+<td>
+<span class="listing-date">Dec 27, 2022</span>
+</td>
+<td>
+<a href="./posts/2_research/2022-12-27-DFT_study.html" class="title listing-title">Discrete Fourier Transform</a>
+</td>
+<td>
+<span class="listing-author">SEOYEON CHOI</span>
+</td>
+</tr>
+<tr data-index="14" data-listing-date-sort="1671116400000" data-listing-file-modified-sort="1701418829210" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="4" data-listing-title-sort="linspace" data-listing-filename-sort="2022-12-16-linspace.ipynb">
+<td>
+<span class="listing-date">Dec 16, 2022</span>
+</td>
+<td>
+<a href="./posts/2_research/2022-12-16-linspace.html" class="title listing-title">linspace</a>
+</td>
+<td>
+<span class="listing-author">SEOYEON CHOI</span>
+</td>
+</tr>
+<tr data-index="15" data-categories="GODE" data-listing-date-sort="1669820400000" data-listing-file-modified-sort="1701418829210" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="14" data-listing-title-sort="Graph code" data-listing-filename-sort="2022-12-01-graph_code_guebin.ipynb">
+<td>
+<span class="listing-date">Dec 1, 2022</span>
+</td>
+<td>
+<a href="./posts/2_research/2022-12-01-graph_code_guebin.html" class="title listing-title">Graph code</a>
+</td>
+<td>
+<span class="listing-author">SEOYEON CHOI</span>
+</td>
+</tr>
+<tr data-index="16" data-categories="GODE" data-listing-date-sort="1669215600000" data-listing-file-modified-sort="1701418829202" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="277" data-listing-title-sort="Class code for Comparison Study" data-listing-filename-sort="2022-11-19-class_code_for_paper.ipynb">
+<td>
+<span class="listing-date">Nov 24, 2022</span>
+</td>
+<td>
+<a href="./posts/2_research/2022-11-19-class_code_for_paper.html" class="title listing-title">Class code for Comparison Study</a>
+</td>
+<td>
+<span class="listing-author">SEOYEON CHOI</span>
+</td>
+</tr>
+<tr data-index="17" data-categories="GODE" data-listing-date-sort="1669215600000" data-listing-file-modified-sort="1701418829198" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="157" data-listing-title-sort="Earthquake" data-listing-filename-sort="2022-10-02-Earthquake_real.ipynb">
+<td>
+<span class="listing-date">Nov 24, 2022</span>
+</td>
+<td>
+<a href="./posts/2_research/2022-10-02-Earthquake_real.html" class="title listing-title">Earthquake</a>
+</td>
+<td>
+<span class="listing-author">SEOYEON CHOI</span>
+</td>
+</tr>
+<tr data-index="18" data-categories="GODE" data-listing-date-sort="1662044400000" data-listing-file-modified-sort="1701418829166" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="249" data-listing-title-sort="Simulation" data-listing-filename-sort="2022-09-02-paper_simulation.ipynb">
+<td>
+<span class="listing-date">Sep 2, 2022</span>
+</td>
+<td>
+<a href="./posts/2_research/2022-09-02-paper_simulation.html" class="title listing-title">Simulation</a>
+</td>
+<td>
+<span class="listing-author">SEOYEON CHOI</span>
+</td>
+</tr>
+<tr data-index="19" data-categories="GODE" data-listing-date-sort="1661958000000" data-listing-file-modified-sort="1701418829490" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="3" data-listing-title-sort="GODE" data-listing-filename-sort="index.qmd">
+<td>
+<span class="listing-date">Sep 1, 2022</span>
+</td>
+<td>
+<a href="./posts/2_research/index.html" class="title listing-title">GODE</a>
+</td>
+<td>
+<span class="listing-author">SEOYEON CHOI</span>
 </td>
 </tr>
 </tbody>
-
 </table>
 <div class="listing-no-matching d-none">
 No matching items
@@ -551,10 +599,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
-  function tippyHover(el, contentFn) {
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -564,8 +611,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -580,6 +636,233 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      return note.innerHTML;
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
@@ -620,6 +903,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+
 
 
 

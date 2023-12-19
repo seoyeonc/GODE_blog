@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.269">
+<meta name="generator" content="quarto-1.4.527">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -19,11 +19,12 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -48,47 +49,17 @@ pre.numberSource code > span > a:first-child::before
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
     padding: 0 4px; width: 4em;
-    color: #aaaaaa;
   }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
 div.sourceCode
   {   }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { color: #008000; } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { color: #008000; font-weight: bold; } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -110,7 +81,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -119,13 +96,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
         <script type="text/javascript">
         window.PlotlyConfig = {MathJaxConfig: 'local'};
@@ -147,7 +125,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
         });
         }
         </script>
-        
+
 
 
 <link rel="stylesheet" href="../../styles.css">
@@ -155,46 +133,52 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <body class="nav-sidebar docked nav-fixed">
 
-
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">GODE blog</span>
     </a>
   </div>
+            <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="https://seoyeonc.github.io/sy_hub/">
- <span class="menu-text">Main_Blog</span></a>
+    <a class="nav-link" href="https://seoyeonc.github.io/sy_hub/"> 
+<span class="menu-text">Main_Blog</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../about.html">
- <span class="menu-text">About</span></a>
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/seoyeonc"><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/seoyeonc"> <i class="bi bi-github" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
 </ul>
-              <div id="quarto-search" class="" title="Search"></div>
           </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-    <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><strong>[GODE]</strong>Package Tutorial</h1>
-      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
-        <i class="bi bi-chevron-right"></i>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><strong>[GODE]</strong>Package Tutorial</li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
       </button>
     </div>
   </nav>
@@ -203,7 +187,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title d-none d-lg-block"><strong>[GODE]</strong>Package Tutorial</h1>
+      <h1 class="title"><strong>[GODE]</strong>Package Tutorial</h1>
                       </div>
   </div>
     
@@ -230,50 +214,56 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
-      <div class="mt-2 flex-shrink-0 align-items-center">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+        <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
         <div id="quarto-search" class="" title="Search"></div>
         </div>
-      </div>
+        </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../1_studies.html" class="sidebar-item-text sidebar-link"><strong>Studies</strong></a>
+  <a href="../../1_studies.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><strong>Studies</strong></span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true"><strong>Research</strong></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text"><strong>Research</strong></span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../2_research.html" class="sidebar-item-text sidebar-link"><strong>Research</strong></a>
+  <a href="../../2_research.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><strong>Research</strong></span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true"><strong>Result</strong></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text"><strong>Result</strong></span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../3_table.html" class="sidebar-item-text sidebar-link"><strong>Table</strong></a>
+  <a href="../../3_table.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><strong>Table</strong></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../4_figure.html" class="sidebar-item-text sidebar-link"><strong>Figure</strong></a>
+  <a href="../../4_figure.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><strong>Figure</strong></span></a>
   </div>
 </li>
       </ul>
@@ -281,6 +271,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     </ul>
     </div>
 </nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -324,19 +315,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 
 
+
 <section id="import" class="level1">
 <h1>Import</h1>
-<div class="cell" data-execution_count="1">
+<div id="6e6ee0d9-9b58-4980-b116-7e566c181851" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> GODE</span></code></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>2023-11-30 13:14:35.262441: I tensorflow/core/util/port.cc:110] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="2">
+<div id="13747122-8908-439e-8c3c-9c18bdd8765f" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span></code></pre></div>
 </div>
-<div class="cell" data-execution_count="3">
+<div id="9699fef9-be83-41aa-8dd3-b0a9ae9eabad" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pygsp <span class="im">import</span> graphs, filters, plotting, utils</span></code></pre></div>
 </div>
 </section>
@@ -344,7 +336,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1>Linear</h1>
 <section id="data_linear" class="level2">
 <h2 class="anchored" data-anchor-id="data_linear">Data_Linear</h2>
-<div class="cell" data-execution_count="4">
+<div id="6a5c5210-68ee-41ea-a157-44dd2b916ed4" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">6</span>)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>epsilon <span class="op">=</span> np.around(np.random.normal(size<span class="op">=</span><span class="dv">1000</span>),<span class="dv">15</span>)</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>signal <span class="op">=</span> np.random.choice(np.concatenate((np.random.uniform(<span class="op">-</span><span class="dv">7</span>, <span class="op">-</span><span class="dv">5</span>, <span class="dv">25</span>).<span class="bu">round</span>(<span class="dv">15</span>), np.random.uniform(<span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">25</span>).<span class="bu">round</span>(<span class="dv">15</span>), np.repeat(<span class="dv">0</span>, <span class="dv">950</span>))), <span class="dv">1000</span>)</span>
@@ -354,7 +346,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>outlier_true_linear <span class="op">=</span> <span class="bu">list</span>(<span class="bu">map</span>(<span class="kw">lambda</span> x: <span class="dv">1</span> <span class="cf">if</span> x<span class="op">!=</span><span class="dv">0</span> <span class="cf">else</span> <span class="dv">0</span>,outlier_true_linear))</span>
 <span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>index_of_trueoutlier_bool <span class="op">=</span> signal<span class="op">!=</span><span class="dv">0</span></span></code></pre></div>
 </div>
-<div class="cell" data-execution_count="5">
+<div id="56195d7a-867d-4196-a3c2-9c7a0a94acf9" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>x_1 <span class="op">=</span> np.linspace(<span class="dv">0</span>,<span class="dv">2</span>,<span class="dv">1000</span>)</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>y1_1 <span class="op">=</span> <span class="dv">5</span> <span class="op">*</span> x_1</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>y_1 <span class="op">=</span> y1_1 <span class="op">+</span> eta <span class="co"># eta = signal + epsilon</span></span>
@@ -363,39 +355,43 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="gode_lienar" class="level2">
 <h2 class="anchored" data-anchor-id="gode_lienar">GODE_Lienar</h2>
-<div class="cell" data-execution_count="6">
+<div id="a8f54050-4af0-4b78-8120-54509994ca3d" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>Lin <span class="op">=</span> GODE.Linear(_df)</span></code></pre></div>
 </div>
-<div class="cell" data-execution_count="7">
+<div id="e7506f27-805d-447c-8905-d4063d5aa356" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>Lin.fit(sd<span class="op">=</span><span class="dv">20</span>)</span></code></pre></div>
 </div>
-<div class="cell" data-execution_count="8">
+<div id="1172f15e-ed18-49a9-87c8-b1b538fc8d48" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>outlier_old_linear, outlier_linear, outlier_index_linear <span class="op">=</span> GODE.GODE_Anomalous(Lin(_df),contamination<span class="op">=</span><span class="fl">0.05</span>)</span></code></pre></div>
 </div>
 </section>
 <section id="plot_linear" class="level2">
 <h2 class="anchored" data-anchor-id="plot_linear">Plot_Linear</h2>
-<div class="cell" data-execution_count="9">
+<div id="33e3bbf0-7db0-448a-abf6-2848656a9cf3" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>GODE.Linear_plot(Lin(_df),index_of_trueoutlier_bool, outlier_index_linear)</span></code></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="2023-11-27-GODE_Tutorial_files/figure-html/cell-10-output-1.png" class="img-fluid"></p>
+<div>
+<figure class="figure">
+<p><img src="2023-11-27-GODE_Tutorial_files/figure-html/cell-10-output-1.png" class="img-fluid figure-img"></p>
+</figure>
 </div>
 </div>
-<div class="cell" data-execution_count="10">
+</div>
+<div id="ba09576f-ce1b-4947-b260-fba85cdaa4c2" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>Lin(_df)[<span class="st">'x'</span>][:<span class="dv">10</span>]</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="10">
 <pre><code>array([0.        , 0.002002  , 0.004004  , 0.00600601, 0.00800801,
        0.01001001, 0.01201201, 0.01401401, 0.01601602, 0.01801802])</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="11">
+<div id="f066de75-e341-403c-ad73-7cc22b135cf7" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>Lin(_df)[<span class="st">'y'</span>][:<span class="dv">10</span>]</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="11">
 <pre><code>array([-0.31178367, -6.08358567,  0.23784081, -0.86906177, -2.44674061,
         0.96330157,  1.18712379, -1.44402316,  1.71937116, -0.33980351])</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="12">
+<div id="8d80b161-f536-4464-b160-43731d714241" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>Lin(_df)[<span class="st">'yhat'</span>][:<span class="dv">10</span>]</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="12">
 <pre><code>array([0.26224717, 0.37091714, 0.37104804, 0.3712662 , 0.3715716 ,
@@ -405,13 +401,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="confusion-matrix_linear" class="level2">
 <h2 class="anchored" data-anchor-id="confusion-matrix_linear">Confusion matrix_Linear</h2>
-<div class="cell" data-scrolled="true" data-execution_count="13">
+<div id="3e54e821-6204-44fd-8567-09374a484baa" class="cell" data-scrolled="true" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>Conf_linear <span class="op">=</span> GODE.Conf_matrx(outlier_true_linear,outlier_linear)</span></code></pre></div>
 </div>
-<div class="cell" data-execution_count="14">
+<div id="58c54d2f-cf68-48a0-b850-8745b91061fa" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>Conf_linear.conf(<span class="st">'GODE'</span>)</span></code></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="2023-11-27-GODE_Tutorial_files/figure-html/cell-15-output-1.png" class="img-fluid"></p>
+<div>
+<figure class="figure">
+<p><img src="2023-11-27-GODE_Tutorial_files/figure-html/cell-15-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Accuracy: 0.999
@@ -420,7 +420,7 @@ Recall: 0.980
 F1 Score: 0.990</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="15">
+<div id="85f3f963-793c-4c0b-af57-ba2bd22a9321" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>Conf_linear()</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="15">
 <pre><code>{'Accuracy': 0.999,
@@ -436,7 +436,7 @@ F1 Score: 0.990</code></pre>
 <h1>Orbit</h1>
 <section id="data_orbit" class="level2">
 <h2 class="anchored" data-anchor-id="data_orbit">Data_Orbit</h2>
-<div class="cell" data-execution_count="16">
+<div id="4a79ac7e-7617-4d71-b92e-8fb9bd8aefe7" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">777</span>)</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>epsilon <span class="op">=</span> np.around(np.random.normal(size<span class="op">=</span><span class="dv">1000</span>),<span class="dv">15</span>)</span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>signal <span class="op">=</span> np.random.choice(np.concatenate((np.random.uniform(<span class="op">-</span><span class="dv">4</span>, <span class="op">-</span><span class="dv">1</span>, <span class="dv">25</span>).<span class="bu">round</span>(<span class="dv">15</span>), np.random.uniform(<span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">25</span>).<span class="bu">round</span>(<span class="dv">15</span>), np.repeat(<span class="dv">0</span>, <span class="dv">950</span>))), <span class="dv">1000</span>)</span>
@@ -457,53 +457,57 @@ F1 Score: 0.990</code></pre>
 </section>
 <section id="gode_orbit" class="level2">
 <h2 class="anchored" data-anchor-id="gode_orbit">GODE_Orbit</h2>
-<div class="cell" data-execution_count="17">
+<div id="7f4bc066-3fa2-4ebe-85a0-ca5d993d750f" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>Or <span class="op">=</span> GODE.Orbit(_df)</span></code></pre></div>
 </div>
-<div class="cell" data-execution_count="18">
+<div id="f24802d3-6924-43bb-ae2f-d27f96664534" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>Or.fit(sd<span class="op">=</span><span class="dv">15</span>,method <span class="op">=</span> <span class="st">'Euclidean'</span>)</span></code></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>100%|██████████| 1000/1000 [00:01&lt;00:00, 613.53it/s]</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="19">
+<div id="826a6f8c-3416-41c4-bbd2-b4b00e3921e4" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>outlier_old_orbit, outlier_orbit, outlier_index_orbit <span class="op">=</span> GODE.GODE_Anomalous(Or(_df),contamination<span class="op">=</span><span class="fl">0.05</span>)</span></code></pre></div>
 </div>
 </section>
 <section id="plot_orbit" class="level2">
 <h2 class="anchored" data-anchor-id="plot_orbit">Plot_Orbit</h2>
-<div class="cell" data-execution_count="20">
+<div id="4e9b92d1-e0cb-4a5e-9def-4e178c4ec3b7" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>GODE.Orbit_plot(Or(_df),index_of_trueoutlier_bool,outlier_index_orbit)</span></code></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="2023-11-27-GODE_Tutorial_files/figure-html/cell-21-output-1.png" class="img-fluid"></p>
+<div>
+<figure class="figure">
+<p><img src="2023-11-27-GODE_Tutorial_files/figure-html/cell-21-output-1.png" class="img-fluid figure-img"></p>
+</figure>
 </div>
 </div>
-<div class="cell" data-execution_count="21">
+</div>
+<div id="8de2ef98-312d-4b15-baa6-8d2c2aad917e" class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>Or(_df)[<span class="st">'x'</span>][:<span class="dv">5</span>]</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="21">
 <pre><code>array([-6.        , -5.99916963, -5.9966797 , -5.99253378, -5.98673778])</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="22">
+<div id="e1a39f56-949e-4d54-b701-d159cf60cada" class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>Or(_df)[<span class="st">'y'</span>][:<span class="dv">5</span>]</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="22">
 <pre><code>array([-7.34788079e-16, -3.76943905e-02, -7.53604665e-02, -1.12969981e-01,
        -1.50494820e-01])</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="23">
+<div id="c584a510-35fb-46ff-a303-9bb92012ad18" class="cell" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>Or(_df)[<span class="st">'f1'</span>][:<span class="dv">5</span>]</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="23">
 <pre><code>array([0.        , 0.18867305, 0.37727893, 0.56575049, 0.75402065])</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="24">
+<div id="d5feefc7-ae2f-44b4-98c1-74ed1d374f0a" class="cell" data-execution_count="24">
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>Or(_df)[<span class="st">'f'</span>][:<span class="dv">5</span>]</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="24">
 <pre><code>array([-0.46820879, -0.63415181,  0.31189882, -0.14761143,  1.66037153])</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="25">
+<div id="90e3bbfa-dead-438e-bb1e-48a17483fcd9" class="cell" data-execution_count="25">
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>Or(_df)[<span class="st">'fhat'</span>][:<span class="dv">5</span>]</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="25">
 <pre><code>array([0.08086037, 0.2425556 , 0.40437747, 0.5665164 , 0.72915801])</code></pre>
@@ -512,13 +516,17 @@ F1 Score: 0.990</code></pre>
 </section>
 <section id="confusion-matrix_orbit" class="level2">
 <h2 class="anchored" data-anchor-id="confusion-matrix_orbit">Confusion matrix_Orbit</h2>
-<div class="cell" data-scrolled="true" data-execution_count="26">
+<div id="614212d9-8290-451d-8ba2-d248538bcfe6" class="cell" data-scrolled="true" data-execution_count="26">
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>Conf_orbit <span class="op">=</span> GODE.Conf_matrx(outlier_true_orbit,outlier_orbit)</span></code></pre></div>
 </div>
-<div class="cell" data-execution_count="27">
+<div id="c91d7841-dace-4100-984e-27eecf836c99" class="cell" data-execution_count="27">
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>Conf_orbit.conf(<span class="st">'GODE'</span>)</span></code></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="2023-11-27-GODE_Tutorial_files/figure-html/cell-28-output-1.png" class="img-fluid"></p>
+<div>
+<figure class="figure">
+<p><img src="2023-11-27-GODE_Tutorial_files/figure-html/cell-28-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Accuracy: 0.955
@@ -527,7 +535,7 @@ Recall: 0.551
 F1 Score: 0.545</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="28">
+<div id="f7f7abea-4b88-4101-8f05-03412801a66b" class="cell" data-execution_count="28">
 <div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>Conf_orbit()</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="28">
 <pre><code>{'Accuracy': 0.955,
@@ -543,7 +551,7 @@ F1 Score: 0.545</code></pre>
 <h1>Bunny</h1>
 <section id="data_bunny" class="level2">
 <h2 class="anchored" data-anchor-id="data_bunny">Data_Bunny</h2>
-<div class="cell" data-execution_count="29">
+<div id="d0765b04-6a37-4287-90eb-fbfdbfbce214" class="cell" data-execution_count="29">
 <div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>G <span class="op">=</span> graphs.Bunny()</span>
 <span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> G.N</span>
 <span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>g <span class="op">=</span> filters.Heat(G, tau<span class="op">=</span><span class="dv">75</span>) </span>
@@ -562,7 +570,7 @@ F1 Score: 0.545</code></pre>
 <pre><code>2023-11-30 13:14:41,369:[WARNING](pygsp.graphs.graph.lmax): The largest eigenvalue G.lmax is not available, we need to estimate it. Explicitly call G.estimate_lmax() or G.compute_fourier_basis() once beforehand to suppress the warning.</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="30">
+<div id="afe5f1ba-e3e3-4847-9fb2-8d6d39940217" class="cell" data-execution_count="30">
 <div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>G.coords.shape</span>
 <span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>_W <span class="op">=</span> G.W.toarray()</span>
 <span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>_x <span class="op">=</span> G.coords[:,<span class="dv">0</span>]</span>
@@ -573,25 +581,29 @@ F1 Score: 0.545</code></pre>
 </section>
 <section id="gode_bunny" class="level2">
 <h2 class="anchored" data-anchor-id="gode_bunny">GODE_Bunny</h2>
-<div class="cell" data-execution_count="31">
+<div id="dcf07127-edb9-4bd4-969d-6f500bdf9055" class="cell" data-execution_count="31">
 <div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>bu <span class="op">=</span> GODE.BUNNY(_df,_W)</span></code></pre></div>
 </div>
-<div class="cell" data-execution_count="32">
+<div id="66cd3621-9869-4b7c-91bd-3592021ddcf8" class="cell" data-execution_count="32">
 <div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>bu.fit(sd<span class="op">=</span><span class="dv">20</span>)</span></code></pre></div>
 </div>
-<div class="cell" data-execution_count="33">
+<div id="4e6aa909-75da-4da6-8c72-8646dacac946" class="cell" data-execution_count="33">
 <div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>outlier_old_bunny, outlier_bunny, outlier_index_bunny <span class="op">=</span> GODE.GODE_Anomalous(bu(_df),contamination<span class="op">=</span><span class="fl">0.05</span>)</span></code></pre></div>
 </div>
 </section>
 <section id="plot_bunny" class="level2">
 <h2 class="anchored" data-anchor-id="plot_bunny">Plot_Bunny</h2>
-<div class="cell" data-jupyter="{&quot;source_hidden&quot;:true}" data-execution_count="34">
+<div id="570e6d77-59ea-46b9-9dbc-f8843d580968" class="cell" data-jupyter="{&quot;source_hidden&quot;:true}" data-execution_count="34">
 <div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>GODE.Bunny_plot(bu(_df),index_of_trueoutlier_bool_bunny,outlier_index_bunny)</span></code></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="2023-11-27-GODE_Tutorial_files/figure-html/cell-35-output-1.png" class="img-fluid"></p>
+<div>
+<figure class="figure">
+<p><img src="2023-11-27-GODE_Tutorial_files/figure-html/cell-35-output-1.png" class="img-fluid figure-img"></p>
+</figure>
 </div>
 </div>
-<div class="cell" data-execution_count="35">
+</div>
+<div id="f0f3545b-4e17-4abf-8777-02b3e2dd7a22" class="cell" data-execution_count="35">
 <div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>bu(_df)</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="35">
 <pre><code>{'x': array([ 0.26815193, -0.58456893, -0.02730755, ...,  0.15397547,
@@ -611,13 +623,17 @@ F1 Score: 0.545</code></pre>
 </section>
 <section id="confusion-matrix_bunny" class="level2">
 <h2 class="anchored" data-anchor-id="confusion-matrix_bunny">Confusion matrix_Bunny</h2>
-<div class="cell" data-scrolled="true" data-execution_count="36">
+<div id="0891a846-5a4f-4dba-8cf5-21834a81692e" class="cell" data-scrolled="true" data-execution_count="36">
 <div class="sourceCode cell-code" id="cb52"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>Conf_bunny <span class="op">=</span> GODE.Conf_matrx(outlier_true_bunny,outlier_bunny)</span></code></pre></div>
 </div>
-<div class="cell" data-execution_count="37">
+<div id="c2ac0133-8335-4211-adca-f1f58549f96d" class="cell" data-execution_count="37">
 <div class="sourceCode cell-code" id="cb53"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>Conf_bunny.conf(<span class="st">'GODE'</span>)</span></code></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="2023-11-27-GODE_Tutorial_files/figure-html/cell-38-output-1.png" class="img-fluid"></p>
+<div>
+<figure class="figure">
+<p><img src="2023-11-27-GODE_Tutorial_files/figure-html/cell-38-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Accuracy: 0.988
@@ -626,7 +642,7 @@ Recall: 0.900
 F1 Score: 0.882</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="38">
+<div id="036ad97c-f240-4e88-a590-6ac27dffc42f" class="cell" data-execution_count="38">
 <div class="sourceCode cell-code" id="cb55"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a>Conf_bunny()</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="38">
 <pre><code>{'Accuracy': 0.9884139033160207,
@@ -642,26 +658,26 @@ F1 Score: 0.882</code></pre>
 <h1>Earthquake</h1>
 <section id="data_earthquake" class="level2">
 <h2 class="anchored" data-anchor-id="data_earthquake">Data_Earthquake</h2>
-<div class="cell" data-execution_count="39">
+<div id="c38c8a68-4a2c-411e-84cc-485bd3020f57" class="cell" data-execution_count="39">
 <div class="sourceCode cell-code" id="cb57"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a>_df <span class="op">=</span> pd.concat([pd.read_csv(<span class="st">'00_05.csv'</span>),pd.read_csv(<span class="st">'05_10.csv'</span>),pd.read_csv(<span class="st">'10_15.csv'</span>),pd.read_csv(<span class="st">'15_20.csv'</span>)]).iloc[:,[<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">4</span>]]</span></code></pre></div>
 </div>
-<div class="cell" data-execution_count="40">
+<div id="b1ccbf3a-9436-4dda-9350-fbccad3cc67c" class="cell" data-execution_count="40">
 <div class="sourceCode cell-code" id="cb58"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>_df <span class="op">=</span> _df.assign(Year<span class="op">=</span><span class="bu">list</span>(<span class="bu">map</span>(<span class="kw">lambda</span> x: x.split(<span class="st">'-'</span>)[<span class="dv">0</span>], _df.time))).rename(columns<span class="op">=</span>{<span class="st">'latitude'</span> : <span class="st">'x'</span>, <span class="st">'longitude'</span> : <span class="st">'y'</span>, <span class="st">'mag'</span>: <span class="st">'f'</span>}).iloc[:,<span class="dv">1</span>:]</span>
 <span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a>_df.Year <span class="op">=</span> _df.Year.astype(np.float64)</span></code></pre></div>
 </div>
 </section>
 <section id="gode_earthquake" class="level2">
 <h2 class="anchored" data-anchor-id="gode_earthquake">GODE_Earthquake</h2>
-<div class="cell" data-execution_count="41">
+<div id="c1ddec5e-2549-40ec-80f9-a2daf3137c97" class="cell" data-execution_count="41">
 <div class="sourceCode cell-code" id="cb59"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a>Er <span class="op">=</span> GODE.Earthquake(_df.query(<span class="st">"2010 &lt;= Year &lt; 2011"</span>))</span></code></pre></div>
 </div>
-<div class="cell" data-execution_count="42">
+<div id="32cba355-8869-455f-8581-f9627da447ae" class="cell" data-execution_count="42">
 <div class="sourceCode cell-code" id="cb60"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>Er.fit(sd<span class="op">=</span><span class="dv">20</span>, method <span class="op">=</span> <span class="st">'Haversine'</span>)</span></code></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>100%|██████████| 4790/4790 [00:39&lt;00:00, 121.06it/s]</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="43">
+<div id="0a2dbadd-61f2-46c1-aeb5-942ce0ad85e2" class="cell" data-execution_count="43">
 <div class="sourceCode cell-code" id="cb62"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a>Er(_df.query(<span class="st">"2010 &lt;= Year &lt; 2011"</span>))</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="43">
 <pre><code>{'x': array([  0.663, -19.209, -31.83 , ...,  40.726,  30.646,  26.29 ]),
@@ -671,16 +687,15 @@ F1 Score: 0.882</code></pre>
         5.08949907])}</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="44">
+<div id="076a2ff6-7eb0-414b-905c-c5302a93ce2e" class="cell" data-execution_count="44">
 <div class="sourceCode cell-code" id="cb64"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a>outlier_old_earthquake, outlier_earthquake, outlier_index_earthquake <span class="op">=</span> GODE.GODE_Anomalous(Er(_df.query(<span class="st">"2010 &lt;= Year &lt; 2011"</span>)),contamination<span class="op">=</span><span class="fl">0.05</span>)</span></code></pre></div>
 </div>
 </section>
 <section id="plot_earthquake" class="level2">
 <h2 class="anchored" data-anchor-id="plot_earthquake">Plot_Earthquake</h2>
-<div class="cell" data-execution_count="45">
+<div id="19cde3ef-34dd-4914-961d-d2d08bd9352a" class="cell" data-execution_count="45">
 <div class="sourceCode cell-code" id="cb65"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a>GODE.Earthquake_plot(Er(_df.query(<span class="st">"2010 &lt;= Year &lt; 2011"</span>)),outlier_index_earthquake,lat_center<span class="op">=</span><span class="fl">37.7749</span>, lon_center<span class="op">=-</span><span class="fl">122.4194</span>,fThresh<span class="op">=</span><span class="dv">7</span>,adjzoom<span class="op">=</span><span class="dv">5</span>,adjmarkersize <span class="op">=</span> <span class="dv">40</span>)</span></code></pre></div>
 <div class="cell-output cell-output-display">
-
 <div>                            <div id="88d5feff-68c0-494e-b598-ff4c452b86cb" class="plotly-graph-div" style="height:900px; width:100%;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("88d5feff-68c0-494e-b598-ff4c452b86cb")) {                    Plotly.newPlot(                        "88d5feff-68c0-494e-b598-ff4c452b86cb",                        [{"coloraxis":"coloraxis","hovertemplate":"f=%{z}\u003cbr\u003ex=%{lat}\u003cbr\u003ey=%{lon}\u003cextra\u003e\u003c\u002fextra\u003e","lat":[0.663,-19.209,-31.83,-19.984,50.38,56.7391,9.989,-10.819,51.626,-19.171,51.472,-10.588,53.113,-56.049,-23.166,30.942,-19.497,-19.529,-19.701,-19.661,-19.441,-19.385,8.337,-20.114,-57.422,-23.595,-19.947,-23.407,-19.282,-52.919,-19.378,27.18,-20.056,-19.864,-19.311,-50.811,-19.086,-50.808,50.911,-19.732,51.027,-22.916,-19.59,51.048,-19.359,10.734,-2.494,-19.8,-19.636,-19.842,51.144,-19.486,-19.927,27.007,27.178,51.085,-19.742,-19.616,-19.937,-19.506,-21.083,27.135,-19.648,-19.342,-19.833,6.003,51.118,51.115,-19.323,-19.808,-19.66,-19.469,27.004,-19.396,-19.318,-19.291,-19.636,-19.321,26.78,-19.678,-19.467,-19.361,-19.361,27.067,27.084,27.082,-19.307,-19.467,-19.702,-36.83,26.787,26.839,25.538,18.26,46.37,11.53,27.035,27.056,-63.592,52.881,-19.847,-1.905,18.961,-7.999,-19.908,-19.723,26.896,53.127,-18.309,27.182,27.248,3.931,-2.789,26.895,26.81,-39.293,-13.461,27.039,26.999,27.02,26.944,26.975,27.196,27.065,26.869,26.9,-20.75,26.734,-4.966,27.121,26.819,26.721,26.669,26.732,26.73,26.777,26.714,26.928,26.613,26.801,26.771,26.685,27.131,26.975,27.114,27.096,27.085,27.191,27.06,26.695,-34.576,27.23,27.204,27.184,27.203,27.081,27.08,27.276,27.217,27.155,27.094,26.961,27.104,26.901,2.715,-15.476,-8.7,-18.805,16.962,28.412,-17.016,12.995,10.171,10.402,18.521,51.149,-12.692,-41.483,7.521,38.391,-56.97,53.477,5.42,-14.131,-5.488,18.503,-56.955,10.399,37.28,10.409,-8.501,-6.48,-55.256,19.517,-56.535,-3.105,-6.324,-22.517,-10.786,-30.365,-17.679,53.918,-26.781,-7.268,-37.31,-23.061,3.824,52.001,52.175,-32.339,-33.989,-8.092,39.419,-6.259,-18.442,27.478,-6.534,-28.098,-5.971,-6.263,-6.297,-6.366,32.344,-5.558,-3.456,-56.83,-25.311,30.424,11.927,-21.811,52.88,0.257,-6.064,23.863,-62.897,-37.372,-20.317,31.53,-56.4,-7.148,-56.339,-56.397,-19.862,-56.338,-56.253,-6.686,-22.468,-30.993,-32.255,39.358,7.481,-56.398,-56.424,-56.412,-20.854,-15.19,54.356,54.316,-55.784,-58.019,-57.932,-3.781,40.904,-8.912,-36.231,48.921,25.433,52.051,-6.409,-5.836,-49.308,-18.22,-49.21,-6.001,-5.711,-15.888,2.689,-22.717,48.882,-4.099,48.922,-28.243,52.215,29.775,-21.27,28.349,-57.084,-17.738,-16.66,-24.012,1.25,-17.901,-6.558,1.371,-24.072,-14.76,-34.672,3.849,55.123,3.862,10.293,-2.622,-40.314,-3.369,10.9,28.063,20.162,-22.742,38.275,-25.06,0.443,-20.696,-14.861,-24.381,-15.612,16.418,-18.98,11.966,36.202,-6.167,11.893,11.899,-22.69,-55.716,-5.959,-15.54,-33.625,-18.745,8.132,43.571,6.443,-56.947,23.827,51.199,-54.476,-34.869,-54.645,-54.967,-20.483,51.567,-17.189,-37.958,1.181,-27.683,-4.933,12.009,-15.684,-7.52,-15.692,-7.797,-12.188,-56.108,-27.819,-5.897,-3.005,51.733,11.945,-1.99,-3.112,11.934,34.549,12.121,-22.722,11.916,11.916,11.983,-16.528,11.859,11.874,11.865,11.886,11.906,12.041,11.948,11.784,11.971,11.927,11.863,-0.158,11.94,12.023,11.931,11.797,11.984,34.036,-6.98,17.874,-30.118,-35.958,24.14,52.829,54.65,-6.553,-6.276,37.899,-59.547,11.878,1.435,5.946,36.746,-55.746,-28.782,14.923,-45.464,0.457,-36.438,-61.688,-14.946,-7.865,-1.735,-8.634,-4.176,-17.409,-37.094,12.704,24.383,69.1859,46.598,-62.13,-18.882,36.636,12.736,12.859,51.436,-17.618,-60.709,-13.728,12.837,-15.033,51.236,51.209,-20.466,12.748,40.036,12.914,2.532,-4.617,-58.871,-13.699,-7.601,-13.406,-6.345,40.423,43.76,-19.19,36.411,47.092,-5.355,16.738,-6.37,-6.291,-6.385,-3.456,-23.852,-33.661,46.743,34.321,-56.586,-24.956,-3.423,23.449,-29.454,2.784,-11.315,-0.456,-29.161,-24.734,36.517,-5.51,-6.413,23.084,13.237,-60.492,22.964,-23.0,-3.538,-3.496,-2.36,-3.783,-3.597,-2.494,-3.698,-3.262,-41.494,-3.411,-3.301,-2.809,-2.963,-2.958,-3.414,-3.487,-0.071,24.587,19.341,-35.944,-5.447,-19.612,-47.109,-34.791,63.362,63.486,9.273,4.732,-36.779,-37.743,-56.7,-29.593,-20.347,-20.878,-20.379,24.752,24.696,-20.209,-33.404,-33.351,-6.125,-25.78,-34.737,-11.676,-20.405,12.878,24.471,24.466,24.54,-20.349,-23.75,-23.419,55.141,-63.508,-23.552,28.031,-0.104,12.964,-55.514,-20.414,6.63,-7.366,-55.585,-20.46,14.079,47.006,3.663,42.311,5.545,-10.32,-13.805,-41.046,-41.5,-20.425,-20.457,-4.915,-26.12,-26.185,25.357,33.869,51.263,51.44,-48.93,31.067,-46.872,-58.141,38.169,-2.644,18.248,10.211,51.154,51.299,-13.892,-58.876,2.831,51.334,51.287,51.374,-57.683,-18.619,-18.644,1.038,39.154,6.626,-6.024,-17.818,29.715,-52.822,-57.315,-4.73,-3.416,6.764,25.487,-20.857,-6.684,-36.364,-59.508,49.357,48.046,24.27,19.427,19.801,-43.606,-14.81,19.354,-30.129,-32.336,34.927,-5.812,-6.532,52.73,-16.647,-47.287,-11.129,-6.559,-17.448,-21.894,-57.368,-57.631,-58.853,-18.877,-17.67,5.27,-10.925,-7.926,-57.276,-5.073,-5.103,37.102,5.045,19.706,-0.307,-4.949,-5.212,-36.249,24.687,2.379,-4.903,-7.228,-15.6,-4.963,-4.909,-34.804,-18.717,4.998,37.257,-36.74,13.011,-22.772,1.941,-65.249,13.021,11.884,-29.344,-14.85,-22.596,43.603,24.975,29.637,-26.448,57.705,57.727,57.688,52.438,-20.999,-5.314,-5.573,-21.184,-4.48,-14.283,5.754,-40.459,-14.363,62.8543,-17.745,-7.809,29.973,54.443,-34.906,-5.826,52.233,52.415,-16.039,-13.39,28.748,15.461,-6.338,-36.242,-33.643,-28.085,-6.2,22.899,10.686,-58.79,-17.357,-0.478,13.864,-20.129,-5.584,-55.0,3.7,36.443,-37.506,-21.586,9.835,-16.031,5.951,59.8613,-21.872,20.999,-48.555,29.787,15.722,21.487,31.616,5.662,5.642,-37.522,-37.221,32.147,29.235,-31.846,-14.612,41.497,-3.5,-3.655,0.735,-29.43,5.648,-4.218,51.463,-63.448,-13.749,-4.244,7.788,-19.962,-20.044,-3.127,-1.068,23.407,-55.614,-62.25,-62.202,59.405,-5.999,-37.034,11.154,44.484,44.588,-20.671,-6.58,-20.581,-20.118,-28.567,33.279,-53.136,-15.879,39.453,-14.396,45.834,26.98,-6.917,-40.433,-17.409,-4.118,-10.965,-30.82,-18.314,-3.983,-37.785,-23.825,-6.134,-0.544,-18.935,-5.993,-16.129,-37.992,-59.075,-14.518,-17.368,-43.574,-2.494,-2.475,42.741,-3.65,-43.62,-43.535,-43.522,51.451,-5.574,-13.941,-17.58,-6.133,12.788,1.993,37.925,13.816,-3.587,-16.11,-37.374,58.024,-5.622,24.9,-14.973,-5.731,-0.44,-41.862,-55.8,-17.454,18.72,35.49,-55.078,-55.418,-55.469,-6.18,-7.454,-55.958,36.116,-6.598,-21.869,-6.043,2.705,-35.089,-22.704,-0.762,0.397,-49.496,-21.172,6.748,36.508,-6.079,18.795,53.469,12.805,-6.235,37.24,19.441,-21.135,-36.532,-6.153,6.028,24.754,-27.544,2.221,53.584,-6.57,39.321,54.156,-55.879,-6.55,51.367,18.621,11.141,14.03,-10.084,32.01,-16.109,12.234,52.914,-30.042,-5.321,11.602,-22.693,-8.546,-20.799,71.902,-7.377,-17.438,-17.759,-5.692,12.186,-21.838,12.25,-36.814,12.247,12.246,12.164,-7.113,-22.043,53.557,12.273,12.253,12.273,12.254,28.326,-7.017,12.446,12.303,12.333,12.307,-3.953,-5.736,11.291,12.356,12.377,12.331,12.316,12.353,12.412,12.348,26.238,-3.09,12.487,-7.067,36.61,36.877,37.042,36.969,48.246,-41.425,-17.348,-1.266,-17.423,-17.956,-63.57,-5.387,-13.076,-17.988,-7.495,37.799,-42.929,-17.606,-17.403,-17.804,-17.164,-14.46,-17.331,14.949,-17.728,-17.332,-17.461,-17.404,-17.551,-17.66,-17.386,-17.573,-17.74,-17.428,39.406,-17.541,-14.001,28.616,13.608,-21.055,-38.717,18.944,-6.082,30.309,51.343,50.71,29.484,-13.43,12.837,-15.215,-38.255,-7.4,-21.763,-6.195,-19.958,49.483,-37.432,-37.443,-6.017,-6.122,45.98,-5.746,51.424,-6.983,51.423,-21.842,-5.486,-26.916,-23.91,-22.562,-9.5,38.452,1.239,-6.35,-19.932,10.94,-6.498,-37.404,62.056,7.103,-54.25,7.604,-31.522,-6.996,-0.763,29.703,13.436,-6.103,-1.074,27.691,11.623,35.221,-37.425,2.094,-61.348,52.495,52.498,-20.147,3.924,-15.6,6.548,-17.838,-12.236,43.756,52.628,52.667,-7.318,38.933,-24.554,6.669,-23.966,-24.053,-3.832,6.799,-4.873,49.703,6.82,-15.051,22.759,-15.069,-1.422,-34.007,-8.137,-12.548,60.31,-1.348,6.717,-5.506,-10.831,-6.503,6.218,0.997,6.776,6.725,7.319,6.545,6.497,6.647,6.867,6.684,6.718,-22.143,-4.533,26.777,1.361,35.839,-15.132,-2.892,-6.3,-6.332,-15.173,-5.001,-35.576,3.039,52.681,-2.769,11.735,-22.775,-6.015,27.056,27.022,-5.902,-29.031,52.563,-55.5,-8.71,52.781,49.46,-6.064,52.724,-6.228,52.717,52.655,-6.068,-6.122,-6.492,-37.28,-6.108,52.815,-5.931,-5.966,24.131,52.876,-41.947,-54.295,-15.661,-24.715,-20.676,-5.777,39.34,36.81,-8.234,-8.275,-21.281,12.826,-38.133,-34.153,-38.224,51.811,-38.067,-38.098,-2.433,1.369,1.394,-43.45,6.619,-22.146,7.596,-38.965,-30.813,-61.953,-30.582,-25.261,-7.863,11.143,-10.532,-39.923,14.006,-46.06,-6.005,52.164,-49.284,-6.04,-6.335,24.753,24.421,14.372,-24.007,-5.62,33.4173333,8.955,-4.073,-6.068,-6.08,-6.169,29.841,-53.752,-53.73,-22.353,-35.619,10.358,-50.477,-50.453,-8.866,-2.673,-57.515,-54.174,39.697,-15.027,-14.884,-8.469,18.528,-3.5,39.058,-11.414,-21.7,-9.378,-9.75,-9.246,-34.775,11.779,10.227,-13.672,-16.985,-5.376,-13.652,-8.953,-13.643,-14.476,-35.655,-5.171,1.243,-21.699,22.96,-21.478,-55.395,-0.739,16.396,-50.592,-23.307,-17.177,-17.792,48.273,-37.836,-4.772,-18.259,-8.884,-8.947,30.672,-18.25,-37.91,5.283,41.662,-8.954,-8.873,13.417,14.002,-4.489,-36.875,12.064,-6.132,-18.927,-4.689,-8.07,-32.917,-10.627,15.766,7.588,7.622,-34.539,-36.875,-5.514,7.696,-35.595,45.8835,-5.684,29.872,-19.201,-55.769,7.563,-49.939,-17.18,-36.129,-5.885,-3.319,41.42,44.43,13.197,-8.58,44.448,-1.173,-33.168,14.418,2.635,-1.849,-2.329,51.68,-2.243,58.0335,-1.792,-2.174,-2.386,-10.26,-1.461,-6.46,7.404,-61.305,32.705,24.04,-26.415,3.783,-5.971,-37.281,-0.201,22.866,22.739,7.794,7.779,7.86,37.372,-17.957,7.674,-10.894,7.881,54.542,28.825,-35.392,-28.383,1.022,-22.581,-25.083,26.712,26.688,-37.314,-34.753,17.764,-12.913,39.865,-30.676,7.363,-18.597,70.399,1.944,-20.086,-15.122,-17.302,-4.59,-36.984,-0.894,-57.25,-8.572,-15.09,-32.929,1.597,28.169,43.426,6.513,-9.555,36.501,33.3,-56.168,70.766,4.778,33.335,70.712,-13.731,-6.159,-57.369,-17.876,-36.819,9.331,11.132,6.948,-58.234,13.104,-56.161,-19.372,12.236,-13.968,-13.94,-13.661,33.165,-10.184,-3.864,-13.677,53.523,53.422,31.135,-14.048,-37.339,-13.658,-14.095,-13.756,-17.985,-13.884,-14.458,-13.698,9.779,-50.012,25.715,25.773,-10.116,17.145,-37.617,35.336,-65.425,31.152,-36.25,-8.087,-13.928,-17.843,-17.879,35.962,-20.613,-56.236,-34.64,8.273,-39.75,-38.689,-25.808,-20.197,9.247,-39.063,-55.501,-56.87,-6.532,-54.843,-41.239,-54.8,-12.113,-5.083,-13.098,-6.641,13.135,-7.845,-62.838,46.29,-16.308,-34.991,-7.528,-55.064,-34.657,73.418,73.469,28.815,14.423,35.996,-34.826,18.4,-51.842,0.511,-23.59,-16.689,29.33,35.9,-34.213,42.263,9.178,-1.34,3.498,-12.103,-55.692,-1.421,3.748,-33.934,-8.169,45.385,-17.935,-0.732,-8.085,16.546,44.416,44.403,44.362,-10.408,-24.865,3.559,12.999,-55.725,-18.768,33.108,-55.25,-3.879,-18.058,-56.784,-6.245,-4.054,-35.56,-35.949,-47.065,-21.886,-15.41,-34.152,-56.737,-0.659,-38.072,-37.232,52.612,29.645,-39.861,-23.067,51.588,-34.228,29.21,57.356,14.953,13.624,-21.08,-8.966,-58.602,-33.19,-14.901,60.478,60.473,-51.021,13.502,-36.852,-57.179,-36.858,-13.203,-14.919,-14.979,19.392,-7.332,27.192,30.432,51.228,-50.175,33.654,-56.068,-5.44,-11.157,-54.36,22.18,-55.606,-37.526,-5.463,-20.008,-13.461,-15.914,34.45,-1.912,-36.303,-10.355,-37.529,-6.701,13.641,-2.972,44.121,-6.613,20.228,-15.33,-4.597,-15.271,16.297,-55.729,-30.794,-37.519,19.572,35.633,18.136,14.514,-61.819,-37.167,-37.159,18.0,-6.669,11.678,-5.999,-7.03,3.682,3.739,32.514,-37.42,-23.604,-37.46,-37.503,16.385,-10.702,54.485,-13.537,-13.451,-31.198,-13.92,17.969,33.071,33.195,-29.076,33.126,32.925,33.165,23.122,-56.331,7.805,-10.71,8.445,8.194,-4.413,16.293,2.383,-22.366,-35.535,-56.919,-8.85,-4.42,36.965,29.509,-10.878,-5.196,-5.556,23.251,-55.619,-12.973,-34.64,-20.114,-25.68,-41.081,-4.834,-36.155,-7.146,-28.559,-9.6,-62.21,-21.8,-4.18,32.1646667,-18.152,-27.665,-3.76,52.174,2.63,73.782,1.911,2.346,2.383,-35.043,-19.86,-0.206,-0.15,-42.627,-0.183,17.857,31.9788333,32.2661667,32.3,32.0986667,32.4533333,32.2861667,-17.194,-22.419,-1.647,-31.253,0.8,-36.227,-36.119,17.041,-24.646,-7.633,-34.199,-61.203,30.088,-34.649,-8.971,51.697,-31.455,13.667,-31.227,43.308,-34.881,-35.406,-35.387,-5.609,-55.139,-36.139,-15.329,-15.394,-10.152,-56.896,-52.728,-11.279,13.364,-27.953,-6.326,-1.279,-18.396,-1.098,0.548,-7.289,-35.989,-35.835,13.827,-17.416,14.004,38.821,-36.543,-15.206,32.516,32.509,-37.15,-15.327,37.463,52.958,37.487,-33.889,-34.808,-11.987,18.451,46.791,-15.23,-41.257,-17.556,-16.186,-14.723,-22.475,-36.344,-62.607,-29.413,15.927,19.872,-34.685,19.76,19.674,51.884,-54.475,-3.361,-34.406,17.395,-34.44,-33.251,-5.463,54.496,-35.541,-33.531,-26.919,-46.026,-21.787,-22.266,-44.179,-23.318,0.849,34.334,1.321,-48.519,-48.733,-48.618,-34.361,-36.569,-42.5,-36.596,-35.444,-43.842,-58.27,-4.643,-27.738,-24.472,-17.724,52.139,-36.405,-36.217,-41.439,-36.075,-35.802,28.791,-34.376,-58.417,-7.091,-2.746,-38.526,-34.932,35.303,-33.338,-38.438,-38.502,37.745,-34.227,-1.692,52.785,-36.825,-34.56,1.323,37.594,-37.551,-34.392,44.218,-36.725,-36.685,2.192,23.062,28.592,34.898,-34.233,-34.337,-58.708,46.682,-37.695,-34.488,-9.195,-34.417,-23.709,-37.705,-34.416,-7.439,-34.381,-34.346,-34.469,-34.293,-34.393,-34.507,-34.344,-34.245,-34.47,-34.614,-34.326,-34.255,-34.29,-37.259,-15.348,-57.285,-38.093,36.426,-33.562,-36.934,-36.699,-34.992,7.128,-18.526,-37.156,-36.981,-33.855,-34.765,-59.25,51.489,11.23,-32.569,-32.714,-32.634,-32.614,-32.595,-25.712,-32.66,-35.947,-34.582,-34.533,38.776,38.828,19.348,-33.781,38.709,-33.233,38.864,-36.156,-34.109,-34.608,-38.046,15.852,-37.99,11.284,-16.236,-33.166,14.653,-36.174,14.702,14.664,-37.434,44.174,-13.141,-34.636,-37.057,48.896,1.317,13.59,-29.934,-3.758,-3.762,-35.075,-37.442,-36.665,-37.559,1.891,-36.631,-35.112,-34.659,-34.546,-16.708,-22.227,-34.541,-34.18,-13.571,-35.869,-1.387,-11.996,-37.647,22.901,-34.947,-33.296,-33.372,-33.216,22.918,-38.453,-33.412,-7.382,-36.61,-58.74,3.052,-33.678,-37.301,-37.582,-33.329,-34.976,3.438,-30.257,-36.48,-34.267,-36.537,-33.819,-39.508,-36.618,-35.203,-10.737,-34.162,-2.747,-34.535,-36.675,-35.794,-33.857,-34.495,18.182,-39.76,42.471,-34.831,-33.898,-36.297,-36.759,-34.39,-34.282,-34.537,-37.84,-35.677,5.296,-34.707,32.302,-37.958,-38.599,7.052,-36.048,-35.039,-35.174,-35.237,-38.308,-37.348,-35.353,-36.847,39.482,-38.099,-36.793,-34.907,-58.205,19.134,-34.796,-35.221,-33.87,-33.894,-35.317,-38.212,2.112,-35.186,-35.03,-34.903,-35.546,-38.501,-1.177,-33.639,34.832,-35.193,-37.79,-38.386,-37.792,-45.608,-37.712,-35.013,-34.028,-38.795,-34.701,-37.754,-33.931,25.954,-38.385,-38.32,-34.522,-34.86,-34.45,-36.633,25.937,-34.163,-36.818,-38.145,-36.624,-33.861,35.94,-34.7,-37.695,-33.99,-34.932,-36.492,-35.779,-36.8,-33.903,-34.031,-35.156,-37.332,-33.916,-34.914,10.84,-36.481,-35.047,-37.548,-33.422,-37.632,-37.581,-37.516,-36.644,-33.859,-34.81,-34.793,-36.521,-33.381,-36.354,-33.99,-34.22,-37.511,-34.917,-37.78,-38.283,-34.116,-34.034,-24.872,-36.129,-38.278,-35.455,-33.942,-33.955,-37.968,-35.709,-34.199,-34.578,-37.335,-37.219,-33.303,-35.156,-38.496,-38.554,-33.566,-37.837,-37.169,-36.184,25.891,-34.373,-37.032,-36.326,-38.265,-36.804,-38.191,-33.281,-37.878,-33.717,-38.16,-37.113,-36.668,-33.998,-33.443,-37.52,-36.099,-34.468,-35.452,-34.73,-38.495,-34.815,-33.637,-36.176,-36.952,-33.027,-34.872,-37.247,-34.89,-34.749,-34.492,-33.618,-34.956,-33.304,-33.597,-37.773,-36.122,-33.56,-35.753,-33.83,-37.033,-35.09,-34.614,-35.829,-36.458,-33.623,-36.866,-35.991,-35.133,-36.869,-34.632,-33.821,-38.032,-34.907,-35.819,-34.992,-36.924,-37.964,-35.822,-36.912,-33.878,-33.912,-38.099,-33.975,-31.72,-34.35,-34.867,-31.663,-33.655,-54.027,-36.122,-11.443,25.93,-58.107,5.819,6.484,28.474,0.893,23.784,-55.758,-10.268,-14.845,-23.904,25.523,-46.072,11.176,8.315,-3.375,-30.228,-23.828,-15.112,15.967,15.907,49.702,32.508,-23.75,-23.687,70.896,-27.27,-23.66,-23.738,-23.626,24.126,-21.511,-27.524,16.961,-13.507,44.301,20.951,-15.509,-21.84,-41.437,46.704,-23.067,-35.029,-40.174,-56.671,-8.8,42.587,-29.756,4.624,19.038,40.332,-7.217,6.169,-19.071,11.533,-13.566,-33.301,-36.779,-6.027,-15.297,-21.902,29.894,29.852,-6.038,19.855,-33.622,8.428,34.0,-24.154,-9.905,-40.593,-39.152,-37.763,-6.657,1.037,-7.189,-7.09,-6.994,-7.048,-9.26,-23.058,1.522,-6.076,-38.857,20.989,-15.053,15.893,-15.442,-61.971,-24.177,-56.193,43.851,-23.335,-23.319,-23.225,-17.078,5.704,5.698,-5.502,23.488,-7.723,-16.134,-16.004,-8.071,46.836,-21.722,-16.666,-47.911,40.674,-24.671,-24.572,40.4123333,-19.434,-20.36,-24.478,-22.939,53.815,-58.941,-8.595,-22.89,10.188,-0.343,-6.112,-63.0,-23.004,-18.78,1.485,-25.471,-2.878,-21.014,-20.535,-22.292,36.758,30.268,-57.638,2.356,-28.227,19.024,51.672,1.585,1.514,-24.064,1.634,-18.948,-19.11,-28.334,3.044,-28.264,-23.357,-9.832,-7.156,13.639,-14.1,-38.815,-38.904,-38.648,-39.09,-39.096,-39.257,-0.324,50.997,-8.498,-18.599,58.6042,-32.935,30.964,46.701,0.26,16.029,-18.513,-9.18,-8.205,35.515,-31.914,-19.423,8.335,36.525,8.402,-17.557,-17.541,8.341,-11.539,-5.923,-15.338,-28.583,-2.728,3.025,-19.513,38.45,38.422,-39.05,1.446,54.421,8.268,13.551,-36.281,-57.773,-11.216,18.423,16.877,-26.789,42.091,-27.584,19.004,-30.218,-10.1,-8.865,-8.997,-8.946,-8.952,-9.04,-18.324,-12.484,38.404,13.728,-31.355,-6.251,-48.581,-48.293,-11.543,-34.939,46.482,55.291,-31.956,-57.664,-15.626,-6.122,37.938,32.45,51.711,10.454,43.551,26.746,-31.712,-31.728,7.174,42.338,-11.964,11.51,-41.954,-0.687,-15.648,-15.433,-15.656,18.44,6.609,18.319,18.367,18.402,18.393,18.337,18.404,18.42,18.425,18.354,18.482,18.402,18.452,18.463,18.387,18.443,-5.417,15.437,-16.861,-14.42,-56.879,-6.075,-0.019,40.652,-7.907,-9.179,-9.221,-9.131,-9.218,-8.732,6.077,-8.798,-21.508,-53.516,-56.75,-21.392,-4.405,-41.605,-49.789,-9.062,-7.86,14.221,-2.439,-8.988,-8.89,-9.05,-8.876,-8.958,-9.032,-9.019,14.019,-58.173,-16.481,-8.709,18.48,-8.466,-8.375,-20.959,-8.605,-9.098,-8.917,-8.923,-8.948,-8.719,-8.783,-8.726,6.426,-8.802,-12.883,-1.858,-13.881,-5.297,12.424,12.462,12.397,38.245,-16.593,-19.987,1.438,-22.874,42.36,40.726,30.646,26.29,0.663,-19.209,-31.83,-19.984,50.38,56.7391,9.989,-10.819,51.626,-19.171,51.472,-10.588,53.113,-56.049,-23.166,30.942,-19.497,-19.529,-19.701,-19.661,-19.441,-19.385,8.337,-20.114,-57.422,-23.595,-19.947,-23.407,-19.282,-52.919,-19.378,27.18,-20.056,-19.864,-19.311,-50.811,-19.086,-50.808,50.911,-19.732,51.027,-22.916,-19.59,51.048,-19.359,10.734,-2.494,-19.8,-19.636,-19.842,51.144,-19.486,-19.927,27.007,27.178,51.085,-19.742,-19.616,-19.937,-19.506,-21.083,27.135,-19.648,-19.342,-19.833,6.003,51.118,51.115,-19.323,-19.808,-19.66,-19.469,27.004,-19.396,-19.318,-19.291,-19.636,-19.321,26.78,-19.678,-19.467,-19.361,-19.361,27.067,27.084,27.082,-19.307,-19.467,-19.702,-36.83,26.787,26.839,25.538,18.26,46.37,11.53,27.035,27.056,-63.592,52.881,-19.847,-1.905,18.961,-7.999,-19.908,-19.723,26.896,53.127,-18.309,27.182,27.248,3.931,-2.789,26.895,26.81,-39.293,-13.461,27.039,26.999,27.02,26.944,26.975,27.196,27.065,26.869,26.9,-20.75,26.734,-4.966,27.121,26.819,26.721,26.669,26.732,26.73,26.777,26.714,26.928,26.613,26.801,26.771,26.685,27.131,26.975,27.114,27.096,27.085,27.191,27.06,26.695,-34.576,27.23,27.204,27.184,27.203,27.081,27.08,27.276,27.217,27.155,27.094,26.961,27.104,26.901,2.715,-15.476,-8.7,-18.805,16.962,28.412,-17.016,12.995,10.171,10.402,18.521,51.149,-12.692,-41.483,7.521,38.391,-56.97,53.477,5.42,-14.131,-5.488,18.503,-56.955,10.399,37.28,10.409,-8.501,-6.48,-55.256,19.517,-56.535,-3.105,-6.324,-22.517,-10.786,-30.365,-17.679,53.918,-26.781,-7.268,-37.31,-23.061,3.824,52.001,52.175,-32.339,-33.989,-8.092,39.419,-6.259,-18.442,27.478,-6.534,-28.098,-5.971,-6.263,-6.297,-6.366,32.344,-5.558,-3.456,-56.83,-25.311,30.424,11.927,-21.811,52.88,0.257,-6.064,23.863,-62.897,-37.372,-20.317,31.53,-56.4,-7.148,-56.339,-56.397,-19.862,-56.338,-56.253,-6.686,-22.468,-30.993,-32.255,39.358,7.481,-56.398,-56.424,-56.412,-20.854,-15.19,54.356,54.316,-55.784,-58.019,-57.932,-3.781,40.904,-8.912,-36.231,48.921,25.433,52.051,-6.409,-5.836,-49.308,-18.22,-49.21,-6.001,-5.711,-15.888,2.689,-22.717,48.882,-4.099,48.922,-28.243,52.215,29.775,-21.27,28.349,-57.084,-17.738,-16.66,-24.012,1.25,-17.901,-6.558,1.371,-24.072,-14.76,-34.672,3.849,55.123,3.862,10.293,-2.622,-40.314,-3.369,10.9,28.063,20.162,-22.742,38.275,-25.06,0.443,-20.696,-14.861,-24.381,-15.612,16.418,-18.98,11.966,36.202,-6.167,11.893,11.899,-22.69,-55.716,-5.959,-15.54,-33.625,-18.745,8.132,43.571,6.443,-56.947,23.827,51.199,-54.476,-34.869,-54.645,-54.967,-20.483,51.567,-17.189,-37.958,1.181,-27.683,-4.933,12.009,-15.684,-7.52,-15.692,-7.797,-12.188,-56.108,-27.819,-5.897,-3.005,51.733,11.945,-1.99,-3.112,11.934,34.549,12.121,-22.722,11.916,11.916,11.983,-16.528,11.859,11.874,11.865,11.886,11.906,12.041,11.948,11.784,11.971,11.927,11.863,-0.158,11.94,12.023,11.931,11.797,11.984,34.036,-6.98,17.874,-30.118,-35.958,24.14,52.829,54.65,-6.553,-6.276,37.899,-59.547,11.878,1.435,5.946,36.746,-55.746,-28.782,14.923,-45.464,0.457,-36.438,-61.688,-14.946,-7.865,-1.735,-8.634,-4.176,-17.409,-37.094,12.704,24.383,69.1859,46.598,-62.13,-18.882,36.636,12.736,12.859,51.436,-17.618,-60.709,-13.728,12.837,-15.033,51.236,51.209,-20.466,12.748,40.036,12.914,2.532,-4.617,-58.871,-13.699,-7.601,-13.406,-6.345,40.423,43.76,-19.19,36.411,47.092,-5.355,16.738,-6.37,-6.291,-6.385,-3.456,-23.852,-33.661,46.743,34.321,-56.586,-24.956,-3.423,23.449,-29.454,2.784,-11.315,-0.456,-29.161,-24.734,36.517,-5.51,-6.413,23.084,13.237,-60.492,22.964,-23.0,-3.538,-3.496,-2.36,-3.783,-3.597,-2.494,-3.698,-3.262,-41.494,-3.411,-3.301,-2.809,-2.963,-2.958,-3.414,-3.487,-0.071,24.587,19.341,-35.944,-5.447,-19.612,-47.109,-34.791,63.362,63.486,9.273,4.732,-36.779,-37.743,-56.7,-29.593,-20.347,-20.878,-20.379,24.752,24.696,-20.209,-33.404,-33.351,-6.125,-25.78,-34.737,-11.676,-20.405,12.878,24.471,24.466,24.54,-20.349,-23.75,-23.419,55.141,-63.508,-23.552,28.031,-0.104,12.964,-55.514,-20.414,6.63,-7.366,-55.585,-20.46,14.079,47.006,3.663,42.311,5.545,-10.32,-13.805,-41.046,-41.5,-20.425,-20.457,-4.915,-26.12,-26.185,25.357,33.869,51.263,51.44,-48.93,31.067,-46.872,-58.141,38.169,-2.644,18.248,10.211,51.154,51.299,-13.892,-58.876,2.831,51.334,51.287,51.374,-57.683,-18.619,-18.644,1.038,39.154,6.626,-6.024,-17.818,29.715,-52.822,-57.315,-4.73,-3.416,6.764,25.487,-20.857,-6.684,-36.364,-59.508,49.357,48.046,24.27,19.427,19.801,-43.606,-14.81,19.354,-30.129,-32.336,34.927,-5.812,-6.532,52.73,-16.647,-47.287,-11.129,-6.559,-17.448,-21.894,-57.368,-57.631,-58.853,-18.877,-17.67,5.27,-10.925,-7.926,-57.276,-5.073,-5.103,37.102,5.045,19.706,-0.307,-4.949,-5.212,-36.249,24.687,2.379,-4.903,-7.228,-15.6,-4.963,-4.909,-34.804,-18.717,4.998,37.257,-36.74,13.011,-22.772,1.941,-65.249,13.021,11.884,-29.344,-14.85,-22.596,43.603,24.975,29.637,-26.448,57.705,57.727,57.688,52.438,-20.999,-5.314,-5.573,-21.184,-4.48,-14.283,5.754,-40.459,-14.363,62.8543,-17.745,-7.809,29.973,54.443,-34.906,-5.826,52.233,52.415,-16.039,-13.39,28.748,15.461,-6.338,-36.242,-33.643,-28.085,-6.2,22.899,10.686,-58.79,-17.357,-0.478,13.864,-20.129,-5.584,-55.0,3.7,36.443,-37.506,-21.586,9.835,-16.031,5.951,59.8613,-21.872,20.999,-48.555,29.787,15.722,21.487,31.616,5.662,5.642,-37.522,-37.221,32.147,29.235,-31.846,-14.612,41.497,-3.5,-3.655,0.735,-29.43,5.648,-4.218,51.463,-63.448,-13.749,-4.244,7.788,-19.962,-20.044,-3.127,-1.068,23.407,-55.614,-62.25,-62.202,59.405,-5.999,-37.034,11.154,44.484,44.588,-20.671,-6.58,-20.581,-20.118,-28.567,33.279,-53.136,-15.879,39.453,-14.396,45.834,26.98,-6.917,-40.433,-17.409,-4.118,-10.965,-30.82,-18.314,-3.983,-37.785,-23.825,-6.134,-0.544,-18.935,-5.993,-16.129,-37.992,-59.075,-14.518,-17.368,-43.574,-2.494,-2.475,42.741,-3.65,-43.62,-43.535,-43.522,51.451,-5.574,-13.941,-17.58,-6.133,12.788,1.993,37.925,13.816,-3.587,-16.11,-37.374,58.024,-5.622,24.9,-14.973,-5.731,-0.44,-41.862,-55.8,-17.454,18.72,35.49,-55.078,-55.418,-55.469,-6.18,-7.454,-55.958,36.116,-6.598,-21.869,-6.043,2.705,-35.089,-22.704,-0.762,0.397,-49.496,-21.172,6.748,36.508,-6.079,18.795,53.469,12.805,-6.235,37.24,19.441,-21.135,-36.532,-6.153,6.028,24.754,-27.544,2.221,53.584,-6.57,39.321,54.156,-55.879,-6.55,51.367,18.621,11.141,14.03,-10.084,32.01,-16.109,12.234,52.914,-30.042,-5.321,11.602,-22.693,-8.546,-20.799,71.902,-7.377,-17.438,-17.759,-5.692,12.186,-21.838,12.25,-36.814,12.247,12.246,12.164,-7.113,-22.043,53.557,12.273,12.253,12.273,12.254,28.326,-7.017,12.446,12.303,12.333,12.307,-3.953,-5.736,11.291,12.356,12.377,12.331,12.316,12.353,12.412,12.348,26.238,-3.09,12.487,-7.067,36.61,36.877,37.042,36.969,48.246,-41.425,-17.348,-1.266,-17.423,-17.956,-63.57,-5.387,-13.076,-17.988,-7.495,37.799,-42.929,-17.606,-17.403,-17.804,-17.164,-14.46,-17.331,14.949,-17.728,-17.332,-17.461,-17.404,-17.551,-17.66,-17.386,-17.573,-17.74,-17.428,39.406,-17.541,-14.001,28.616,13.608,-21.055,-38.717,18.944,-6.082,30.309,51.343,50.71,29.484,-13.43,12.837,-15.215,-38.255,-7.4,-21.763,-6.195,-19.958,49.483,-37.432,-37.443,-6.017,-6.122,45.98,-5.746,51.424,-6.983,51.423,-21.842,-5.486,-26.916,-23.91,-22.562,-9.5,38.452,1.239,-6.35,-19.932,10.94,-6.498,-37.404,62.056,7.103,-54.25,7.604,-31.522,-6.996,-0.763,29.703,13.436,-6.103,-1.074,27.691,11.623,35.221,-37.425,2.094,-61.348,52.495,52.498,-20.147,3.924,-15.6,6.548,-17.838,-12.236,43.756,52.628,52.667,-7.318,38.933,-24.554,6.669,-23.966,-24.053,-3.832,6.799,-4.873,49.703,6.82,-15.051,22.759,-15.069,-1.422,-34.007,-8.137,-12.548,60.31,-1.348,6.717,-5.506,-10.831,-6.503,6.218,0.997,6.776,6.725,7.319,6.545,6.497,6.647,6.867,6.684,6.718,-22.143,-4.533,26.777,1.361,35.839,-15.132,-2.892,-6.3,-6.332,-15.173,-5.001,-35.576,3.039,52.681,-2.769,11.735,-22.775,-6.015,27.056,27.022,-5.902,-29.031,52.563,-55.5,-8.71,52.781,49.46,-6.064,52.724,-6.228,52.717,52.655,-6.068,-6.122,-6.492,-37.28,-6.108,52.815,-5.931,-5.966,24.131,52.876,-41.947,-54.295,-15.661,-24.715,-20.676,-5.777,39.34,36.81,-8.234,-8.275,-21.281,12.826,-38.133,-34.153,-38.224,51.811,-38.067,-38.098,-2.433,1.369,1.394,-43.45,6.619,-22.146,7.596,-38.965,-30.813,-61.953,-30.582,-25.261,-7.863,11.143,-10.532,-39.923,14.006,-46.06,-6.005,52.164,-49.284,-6.04,-6.335,24.753,24.421,14.372,-24.007,-5.62,33.4173333,8.955,-4.073,-6.068,-6.08,-6.169,29.841,-53.752,-53.73,-22.353,-35.619,10.358,-50.477,-50.453,-8.866,-2.673,-57.515,-54.174,39.697,-15.027,-14.884,-8.469,18.528,-3.5,39.058,-11.414,-21.7,-9.378,-9.75,-9.246,-34.775,11.779,10.227,-13.672,-16.985,-5.376,-13.652,-8.953,-13.643,-14.476,-35.655,-5.171,1.243,-21.699,22.96,-21.478,-55.395,-0.739,16.396,-50.592,-23.307,-17.177,-17.792,48.273,-37.836,-4.772,-18.259,-8.884,-8.947,30.672,-18.25,-37.91,5.283,41.662,-8.954,-8.873,13.417,14.002,-4.489,-36.875,12.064,-6.132,-18.927,-4.689,-8.07,-32.917,-10.627,15.766,7.588,7.622,-34.539,-36.875,-5.514,7.696,-35.595,45.8835,-5.684,29.872,-19.201,-55.769,7.563,-49.939,-17.18,-36.129,-5.885,-3.319,41.42,44.43,13.197,-8.58,44.448,-1.173,-33.168,14.418,2.635,-1.849,-2.329,51.68,-2.243,58.0335,-1.792,-2.174,-2.386,-10.26,-1.461,-6.46,7.404,-61.305,32.705,24.04,-26.415,3.783,-5.971,-37.281,-0.201,22.866,22.739,7.794,7.779,7.86,37.372,-17.957,7.674,-10.894,7.881,54.542,28.825,-35.392,-28.383,1.022,-22.581,-25.083,26.712,26.688,-37.314,-34.753,17.764,-12.913,39.865,-30.676,7.363,-18.597,70.399,1.944,-20.086,-15.122,-17.302,-4.59,-36.984,-0.894,-57.25,-8.572,-15.09,-32.929,1.597,28.169,43.426,6.513,-9.555,36.501,33.3,-56.168,70.766,4.778,33.335,70.712,-13.731,-6.159,-57.369,-17.876,-36.819,9.331,11.132,6.948,-58.234,13.104,-56.161,-19.372,12.236,-13.968,-13.94,-13.661,33.165,-10.184,-3.864,-13.677,53.523,53.422,31.135,-14.048,-37.339,-13.658,-14.095,-13.756,-17.985,-13.884,-14.458,-13.698,9.779,-50.012,25.715,25.773,-10.116,17.145,-37.617,35.336,-65.425,31.152,-36.25,-8.087,-13.928,-17.843,-17.879,35.962,-20.613,-56.236,-34.64,8.273,-39.75,-38.689,-25.808,-20.197,9.247,-39.063,-55.501,-56.87,-6.532,-54.843,-41.239,-54.8,-12.113,-5.083,-13.098,-6.641,13.135,-7.845,-62.838,46.29,-16.308,-34.991,-7.528,-55.064,-34.657,73.418,73.469,28.815,14.423,35.996,-34.826,18.4,-51.842,0.511,-23.59,-16.689,29.33,35.9,-34.213,42.263,9.178,-1.34,3.498,-12.103,-55.692,-1.421,3.748,-33.934,-8.169,45.385,-17.935,-0.732,-8.085,16.546,44.416,44.403,44.362,-10.408,-24.865,3.559,12.999,-55.725,-18.768,33.108,-55.25,-3.879,-18.058,-56.784,-6.245,-4.054,-35.56,-35.949,-47.065,-21.886,-15.41,-34.152,-56.737,-0.659,-38.072,-37.232,52.612,29.645,-39.861,-23.067,51.588,-34.228,29.21,57.356,14.953,13.624,-21.08,-8.966,-58.602,-33.19,-14.901,60.478,60.473,-51.021,13.502,-36.852,-57.179,-36.858,-13.203,-14.919,-14.979,19.392,-7.332,27.192,30.432,51.228,-50.175,33.654,-56.068,-5.44,-11.157,-54.36,22.18,-55.606,-37.526,-5.463,-20.008,-13.461,-15.914,34.45,-1.912,-36.303,-10.355,-37.529,-6.701,13.641,-2.972,44.121,-6.613,20.228,-15.33,-4.597,-15.271,16.297,-55.729,-30.794,-37.519,19.572,35.633,18.136,14.514,-61.819,-37.167,-37.159,18.0,-6.669,11.678,-5.999,-7.03,3.682,3.739,32.514,-37.42,-23.604,-37.46,-37.503,16.385,-10.702,54.485,-13.537,-13.451,-31.198,-13.92,17.969,33.071,33.195,-29.076,33.126,32.925,33.165,23.122,-56.331,7.805,-10.71,8.445,8.194,-4.413,16.293,2.383,-22.366,-35.535,-56.919,-8.85,-4.42,36.965,29.509,-10.878,-5.196,-5.556,23.251,-55.619,-12.973,-34.64,-20.114,-25.68,-41.081,-4.834,-36.155,-7.146,-28.559,-9.6,-62.21,-21.8,-4.18,32.1646667,-18.152,-27.665,-3.76,52.174,2.63,73.782,1.911,2.346,2.383,-35.043,-19.86,-0.206,-0.15,-42.627,-0.183,17.857,31.9788333,32.2661667,32.3,32.0986667,32.4533333,32.2861667,-17.194,-22.419,-1.647,-31.253,0.8,-36.227,-36.119,17.041,-24.646,-7.633,-34.199,-61.203,30.088,-34.649,-8.971,51.697,-31.455,13.667,-31.227,43.308,-34.881,-35.406,-35.387,-5.609,-55.139,-36.139,-15.329,-15.394,-10.152,-56.896,-52.728,-11.279,13.364,-27.953,-6.326,-1.279,-18.396,-1.098,0.548,-7.289,-35.989,-35.835,13.827,-17.416,14.004,38.821,-36.543,-15.206,32.516,32.509,-37.15,-15.327,37.463,52.958,37.487,-33.889,-34.808,-11.987,18.451,46.791,-15.23,-41.257,-17.556,-16.186,-14.723,-22.475,-36.344,-62.607,-29.413,15.927,19.872,-34.685,19.76,19.674,51.884,-54.475,-3.361,-34.406,17.395,-34.44,-33.251,-5.463,54.496,-35.541,-33.531,-26.919,-46.026,-21.787,-22.266,-44.179,-23.318,0.849,34.334,1.321,-48.519,-48.733,-48.618,-34.361,-36.569,-42.5,-36.596,-35.444,-43.842,-58.27,-4.643,-27.738,-24.472,-17.724,52.139,-36.405,-36.217,-41.439,-36.075,-35.802,28.791,-34.376,-58.417,-7.091,-2.746,-38.526,-34.932,35.303,-33.338,-38.438,-38.502,37.745,-34.227,-1.692,52.785,-36.825,-34.56,1.323,37.594,-37.551,-34.392,44.218,-36.725,-36.685,2.192,23.062,28.592,34.898,-34.233,-34.337,-58.708,46.682,-37.695,-34.488,-9.195,-34.417,-23.709,-37.705,-34.416,-7.439,-34.381,-34.346,-34.469,-34.293,-34.393,-34.507,-34.344,-34.245,-34.47,-34.614,-34.326,-34.255,-34.29,-37.259,-15.348,-57.285,-38.093,36.426,-33.562,-36.934,-36.699,-34.992,7.128,-18.526,-37.156,-36.981,-33.855,-34.765,-59.25,51.489,11.23,-32.569,-32.714,-32.634,-32.614,-32.595,-25.712,-32.66,-35.947,-34.582,-34.533,38.776,38.828,19.348,-33.781,38.709,-33.233,38.864,-36.156,-34.109,-34.608,-38.046,15.852,-37.99,11.284,-16.236,-33.166,14.653,-36.174,14.702,14.664,-37.434,44.174,-13.141,-34.636,-37.057,48.896,1.317,13.59,-29.934,-3.758,-3.762,-35.075,-37.442,-36.665,-37.559,1.891,-36.631,-35.112,-34.659,-34.546,-16.708,-22.227,-34.541,-34.18,-13.571,-35.869,-1.387,-11.996,-37.647,22.901,-34.947,-33.296,-33.372,-33.216,22.918,-38.453,-33.412,-7.382,-36.61,-58.74,3.052,-33.678,-37.301,-37.582,-33.329,-34.976,3.438,-30.257,-36.48,-34.267,-36.537,-33.819,-39.508,-36.618,-35.203,-10.737,-34.162,-2.747,-34.535,-36.675,-35.794,-33.857,-34.495,18.182,-39.76,42.471,-34.831,-33.898,-36.297,-36.759,-34.39,-34.282,-34.537,-37.84,-35.677,5.296,-34.707,32.302,-37.958,-38.599,7.052,-36.048,-35.039,-35.174,-35.237,-38.308,-37.348,-35.353,-36.847,39.482,-38.099,-36.793,-34.907,-58.205,19.134,-34.796,-35.221,-33.87,-33.894,-35.317,-38.212,2.112,-35.186,-35.03,-34.903,-35.546,-38.501,-1.177,-33.639,34.832,-35.193,-37.79,-38.386,-37.792,-45.608,-37.712,-35.013,-34.028,-38.795,-34.701,-37.754,-33.931,25.954,-38.385,-38.32,-34.522,-34.86,-34.45,-36.633,25.937,-34.163,-36.818,-38.145,-36.624,-33.861,35.94,-34.7,-37.695,-33.99,-34.932,-36.492,-35.779,-36.8,-33.903,-34.031,-35.156,-37.332,-33.916,-34.914,10.84,-36.481,-35.047,-37.548,-33.422,-37.632,-37.581,-37.516,-36.644,-33.859,-34.81,-34.793,-36.521,-33.381,-36.354,-33.99,-34.22,-37.511,-34.917,-37.78,-38.283,-34.116,-34.034,-24.872,-36.129,-38.278,-35.455,-33.942,-33.955,-37.968,-35.709,-34.199,-34.578,-37.335,-37.219,-33.303,-35.156,-38.496,-38.554,-33.566,-37.837,-37.169,-36.184,25.891,-34.373,-37.032,-36.326,-38.265,-36.804,-38.191,-33.281,-37.878,-33.717,-38.16,-37.113,-36.668,-33.998,-33.443,-37.52,-36.099,-34.468,-35.452,-34.73,-38.495,-34.815,-33.637,-36.176,-36.952,-33.027,-34.872,-37.247,-34.89,-34.749,-34.492,-33.618,-34.956,-33.304,-33.597,-37.773,-36.122,-33.56,-35.753,-33.83,-37.033,-35.09,-34.614,-35.829,-36.458,-33.623,-36.866,-35.991,-35.133,-36.869,-34.632,-33.821,-38.032,-34.907,-35.819,-34.992,-36.924,-37.964,-35.822,-36.912,-33.878,-33.912,-38.099,-33.975,-31.72,-34.35,-34.867,-31.663,-33.655,-54.027,-36.122,-11.443,25.93,-58.107,5.819,6.484,28.474,0.893,23.784,-55.758,-10.268,-14.845,-23.904,25.523,-46.072,11.176,8.315,-3.375,-30.228,-23.828,-15.112,15.967,15.907,49.702,32.508,-23.75,-23.687,70.896,-27.27,-23.66,-23.738,-23.626,24.126,-21.511,-27.524,16.961,-13.507,44.301,20.951,-15.509,-21.84,-41.437,46.704,-23.067,-35.029,-40.174,-56.671,-8.8,42.587,-29.756,4.624,19.038,40.332,-7.217,6.169,-19.071,11.533,-13.566,-33.301,-36.779,-6.027,-15.297,-21.902,29.894,29.852,-6.038,19.855,-33.622,8.428,34.0,-24.154,-9.905,-40.593,-39.152,-37.763,-6.657,1.037,-7.189,-7.09,-6.994,-7.048,-9.26,-23.058,1.522,-6.076,-38.857,20.989,-15.053,15.893,-15.442,-61.971,-24.177,-56.193,43.851,-23.335,-23.319,-23.225,-17.078,5.704,5.698,-5.502,23.488,-7.723,-16.134,-16.004,-8.071,46.836,-21.722,-16.666,-47.911,40.674,-24.671,-24.572,40.4123333,-19.434,-20.36,-24.478,-22.939,53.815,-58.941,-8.595,-22.89,10.188,-0.343,-6.112,-63.0,-23.004,-18.78,1.485,-25.471,-2.878,-21.014,-20.535,-22.292,36.758,30.268,-57.638,2.356,-28.227,19.024,51.672,1.585,1.514,-24.064,1.634,-18.948,-19.11,-28.334,3.044,-28.264,-23.357,-9.832,-7.156,13.639,-14.1,-38.815,-38.904,-38.648,-39.09,-39.096,-39.257,-0.324,50.997,-8.498,-18.599,58.6042,-32.935,30.964,46.701,0.26,16.029,-18.513,-9.18,-8.205,35.515,-31.914,-19.423,8.335,36.525,8.402,-17.557,-17.541,8.341,-11.539,-5.923,-15.338,-28.583,-2.728,3.025,-19.513,38.45,38.422,-39.05,1.446,54.421,8.268,13.551,-36.281,-57.773,-11.216,18.423,16.877,-26.789,42.091,-27.584,19.004,-30.218,-10.1,-8.865,-8.997,-8.946,-8.952,-9.04,-18.324,-12.484,38.404,13.728,-31.355,-6.251,-48.581,-48.293,-11.543,-34.939,46.482,55.291,-31.956,-57.664,-15.626,-6.122,37.938,32.45,51.711,10.454,43.551,26.746,-31.712,-31.728,7.174,42.338,-11.964,11.51,-41.954,-0.687,-15.648,-15.433,-15.656,18.44,6.609,18.319,18.367,18.402,18.393,18.337,18.404,18.42,18.425,18.354,18.482,18.402,18.452,18.463,18.387,18.443,-5.417,15.437,-16.861,-14.42,-56.879,-6.075,-0.019,40.652,-7.907,-9.179,-9.221,-9.131,-9.218,-8.732,6.077,-8.798,-21.508,-53.516,-56.75,-21.392,-4.405,-41.605,-49.789,-9.062,-7.86,14.221,-2.439,-8.988,-8.89,-9.05,-8.876,-8.958,-9.032,-9.019,14.019,-58.173,-16.481,-8.709,18.48,-8.466,-8.375,-20.959,-8.605,-9.098,-8.917,-8.923,-8.948,-8.719,-8.783,-8.726,6.426,-8.802,-12.883,-1.858,-13.881,-5.297,12.424,12.462,12.397,38.245,-16.593,-19.987,1.438,-22.874,42.36,40.726,30.646,26.29],"lon":[-26.045,167.902,-178.135,168.353,153.964,-156.1674,126.249,165.376,177.378,167.952,16.057,164.338,171.428,-26.711,-179.941,86.508,168.217,168.109,168.123,168.14,168.052,168.014,-102.804,-173.909,-24.434,-175.655,168.043,-179.802,168.017,27.317,168.069,143.513,168.214,168.219,167.96,139.375,167.926,139.237,-176.009,168.369,-175.973,-176.407,167.94,-176.105,167.802,-61.635,-11.975,167.756,168.261,168.213,-176.205,168.088,168.13,143.738,143.298,-176.186,168.207,168.284,168.181,168.101,168.129,143.313,168.014,167.933,168.096,127.431,-176.155,-176.162,167.975,168.272,168.224,168.066,143.393,167.947,167.942,167.97,167.987,167.928,143.93,167.955,168.023,167.973,167.954,143.385,143.429,143.363,168.002,167.919,167.947,177.1,143.577,143.935,141.123,-66.135,151.069,-86.857,143.309,143.245,-167.354,171.094,168.531,67.969,145.841,119.951,168.596,168.469,143.84,171.161,-173.982,143.396,143.333,95.916,141.476,143.743,143.595,46.276,-111.614,143.311,143.293,143.295,143.413,143.44,143.273,143.504,143.538,143.584,173.75,143.576,-11.674,143.363,143.763,143.669,143.535,143.719,143.466,143.547,143.909,143.408,143.497,143.484,143.581,143.685,143.577,143.653,143.392,143.236,143.514,143.486,143.326,143.699,-179.535,143.387,143.406,143.358,143.455,143.308,143.215,143.752,143.432,143.483,143.585,143.088,143.449,143.698,95.893,-173.72,111.197,-173.342,147.232,59.18,-177.048,-88.64,-103.977,126.155,145.672,-176.168,167.541,-89.159,37.839,73.679,-140.803,-163.181,94.667,-173.306,147.339,146.464,-142.056,126.08,20.22,126.156,-71.46,129.996,-129.917,-108.947,147.031,129.735,149.315,169.51,-73.459,-178.024,-69.143,158.366,178.607,128.786,78.169,-114.407,-32.563,-169.351,-169.412,-179.565,-73.08,119.812,-29.615,104.008,-174.624,129.319,155.647,-177.106,117.707,150.388,150.352,150.265,69.661,149.847,146.016,-25.411,-176.314,69.462,43.983,-179.353,162.382,122.031,148.554,-45.733,165.947,78.078,-177.961,70.083,-25.725,125.124,-25.515,-25.477,-174.413,-25.415,-25.388,129.898,-176.291,-177.78,-179.532,72.86,126.505,-25.573,-25.524,-25.741,-175.415,-173.93,169.128,169.022,-26.709,-7.503,-7.474,100.16,142.967,127.081,-100.826,154.913,-109.904,-169.564,130.473,153.484,120.642,-175.257,120.603,149.977,153.61,-178.956,99.041,-174.858,154.839,79.822,154.918,-13.177,-169.506,90.329,-178.87,139.187,-140.458,-174.716,-174.219,-66.712,-28.75,-13.715,130.532,-101.153,178.987,-71.429,-72.043,127.863,160.378,128.071,-43.128,129.258,-91.728,131.014,-43.72,52.564,121.408,171.449,73.036,-69.793,-79.92,-177.767,-71.715,179.927,167.758,-98.628,169.353,143.576,140.804,130.624,143.492,143.593,-174.945,146.729,148.966,-172.8,-178.918,169.28,-39.396,-127.23,95.739,-141.326,121.658,150.858,-131.937,-108.793,-131.571,-131.479,-173.982,-176.883,168.496,-73.688,100.119,-178.443,126.647,43.986,-74.735,-13.464,-74.87,129.446,165.945,-27.264,64.554,130.7,68.125,159.165,43.973,139.017,101.266,44.001,70.458,44.006,-66.634,43.579,43.618,43.916,-173.297,43.977,43.74,43.716,43.663,43.648,43.797,43.821,43.691,43.932,43.944,43.764,-18.102,43.974,43.974,43.991,43.947,43.963,141.373,68.087,-68.541,-177.186,-102.21,122.493,-169.805,161.361,130.035,154.74,27.343,-26.217,143.642,126.421,-82.571,70.895,-4.768,-178.436,119.868,96.394,126.11,-73.362,161.294,-173.671,107.206,99.417,110.026,142.202,66.073,78.226,143.933,141.588,-146.1917,149.656,154.751,-69.293,87.506,123.054,122.849,-176.683,167.816,-24.785,166.711,-44.845,167.558,-176.5,-176.542,-174.28,123.004,13.247,-88.698,126.223,134.071,158.31,-76.097,126.532,-111.942,104.058,26.333,20.73,168.56,71.207,146.747,151.556,-93.793,150.22,150.272,150.161,100.043,179.95,-71.86,153.335,141.267,-142.292,179.618,99.648,142.867,-71.736,128.294,166.239,-19.984,-177.526,-112.202,71.101,153.744,130.035,-108.454,145.438,-24.357,-108.373,-174.762,99.855,99.663,99.853,99.623,99.789,99.918,99.749,100.261,-85.758,99.476,100.463,100.093,100.504,100.372,99.938,100.082,125.059,-109.2,146.456,-102.789,154.231,168.129,165.418,-108.103,-23.978,-23.799,125.726,36.122,-73.41,-73.362,-141.952,-71.112,-173.751,-68.372,-173.837,-109.26,-109.156,-174.014,-178.732,-178.501,150.869,-177.639,-73.726,-111.948,-173.72,124.819,-109.026,-109.144,-109.098,-173.773,-115.25,-115.191,160.172,-166.853,-115.185,104.212,149.715,92.355,-27.996,-173.846,94.341,125.699,158.365,-173.916,-91.37,-27.219,95.389,142.871,-82.658,42.783,167.739,-91.691,-91.5,-174.065,-174.205,133.71,70.786,70.873,124.825,72.887,-175.159,-175.248,121.487,141.611,-10.244,-9.186,22.744,-76.652,146.487,-84.293,-174.99,-175.185,-49.222,-25.708,128.217,-175.203,-175.18,-175.361,-147.913,65.35,65.492,124.395,70.285,124.837,150.854,-173.989,69.587,10.516,-24.385,153.388,150.976,123.687,141.104,-177.768,154.854,-73.293,149.381,-129.315,153.925,125.154,122.246,-75.417,172.572,-75.911,122.157,-177.982,-179.555,26.541,127.498,104.998,-167.004,167.511,100.249,161.755,128.751,168.069,-174.491,-147.71,-147.736,-25.294,169.566,-173.106,125.407,113.794,-71.324,-147.708,152.534,152.583,140.954,94.736,121.472,133.498,133.846,133.872,-74.256,141.177,126.74,133.68,129.134,-172.267,133.76,133.712,-71.795,-175.534,94.736,139.883,177.221,124.784,-175.252,96.934,178.726,125.081,143.241,-71.175,-75.717,-175.296,145.623,123.554,51.666,-64.63,-32.702,-32.679,-32.762,179.732,-179.02,133.917,146.462,-68.178,152.024,167.887,126.027,-72.765,167.826,-149.5119,-173.248,-74.373,139.89,163.067,-71.621,151.544,179.754,-172.879,-173.207,-76.073,142.599,-95.317,-107.043,-100.754,-71.928,-66.515,147.684,144.445,141.772,-25.343,-178.863,-19.613,51.795,66.194,148.108,-129.057,126.567,70.774,-73.599,-67.02,-84.921,-173.96,125.993,-153.1756,-179.403,-106.221,105.359,-114.141,-93.1,-105.93,-40.866,124.582,124.642,-74.392,-73.524,141.57,142.431,-70.265,-70.777,141.986,149.47,149.672,-29.039,-71.795,124.644,152.351,-178.573,148.037,66.108,-80.584,94.057,66.822,66.831,148.377,129.24,90.648,-124.953,154.25,154.853,-30.226,125.855,-73.412,139.759,149.859,149.724,169.818,154.335,169.928,66.682,74.291,96.312,-118.171,-179.306,73.84,-176.243,151.325,54.5,103.461,176.818,167.189,103.585,162.173,-178.041,-175.205,142.961,-73.423,179.975,149.805,127.477,-67.382,147.728,168.042,49.073,-25.494,-76.123,-173.999,171.968,138.538,138.47,145.391,101.961,171.915,172.417,171.83,-175.87,153.053,65.93,168.163,149.961,92.563,-97.827,141.788,144.85,127.414,-173.349,-96.352,-32.135,149.891,122.185,-174.163,149.971,132.884,-105.196,-26.991,167.755,-107.097,54.47,-121.799,-123.703,-27.849,146.406,-75.146,-27.873,136.773,130.154,-174.504,150.31,128.623,-72.246,-69.184,124.519,123.844,117.32,-68.912,123.564,71.251,133.562,-107.193,-164.523,143.558,154.36,19.95,147.374,-67.269,-73.718,149.885,-77.974,121.983,-67.345,96.717,162.943,154.246,71.817,-166.159,-28.063,154.185,-178.503,146.415,95.071,-91.121,161.061,137.918,-174.139,141.514,-170.452,-177.234,-80.003,94.973,171.325,112.53,-178.826,-1.626,128.583,167.879,65.647,148.342,141.502,-174.573,141.43,-71.101,141.556,141.488,141.461,150.061,-179.742,160.121,141.464,141.455,141.429,141.459,66.323,150.14,141.555,141.566,141.527,141.461,100.574,150.948,-62.398,141.636,141.652,141.669,141.532,141.587,141.634,141.487,141.104,139.77,141.474,150.153,-32.749,-32.874,-32.987,-32.778,148.503,-86.826,167.727,-77.306,167.798,167.83,171.736,154.126,166.439,167.781,107.058,57.017,-81.921,167.743,167.814,167.685,168.2,167.345,167.827,-91.511,167.832,167.817,167.867,167.801,167.71,167.801,167.781,168.126,167.685,167.706,143.148,168.069,-72.719,142.255,92.817,-174.622,-73.149,39.262,112.995,94.829,-178.571,175.598,128.318,167.832,144.838,167.453,-73.501,128.454,-179.451,150.142,-70.357,155.383,-73.323,-73.281,150.64,150.733,153.175,150.765,-178.605,150.788,-178.649,-175.039,146.822,-177.245,-66.649,171.502,39.064,69.637,126.213,103.964,-70.334,93.246,104.618,78.287,145.567,-34.206,-2.75,136.002,179.741,150.65,-16.025,56.812,-90.493,150.404,67.456,139.672,-86.695,59.317,-73.642,126.583,154.209,159.888,159.843,66.855,-74.999,-172.981,123.222,179.508,165.523,-125.815,-169.345,-169.408,126.393,142.156,-176.929,123.25,-176.095,-66.825,141.4,123.623,153.444,154.637,123.562,-173.556,120.84,-173.548,120.636,-72.308,68.032,114.522,-177.546,99.533,123.646,147.666,165.519,149.817,123.519,99.541,123.259,124.026,123.765,123.431,123.48,123.694,123.622,123.571,123.409,170.117,102.451,143.119,126.932,140.413,168.162,128.048,150.552,150.45,168.177,101.131,-104.013,128.222,-169.707,141.175,125.395,171.759,150.696,53.812,53.861,150.712,-13.096,-169.341,-128.5,157.697,-169.7,-130.047,151.032,-169.409,150.422,-169.561,-169.333,150.495,150.458,150.197,-73.844,150.625,-169.719,150.59,150.428,122.47,-169.848,-73.838,-136.74,-175.223,-69.817,-178.859,147.109,23.992,26.91,118.591,118.584,-68.244,-88.535,-74.169,-72.303,-73.23,-176.113,-73.31,-73.412,138.795,97.182,97.144,39.932,123.397,-68.216,91.898,177.353,-178.268,46.445,-179.944,-176.538,158.709,145.999,161.338,-16.526,145.026,-75.589,147.076,142.123,120.832,105.495,-107.518,122.596,122.11,93.26,-179.788,153.815,-116.4746667,-75.654,-103.734,154.446,154.508,154.424,80.397,140.728,140.606,171.651,-71.953,-62.448,114.179,114.266,157.532,141.413,157.61,-136.867,142.369,-174.615,-174.625,-80.471,145.085,149.5,140.715,163.59,-174.993,67.014,66.25,67.324,-71.638,143.106,92.249,166.448,-173.482,150.889,166.605,160.949,166.485,167.334,-72.36,129.385,97.187,-174.938,125.024,-68.572,-27.94,99.786,-97.782,139.324,179.116,-173.231,-173.553,154.276,-73.278,153.843,168.162,160.895,160.863,141.593,168.215,-75.038,126.984,141.657,160.88,160.863,95.768,95.347,101.342,-73.48,46.493,130.286,-69.164,-77.232,108.089,-177.933,161.447,-96.251,91.856,91.979,-108.393,-73.535,151.161,91.958,-17.617,-75.475,146.403,80.428,-177.553,-27.273,91.879,110.641,166.83,-100.176,146.648,150.523,142.453,148.841,93.087,111.34,148.689,123.7,179.719,56.388,128.53,136.453,136.484,-173.799,136.717,-139.3752,136.228,136.543,136.635,161.433,119.35,129.181,91.823,-35.922,-115.9113333,121.62,27.474,126.643,147.616,-94.289,34.489,-107.816,-108.008,91.895,91.992,92.09,141.625,-66.778,91.967,166.115,91.936,-161.473,128.596,-106.376,-71.345,120.092,171.796,-176.233,142.688,142.503,51.95,-71.822,119.392,169.371,74.846,-177.516,126.905,169.485,-15.104,127.167,169.162,-70.494,-72.593,-106.097,78.401,-13.225,-141.75,112.451,-173.432,-179.346,127.389,65.966,146.773,-82.462,108.279,70.17,96.087,-27.066,-14.295,95.785,96.15,-14.384,166.594,149.413,-26.446,169.103,-73.505,-84.206,93.471,124.025,-139.863,145.209,-27.508,169.196,-88.484,166.685,166.638,166.648,96.07,161.068,100.966,166.376,-163.168,-163.155,77.839,166.606,-74.257,166.745,166.837,166.934,-176.938,166.73,167.008,166.643,125.621,119.618,130.097,129.944,121.448,-101.159,-72.852,-35.924,179.875,103.547,-73.106,-71.558,-74.352,168.94,168.988,4.142,168.417,-139.157,-71.969,-102.973,-91.75,-91.372,-66.736,-174.005,-84.302,-92.159,-26.291,-143.132,128.273,-135.398,-88.467,-135.252,65.547,-77.541,167.121,105.161,51.106,107.22,166.091,152.015,-14.185,178.883,119.718,-129.005,-15.403,7.345,7.49,128.525,93.18,3.961,-16.074,-67.07,28.316,124.657,-176.646,177.283,51.476,4.12,-72.143,-126.499,125.578,120.071,95.845,166.214,-26.932,119.299,96.018,-72.063,128.936,150.003,-175.22,122.485,118.259,-60.98,-129.481,-129.523,-129.467,123.503,69.868,127.982,145.249,-127.942,168.375,71.328,-128.25,101.0,-70.547,147.616,154.854,101.096,-72.939,-103.058,-12.107,-68.251,-173.17,-72.247,-140.913,122.563,-73.454,-73.686,-163.691,140.951,78.526,169.426,-175.216,-71.877,141.98,162.198,145.447,92.777,-68.594,117.465,-26.362,-72.307,167.455,-177.65,-177.877,139.394,122.876,-73.176,-24.192,-73.616,167.054,167.39,-173.586,93.163,128.632,54.967,101.424,178.653,114.702,136.977,-27.936,35.877,162.351,-22.954,123.623,-27.73,-72.879,127.804,-174.461,-111.597,-172.416,26.01,128.122,-99.775,161.38,-72.969,147.34,144.681,142.212,148.181,146.426,-45.273,-173.178,144.813,-173.219,-98.234,-27.125,121.406,-73.68,120.434,67.658,-68.515,-91.987,161.163,-73.759,-73.753,-81.673,147.291,-86.813,146.641,129.383,126.546,126.585,92.826,-73.669,-176.959,-73.732,-73.687,-98.179,165.253,-161.039,-111.977,-112.167,-177.846,166.747,-101.735,96.617,96.449,61.372,96.546,96.86,96.548,121.441,-27.311,91.843,161.079,-103.521,-104.222,153.489,119.69,97.205,171.389,-105.451,147.516,124.065,-77.405,-3.542,130.402,161.116,152.429,101.728,122.023,-127.114,166.523,-71.633,-176.223,-70.667,-89.894,145.687,-100.992,129.583,-68.124,149.848,164.688,-174.543,35.193,-115.2683333,168.289,-175.953,141.943,-173.525,96.928,8.815,96.721,97.17,97.048,-72.689,-68.842,125.042,125.089,124.949,125.009,-81.607,-115.1341667,-115.2925,-115.2595,-115.0481667,-115.632,-115.2953333,-177.059,-179.278,128.215,-176.98,126.462,-72.878,-72.697,147.275,-176.137,127.485,-72.104,153.875,69.541,-71.82,117.432,-175.379,-178.431,92.831,-178.458,138.379,-71.935,-72.897,-73.385,122.731,-128.373,-73.449,-175.419,-175.499,-78.055,147.582,26.137,162.97,125.183,-70.821,130.284,-15.833,-173.184,-78.129,126.952,128.46,-72.725,-73.046,120.071,-172.011,-91.385,40.138,-73.526,-174.123,92.826,92.708,-73.557,-74.56,74.618,171.961,74.63,-178.74,-73.82,165.816,120.742,141.845,167.548,-88.949,-13.078,-69.515,167.194,-174.823,-73.164,-159.343,60.914,-91.294,-105.465,-72.084,-75.364,-75.331,-166.404,143.379,152.245,-71.723,-100.985,-72.04,-72.113,147.52,110.105,-73.475,-72.172,-176.415,166.069,-68.64,-179.557,-72.832,-177.177,120.731,81.759,126.343,164.895,164.672,164.855,-72.008,-72.773,-83.5,-72.91,-73.041,-72.569,-29.735,102.828,-113.217,-176.043,-178.785,142.204,-73.074,-73.257,-89.251,-73.178,-73.158,128.45,-72.035,-23.567,67.978,83.703,-73.534,-72.565,74.498,-179.132,-73.596,-73.653,141.59,-71.768,128.135,160.356,-73.702,-71.747,97.171,141.299,-73.465,-71.931,-129.355,-73.5,-73.612,133.02,94.623,142.64,141.595,-71.917,-71.942,-25.667,152.674,-73.786,-71.823,157.598,-71.985,-175.802,-73.651,-72.006,128.146,-71.979,-71.976,-71.978,-71.906,-71.802,-72.124,-71.728,-71.866,-72.004,-71.99,-71.799,-71.674,-71.891,-73.512,-173.373,-27.931,-74.906,86.966,-72.298,-73.498,-73.189,-73.831,-34.307,168.951,-73.681,-72.718,-72.324,-73.949,149.25,-173.531,125.458,-71.631,-71.827,-71.721,-71.613,-71.641,-66.617,-71.644,-73.255,-71.58,-73.82,40.143,40.119,144.743,-72.002,40.051,-71.906,39.986,-73.042,-71.977,-71.906,-73.5,147.549,-73.3,140.601,-115.296,-72.064,144.206,-72.972,144.287,144.221,-73.711,147.647,166.687,-72.24,-73.521,91.481,126.361,-90.921,-71.917,100.943,100.991,-72.367,-73.506,-73.374,-73.643,127.504,-73.223,-73.132,-71.755,-71.85,176.417,-68.328,-72.708,-72.074,167.227,-69.919,145.545,166.222,-74.582,120.769,-71.985,-72.275,-72.251,-72.125,120.795,-73.554,-71.868,104.609,-73.36,148.721,126.929,-72.043,-73.799,-73.872,-71.994,-72.665,126.837,-69.02,-73.116,-72.171,-72.562,-72.055,-73.788,-73.328,-72.586,166.081,-73.347,138.58,-72.68,-73.301,-73.233,-71.782,-72.642,122.399,-71.366,75.628,-73.814,-71.424,-72.473,-73.551,-73.504,-71.915,-73.736,-74.486,-72.291,-82.513,-73.119,105.171,-74.928,-73.113,126.309,-72.794,-72.487,-73.819,-71.919,-73.916,-73.065,-72.322,-73.331,140.44,-73.68,-72.729,-71.877,-7.825,121.327,-72.215,-72.443,-73.297,-73.287,-72.883,-73.383,99.015,-72.523,-72.493,-71.617,-72.854,-75.273,-80.39,-71.832,141.468,-72.475,-72.883,-73.473,-73.42,167.153,-73.328,-71.958,-71.986,-73.873,-71.905,-73.507,-73.168,128.484,-73.552,-73.574,-73.606,-72.539,-73.689,-72.707,128.433,-71.952,-73.376,-73.739,-73.369,-72.238,70.074,-71.827,-72.832,-71.382,-72.71,-73.304,-73.36,-73.315,-72.344,-72.292,-72.522,-73.836,-73.154,-73.708,-43.406,-73.197,-72.376,-73.345,-71.828,-73.595,-73.699,-73.55,-73.093,-71.695,-71.701,-71.541,-73.051,-71.96,-73.208,-71.805,-72.166,-73.453,-72.328,-73.348,-73.429,-72.255,-72.296,-65.602,-73.257,-73.725,-71.529,-71.339,-71.359,-73.383,-73.106,-72.049,-72.851,-73.258,-72.673,-71.841,-72.212,-73.645,-72.865,-71.911,-74.973,-73.373,-73.098,128.368,-73.965,-73.14,-73.188,-73.716,-73.399,-73.694,-71.955,-73.545,-72.163,-73.652,-73.315,-73.257,-72.197,-71.525,-73.565,-73.309,-73.513,-72.867,-72.73,-75.326,-72.505,-71.976,-73.51,-72.871,-72.439,-72.433,-74.095,-74.115,-72.427,-72.126,-72.02,-72.712,-71.579,-72.807,-75.048,-72.71,-72.001,-72.197,-71.456,-73.2,-73.774,-73.777,-73.329,-72.647,-72.163,-73.116,-74.012,-72.176,-72.673,-72.225,-72.132,-73.393,-72.817,-72.818,-72.622,-73.594,-74.126,-72.836,-73.366,-71.943,-72.107,-73.708,-72.119,-72.156,-72.197,-72.614,-69.141,-72.033,-133.64,-72.898,166.288,128.425,-139.896,125.653,126.802,86.745,123.181,122.816,-4.758,161.316,167.331,-175.605,101.903,166.184,-86.126,137.703,146.033,165.862,-175.998,-173.003,-91.26,-91.207,155.789,48.29,-175.872,-175.88,-6.523,-176.593,-175.915,-175.917,-176.036,122.936,-173.778,65.966,-85.509,166.806,148.441,121.22,-173.323,-175.115,-87.051,152.577,-68.514,-108.397,173.778,-140.713,157.655,130.703,-177.836,93.136,121.151,143.651,128.723,126.907,-176.671,142.351,-111.514,-179.19,-110.63,154.466,-173.272,-174.767,-42.59,-42.753,147.737,-74.378,-68.789,-102.924,25.393,-175.812,113.845,-16.769,81.981,-93.999,147.749,126.242,154.877,154.829,154.867,154.855,111.025,170.349,97.063,149.736,-179.695,121.126,-173.492,-96.861,-173.307,-161.35,-175.843,-24.57,86.25,-179.877,-179.877,-66.564,-177.067,-82.394,-82.303,147.495,123.615,130.479,-172.803,-172.737,147.819,152.731,-175.316,-73.437,99.593,135.626,-116.061,-116.142,-124.9613333,-173.857,-177.734,-116.154,-112.265,-163.02,-25.738,130.595,-112.204,125.931,-16.109,154.463,155.693,-112.306,169.393,-85.099,-176.677,100.906,-178.747,-178.104,171.532,71.309,105.668,-141.462,126.723,-70.698,121.207,177.745,-90.602,-90.714,-66.698,-90.281,169.665,169.349,-176.384,126.585,-176.482,-66.712,108.788,125.031,125.486,-14.554,-15.93,-15.829,-15.932,-15.51,-15.735,-15.9,99.093,-178.09,-74.466,-173.696,-153.4744,179.825,130.888,152.547,120.653,-60.925,167.897,157.756,129.029,110.736,57.918,169.583,-83.049,71.481,-83.031,-63.903,-63.887,-83.01,166.359,152.516,-173.346,-177.881,-102.461,93.789,175.282,21.963,22.043,174.852,122.201,-161.482,-110.357,125.46,-73.16,-65.809,165.647,-72.823,-94.478,-63.214,72.086,-65.829,-80.804,-177.746,161.023,157.777,158.071,158.128,158.1,158.08,-173.215,166.293,21.961,-90.132,-68.599,130.634,107.282,106.602,166.24,-108.557,153.262,165.242,-177.89,-65.879,-174.425,152.587,143.599,48.3,177.706,-63.475,146.717,126.285,-177.505,-177.612,125.943,142.991,166.264,142.082,-83.873,133.33,-174.763,-175.054,-174.799,-72.928,124.4,-72.887,-72.903,-73.037,-72.884,-72.842,-72.826,-72.861,-72.814,-72.807,-72.469,-72.513,-72.513,-72.626,-72.784,-72.571,133.731,-88.761,-174.228,167.667,-144.471,147.5,123.169,-124.6925,107.879,157.745,157.704,157.626,157.784,157.794,126.759,157.616,-174.564,159.28,-143.75,171.341,151.746,-16.568,164.192,157.763,157.454,-91.875,121.309,157.721,158.032,157.892,157.634,157.719,158.007,157.551,-91.878,-14.695,-74.034,157.303,-107.038,157.138,157.087,-178.977,157.255,157.812,157.606,157.618,157.76,157.471,157.354,157.487,126.293,-77.718,166.145,138.98,167.231,145.859,141.949,142.185,142.16,71.467,67.324,-175.407,67.763,69.345,-30.462,51.925,83.791,99.866,-26.045,167.902,-178.135,168.353,153.964,-156.1674,126.249,165.376,177.378,167.952,16.057,164.338,171.428,-26.711,-179.941,86.508,168.217,168.109,168.123,168.14,168.052,168.014,-102.804,-173.909,-24.434,-175.655,168.043,-179.802,168.017,27.317,168.069,143.513,168.214,168.219,167.96,139.375,167.926,139.237,-176.009,168.369,-175.973,-176.407,167.94,-176.105,167.802,-61.635,-11.975,167.756,168.261,168.213,-176.205,168.088,168.13,143.738,143.298,-176.186,168.207,168.284,168.181,168.101,168.129,143.313,168.014,167.933,168.096,127.431,-176.155,-176.162,167.975,168.272,168.224,168.066,143.393,167.947,167.942,167.97,167.987,167.928,143.93,167.955,168.023,167.973,167.954,143.385,143.429,143.363,168.002,167.919,167.947,177.1,143.577,143.935,141.123,-66.135,151.069,-86.857,143.309,143.245,-167.354,171.094,168.531,67.969,145.841,119.951,168.596,168.469,143.84,171.161,-173.982,143.396,143.333,95.916,141.476,143.743,143.595,46.276,-111.614,143.311,143.293,143.295,143.413,143.44,143.273,143.504,143.538,143.584,173.75,143.576,-11.674,143.363,143.763,143.669,143.535,143.719,143.466,143.547,143.909,143.408,143.497,143.484,143.581,143.685,143.577,143.653,143.392,143.236,143.514,143.486,143.326,143.699,-179.535,143.387,143.406,143.358,143.455,143.308,143.215,143.752,143.432,143.483,143.585,143.088,143.449,143.698,95.893,-173.72,111.197,-173.342,147.232,59.18,-177.048,-88.64,-103.977,126.155,145.672,-176.168,167.541,-89.159,37.839,73.679,-140.803,-163.181,94.667,-173.306,147.339,146.464,-142.056,126.08,20.22,126.156,-71.46,129.996,-129.917,-108.947,147.031,129.735,149.315,169.51,-73.459,-178.024,-69.143,158.366,178.607,128.786,78.169,-114.407,-32.563,-169.351,-169.412,-179.565,-73.08,119.812,-29.615,104.008,-174.624,129.319,155.647,-177.106,117.707,150.388,150.352,150.265,69.661,149.847,146.016,-25.411,-176.314,69.462,43.983,-179.353,162.382,122.031,148.554,-45.733,165.947,78.078,-177.961,70.083,-25.725,125.124,-25.515,-25.477,-174.413,-25.415,-25.388,129.898,-176.291,-177.78,-179.532,72.86,126.505,-25.573,-25.524,-25.741,-175.415,-173.93,169.128,169.022,-26.709,-7.503,-7.474,100.16,142.967,127.081,-100.826,154.913,-109.904,-169.564,130.473,153.484,120.642,-175.257,120.603,149.977,153.61,-178.956,99.041,-174.858,154.839,79.822,154.918,-13.177,-169.506,90.329,-178.87,139.187,-140.458,-174.716,-174.219,-66.712,-28.75,-13.715,130.532,-101.153,178.987,-71.429,-72.043,127.863,160.378,128.071,-43.128,129.258,-91.728,131.014,-43.72,52.564,121.408,171.449,73.036,-69.793,-79.92,-177.767,-71.715,179.927,167.758,-98.628,169.353,143.576,140.804,130.624,143.492,143.593,-174.945,146.729,148.966,-172.8,-178.918,169.28,-39.396,-127.23,95.739,-141.326,121.658,150.858,-131.937,-108.793,-131.571,-131.479,-173.982,-176.883,168.496,-73.688,100.119,-178.443,126.647,43.986,-74.735,-13.464,-74.87,129.446,165.945,-27.264,64.554,130.7,68.125,159.165,43.973,139.017,101.266,44.001,70.458,44.006,-66.634,43.579,43.618,43.916,-173.297,43.977,43.74,43.716,43.663,43.648,43.797,43.821,43.691,43.932,43.944,43.764,-18.102,43.974,43.974,43.991,43.947,43.963,141.373,68.087,-68.541,-177.186,-102.21,122.493,-169.805,161.361,130.035,154.74,27.343,-26.217,143.642,126.421,-82.571,70.895,-4.768,-178.436,119.868,96.394,126.11,-73.362,161.294,-173.671,107.206,99.417,110.026,142.202,66.073,78.226,143.933,141.588,-146.1917,149.656,154.751,-69.293,87.506,123.054,122.849,-176.683,167.816,-24.785,166.711,-44.845,167.558,-176.5,-176.542,-174.28,123.004,13.247,-88.698,126.223,134.071,158.31,-76.097,126.532,-111.942,104.058,26.333,20.73,168.56,71.207,146.747,151.556,-93.793,150.22,150.272,150.161,100.043,179.95,-71.86,153.335,141.267,-142.292,179.618,99.648,142.867,-71.736,128.294,166.239,-19.984,-177.526,-112.202,71.101,153.744,130.035,-108.454,145.438,-24.357,-108.373,-174.762,99.855,99.663,99.853,99.623,99.789,99.918,99.749,100.261,-85.758,99.476,100.463,100.093,100.504,100.372,99.938,100.082,125.059,-109.2,146.456,-102.789,154.231,168.129,165.418,-108.103,-23.978,-23.799,125.726,36.122,-73.41,-73.362,-141.952,-71.112,-173.751,-68.372,-173.837,-109.26,-109.156,-174.014,-178.732,-178.501,150.869,-177.639,-73.726,-111.948,-173.72,124.819,-109.026,-109.144,-109.098,-173.773,-115.25,-115.191,160.172,-166.853,-115.185,104.212,149.715,92.355,-27.996,-173.846,94.341,125.699,158.365,-173.916,-91.37,-27.219,95.389,142.871,-82.658,42.783,167.739,-91.691,-91.5,-174.065,-174.205,133.71,70.786,70.873,124.825,72.887,-175.159,-175.248,121.487,141.611,-10.244,-9.186,22.744,-76.652,146.487,-84.293,-174.99,-175.185,-49.222,-25.708,128.217,-175.203,-175.18,-175.361,-147.913,65.35,65.492,124.395,70.285,124.837,150.854,-173.989,69.587,10.516,-24.385,153.388,150.976,123.687,141.104,-177.768,154.854,-73.293,149.381,-129.315,153.925,125.154,122.246,-75.417,172.572,-75.911,122.157,-177.982,-179.555,26.541,127.498,104.998,-167.004,167.511,100.249,161.755,128.751,168.069,-174.491,-147.71,-147.736,-25.294,169.566,-173.106,125.407,113.794,-71.324,-147.708,152.534,152.583,140.954,94.736,121.472,133.498,133.846,133.872,-74.256,141.177,126.74,133.68,129.134,-172.267,133.76,133.712,-71.795,-175.534,94.736,139.883,177.221,124.784,-175.252,96.934,178.726,125.081,143.241,-71.175,-75.717,-175.296,145.623,123.554,51.666,-64.63,-32.702,-32.679,-32.762,179.732,-179.02,133.917,146.462,-68.178,152.024,167.887,126.027,-72.765,167.826,-149.5119,-173.248,-74.373,139.89,163.067,-71.621,151.544,179.754,-172.879,-173.207,-76.073,142.599,-95.317,-107.043,-100.754,-71.928,-66.515,147.684,144.445,141.772,-25.343,-178.863,-19.613,51.795,66.194,148.108,-129.057,126.567,70.774,-73.599,-67.02,-84.921,-173.96,125.993,-153.1756,-179.403,-106.221,105.359,-114.141,-93.1,-105.93,-40.866,124.582,124.642,-74.392,-73.524,141.57,142.431,-70.265,-70.777,141.986,149.47,149.672,-29.039,-71.795,124.644,152.351,-178.573,148.037,66.108,-80.584,94.057,66.822,66.831,148.377,129.24,90.648,-124.953,154.25,154.853,-30.226,125.855,-73.412,139.759,149.859,149.724,169.818,154.335,169.928,66.682,74.291,96.312,-118.171,-179.306,73.84,-176.243,151.325,54.5,103.461,176.818,167.189,103.585,162.173,-178.041,-175.205,142.961,-73.423,179.975,149.805,127.477,-67.382,147.728,168.042,49.073,-25.494,-76.123,-173.999,171.968,138.538,138.47,145.391,101.961,171.915,172.417,171.83,-175.87,153.053,65.93,168.163,149.961,92.563,-97.827,141.788,144.85,127.414,-173.349,-96.352,-32.135,149.891,122.185,-174.163,149.971,132.884,-105.196,-26.991,167.755,-107.097,54.47,-121.799,-123.703,-27.849,146.406,-75.146,-27.873,136.773,130.154,-174.504,150.31,128.623,-72.246,-69.184,124.519,123.844,117.32,-68.912,123.564,71.251,133.562,-107.193,-164.523,143.558,154.36,19.95,147.374,-67.269,-73.718,149.885,-77.974,121.983,-67.345,96.717,162.943,154.246,71.817,-166.159,-28.063,154.185,-178.503,146.415,95.071,-91.121,161.061,137.918,-174.139,141.514,-170.452,-177.234,-80.003,94.973,171.325,112.53,-178.826,-1.626,128.583,167.879,65.647,148.342,141.502,-174.573,141.43,-71.101,141.556,141.488,141.461,150.061,-179.742,160.121,141.464,141.455,141.429,141.459,66.323,150.14,141.555,141.566,141.527,141.461,100.574,150.948,-62.398,141.636,141.652,141.669,141.532,141.587,141.634,141.487,141.104,139.77,141.474,150.153,-32.749,-32.874,-32.987,-32.778,148.503,-86.826,167.727,-77.306,167.798,167.83,171.736,154.126,166.439,167.781,107.058,57.017,-81.921,167.743,167.814,167.685,168.2,167.345,167.827,-91.511,167.832,167.817,167.867,167.801,167.71,167.801,167.781,168.126,167.685,167.706,143.148,168.069,-72.719,142.255,92.817,-174.622,-73.149,39.262,112.995,94.829,-178.571,175.598,128.318,167.832,144.838,167.453,-73.501,128.454,-179.451,150.142,-70.357,155.383,-73.323,-73.281,150.64,150.733,153.175,150.765,-178.605,150.788,-178.649,-175.039,146.822,-177.245,-66.649,171.502,39.064,69.637,126.213,103.964,-70.334,93.246,104.618,78.287,145.567,-34.206,-2.75,136.002,179.741,150.65,-16.025,56.812,-90.493,150.404,67.456,139.672,-86.695,59.317,-73.642,126.583,154.209,159.888,159.843,66.855,-74.999,-172.981,123.222,179.508,165.523,-125.815,-169.345,-169.408,126.393,142.156,-176.929,123.25,-176.095,-66.825,141.4,123.623,153.444,154.637,123.562,-173.556,120.84,-173.548,120.636,-72.308,68.032,114.522,-177.546,99.533,123.646,147.666,165.519,149.817,123.519,99.541,123.259,124.026,123.765,123.431,123.48,123.694,123.622,123.571,123.409,170.117,102.451,143.119,126.932,140.413,168.162,128.048,150.552,150.45,168.177,101.131,-104.013,128.222,-169.707,141.175,125.395,171.759,150.696,53.812,53.861,150.712,-13.096,-169.341,-128.5,157.697,-169.7,-130.047,151.032,-169.409,150.422,-169.561,-169.333,150.495,150.458,150.197,-73.844,150.625,-169.719,150.59,150.428,122.47,-169.848,-73.838,-136.74,-175.223,-69.817,-178.859,147.109,23.992,26.91,118.591,118.584,-68.244,-88.535,-74.169,-72.303,-73.23,-176.113,-73.31,-73.412,138.795,97.182,97.144,39.932,123.397,-68.216,91.898,177.353,-178.268,46.445,-179.944,-176.538,158.709,145.999,161.338,-16.526,145.026,-75.589,147.076,142.123,120.832,105.495,-107.518,122.596,122.11,93.26,-179.788,153.815,-116.4746667,-75.654,-103.734,154.446,154.508,154.424,80.397,140.728,140.606,171.651,-71.953,-62.448,114.179,114.266,157.532,141.413,157.61,-136.867,142.369,-174.615,-174.625,-80.471,145.085,149.5,140.715,163.59,-174.993,67.014,66.25,67.324,-71.638,143.106,92.249,166.448,-173.482,150.889,166.605,160.949,166.485,167.334,-72.36,129.385,97.187,-174.938,125.024,-68.572,-27.94,99.786,-97.782,139.324,179.116,-173.231,-173.553,154.276,-73.278,153.843,168.162,160.895,160.863,141.593,168.215,-75.038,126.984,141.657,160.88,160.863,95.768,95.347,101.342,-73.48,46.493,130.286,-69.164,-77.232,108.089,-177.933,161.447,-96.251,91.856,91.979,-108.393,-73.535,151.161,91.958,-17.617,-75.475,146.403,80.428,-177.553,-27.273,91.879,110.641,166.83,-100.176,146.648,150.523,142.453,148.841,93.087,111.34,148.689,123.7,179.719,56.388,128.53,136.453,136.484,-173.799,136.717,-139.3752,136.228,136.543,136.635,161.433,119.35,129.181,91.823,-35.922,-115.9113333,121.62,27.474,126.643,147.616,-94.289,34.489,-107.816,-108.008,91.895,91.992,92.09,141.625,-66.778,91.967,166.115,91.936,-161.473,128.596,-106.376,-71.345,120.092,171.796,-176.233,142.688,142.503,51.95,-71.822,119.392,169.371,74.846,-177.516,126.905,169.485,-15.104,127.167,169.162,-70.494,-72.593,-106.097,78.401,-13.225,-141.75,112.451,-173.432,-179.346,127.389,65.966,146.773,-82.462,108.279,70.17,96.087,-27.066,-14.295,95.785,96.15,-14.384,166.594,149.413,-26.446,169.103,-73.505,-84.206,93.471,124.025,-139.863,145.209,-27.508,169.196,-88.484,166.685,166.638,166.648,96.07,161.068,100.966,166.376,-163.168,-163.155,77.839,166.606,-74.257,166.745,166.837,166.934,-176.938,166.73,167.008,166.643,125.621,119.618,130.097,129.944,121.448,-101.159,-72.852,-35.924,179.875,103.547,-73.106,-71.558,-74.352,168.94,168.988,4.142,168.417,-139.157,-71.969,-102.973,-91.75,-91.372,-66.736,-174.005,-84.302,-92.159,-26.291,-143.132,128.273,-135.398,-88.467,-135.252,65.547,-77.541,167.121,105.161,51.106,107.22,166.091,152.015,-14.185,178.883,119.718,-129.005,-15.403,7.345,7.49,128.525,93.18,3.961,-16.074,-67.07,28.316,124.657,-176.646,177.283,51.476,4.12,-72.143,-126.499,125.578,120.071,95.845,166.214,-26.932,119.299,96.018,-72.063,128.936,150.003,-175.22,122.485,118.259,-60.98,-129.481,-129.523,-129.467,123.503,69.868,127.982,145.249,-127.942,168.375,71.328,-128.25,101.0,-70.547,147.616,154.854,101.096,-72.939,-103.058,-12.107,-68.251,-173.17,-72.247,-140.913,122.563,-73.454,-73.686,-163.691,140.951,78.526,169.426,-175.216,-71.877,141.98,162.198,145.447,92.777,-68.594,117.465,-26.362,-72.307,167.455,-177.65,-177.877,139.394,122.876,-73.176,-24.192,-73.616,167.054,167.39,-173.586,93.163,128.632,54.967,101.424,178.653,114.702,136.977,-27.936,35.877,162.351,-22.954,123.623,-27.73,-72.879,127.804,-174.461,-111.597,-172.416,26.01,128.122,-99.775,161.38,-72.969,147.34,144.681,142.212,148.181,146.426,-45.273,-173.178,144.813,-173.219,-98.234,-27.125,121.406,-73.68,120.434,67.658,-68.515,-91.987,161.163,-73.759,-73.753,-81.673,147.291,-86.813,146.641,129.383,126.546,126.585,92.826,-73.669,-176.959,-73.732,-73.687,-98.179,165.253,-161.039,-111.977,-112.167,-177.846,166.747,-101.735,96.617,96.449,61.372,96.546,96.86,96.548,121.441,-27.311,91.843,161.079,-103.521,-104.222,153.489,119.69,97.205,171.389,-105.451,147.516,124.065,-77.405,-3.542,130.402,161.116,152.429,101.728,122.023,-127.114,166.523,-71.633,-176.223,-70.667,-89.894,145.687,-100.992,129.583,-68.124,149.848,164.688,-174.543,35.193,-115.2683333,168.289,-175.953,141.943,-173.525,96.928,8.815,96.721,97.17,97.048,-72.689,-68.842,125.042,125.089,124.949,125.009,-81.607,-115.1341667,-115.2925,-115.2595,-115.0481667,-115.632,-115.2953333,-177.059,-179.278,128.215,-176.98,126.462,-72.878,-72.697,147.275,-176.137,127.485,-72.104,153.875,69.541,-71.82,117.432,-175.379,-178.431,92.831,-178.458,138.379,-71.935,-72.897,-73.385,122.731,-128.373,-73.449,-175.419,-175.499,-78.055,147.582,26.137,162.97,125.183,-70.821,130.284,-15.833,-173.184,-78.129,126.952,128.46,-72.725,-73.046,120.071,-172.011,-91.385,40.138,-73.526,-174.123,92.826,92.708,-73.557,-74.56,74.618,171.961,74.63,-178.74,-73.82,165.816,120.742,141.845,167.548,-88.949,-13.078,-69.515,167.194,-174.823,-73.164,-159.343,60.914,-91.294,-105.465,-72.084,-75.364,-75.331,-166.404,143.379,152.245,-71.723,-100.985,-72.04,-72.113,147.52,110.105,-73.475,-72.172,-176.415,166.069,-68.64,-179.557,-72.832,-177.177,120.731,81.759,126.343,164.895,164.672,164.855,-72.008,-72.773,-83.5,-72.91,-73.041,-72.569,-29.735,102.828,-113.217,-176.043,-178.785,142.204,-73.074,-73.257,-89.251,-73.178,-73.158,128.45,-72.035,-23.567,67.978,83.703,-73.534,-72.565,74.498,-179.132,-73.596,-73.653,141.59,-71.768,128.135,160.356,-73.702,-71.747,97.171,141.299,-73.465,-71.931,-129.355,-73.5,-73.612,133.02,94.623,142.64,141.595,-71.917,-71.942,-25.667,152.674,-73.786,-71.823,157.598,-71.985,-175.802,-73.651,-72.006,128.146,-71.979,-71.976,-71.978,-71.906,-71.802,-72.124,-71.728,-71.866,-72.004,-71.99,-71.799,-71.674,-71.891,-73.512,-173.373,-27.931,-74.906,86.966,-72.298,-73.498,-73.189,-73.831,-34.307,168.951,-73.681,-72.718,-72.324,-73.949,149.25,-173.531,125.458,-71.631,-71.827,-71.721,-71.613,-71.641,-66.617,-71.644,-73.255,-71.58,-73.82,40.143,40.119,144.743,-72.002,40.051,-71.906,39.986,-73.042,-71.977,-71.906,-73.5,147.549,-73.3,140.601,-115.296,-72.064,144.206,-72.972,144.287,144.221,-73.711,147.647,166.687,-72.24,-73.521,91.481,126.361,-90.921,-71.917,100.943,100.991,-72.367,-73.506,-73.374,-73.643,127.504,-73.223,-73.132,-71.755,-71.85,176.417,-68.328,-72.708,-72.074,167.227,-69.919,145.545,166.222,-74.582,120.769,-71.985,-72.275,-72.251,-72.125,120.795,-73.554,-71.868,104.609,-73.36,148.721,126.929,-72.043,-73.799,-73.872,-71.994,-72.665,126.837,-69.02,-73.116,-72.171,-72.562,-72.055,-73.788,-73.328,-72.586,166.081,-73.347,138.58,-72.68,-73.301,-73.233,-71.782,-72.642,122.399,-71.366,75.628,-73.814,-71.424,-72.473,-73.551,-73.504,-71.915,-73.736,-74.486,-72.291,-82.513,-73.119,105.171,-74.928,-73.113,126.309,-72.794,-72.487,-73.819,-71.919,-73.916,-73.065,-72.322,-73.331,140.44,-73.68,-72.729,-71.877,-7.825,121.327,-72.215,-72.443,-73.297,-73.287,-72.883,-73.383,99.015,-72.523,-72.493,-71.617,-72.854,-75.273,-80.39,-71.832,141.468,-72.475,-72.883,-73.473,-73.42,167.153,-73.328,-71.958,-71.986,-73.873,-71.905,-73.507,-73.168,128.484,-73.552,-73.574,-73.606,-72.539,-73.689,-72.707,128.433,-71.952,-73.376,-73.739,-73.369,-72.238,70.074,-71.827,-72.832,-71.382,-72.71,-73.304,-73.36,-73.315,-72.344,-72.292,-72.522,-73.836,-73.154,-73.708,-43.406,-73.197,-72.376,-73.345,-71.828,-73.595,-73.699,-73.55,-73.093,-71.695,-71.701,-71.541,-73.051,-71.96,-73.208,-71.805,-72.166,-73.453,-72.328,-73.348,-73.429,-72.255,-72.296,-65.602,-73.257,-73.725,-71.529,-71.339,-71.359,-73.383,-73.106,-72.049,-72.851,-73.258,-72.673,-71.841,-72.212,-73.645,-72.865,-71.911,-74.973,-73.373,-73.098,128.368,-73.965,-73.14,-73.188,-73.716,-73.399,-73.694,-71.955,-73.545,-72.163,-73.652,-73.315,-73.257,-72.197,-71.525,-73.565,-73.309,-73.513,-72.867,-72.73,-75.326,-72.505,-71.976,-73.51,-72.871,-72.439,-72.433,-74.095,-74.115,-72.427,-72.126,-72.02,-72.712,-71.579,-72.807,-75.048,-72.71,-72.001,-72.197,-71.456,-73.2,-73.774,-73.777,-73.329,-72.647,-72.163,-73.116,-74.012,-72.176,-72.673,-72.225,-72.132,-73.393,-72.817,-72.818,-72.622,-73.594,-74.126,-72.836,-73.366,-71.943,-72.107,-73.708,-72.119,-72.156,-72.197,-72.614,-69.141,-72.033,-133.64,-72.898,166.288,128.425,-139.896,125.653,126.802,86.745,123.181,122.816,-4.758,161.316,167.331,-175.605,101.903,166.184,-86.126,137.703,146.033,165.862,-175.998,-173.003,-91.26,-91.207,155.789,48.29,-175.872,-175.88,-6.523,-176.593,-175.915,-175.917,-176.036,122.936,-173.778,65.966,-85.509,166.806,148.441,121.22,-173.323,-175.115,-87.051,152.577,-68.514,-108.397,173.778,-140.713,157.655,130.703,-177.836,93.136,121.151,143.651,128.723,126.907,-176.671,142.351,-111.514,-179.19,-110.63,154.466,-173.272,-174.767,-42.59,-42.753,147.737,-74.378,-68.789,-102.924,25.393,-175.812,113.845,-16.769,81.981,-93.999,147.749,126.242,154.877,154.829,154.867,154.855,111.025,170.349,97.063,149.736,-179.695,121.126,-173.492,-96.861,-173.307,-161.35,-175.843,-24.57,86.25,-179.877,-179.877,-66.564,-177.067,-82.394,-82.303,147.495,123.615,130.479,-172.803,-172.737,147.819,152.731,-175.316,-73.437,99.593,135.626,-116.061,-116.142,-124.9613333,-173.857,-177.734,-116.154,-112.265,-163.02,-25.738,130.595,-112.204,125.931,-16.109,154.463,155.693,-112.306,169.393,-85.099,-176.677,100.906,-178.747,-178.104,171.532,71.309,105.668,-141.462,126.723,-70.698,121.207,177.745,-90.602,-90.714,-66.698,-90.281,169.665,169.349,-176.384,126.585,-176.482,-66.712,108.788,125.031,125.486,-14.554,-15.93,-15.829,-15.932,-15.51,-15.735,-15.9,99.093,-178.09,-74.466,-173.696,-153.4744,179.825,130.888,152.547,120.653,-60.925,167.897,157.756,129.029,110.736,57.918,169.583,-83.049,71.481,-83.031,-63.903,-63.887,-83.01,166.359,152.516,-173.346,-177.881,-102.461,93.789,175.282,21.963,22.043,174.852,122.201,-161.482,-110.357,125.46,-73.16,-65.809,165.647,-72.823,-94.478,-63.214,72.086,-65.829,-80.804,-177.746,161.023,157.777,158.071,158.128,158.1,158.08,-173.215,166.293,21.961,-90.132,-68.599,130.634,107.282,106.602,166.24,-108.557,153.262,165.242,-177.89,-65.879,-174.425,152.587,143.599,48.3,177.706,-63.475,146.717,126.285,-177.505,-177.612,125.943,142.991,166.264,142.082,-83.873,133.33,-174.763,-175.054,-174.799,-72.928,124.4,-72.887,-72.903,-73.037,-72.884,-72.842,-72.826,-72.861,-72.814,-72.807,-72.469,-72.513,-72.513,-72.626,-72.784,-72.571,133.731,-88.761,-174.228,167.667,-144.471,147.5,123.169,-124.6925,107.879,157.745,157.704,157.626,157.784,157.794,126.759,157.616,-174.564,159.28,-143.75,171.341,151.746,-16.568,164.192,157.763,157.454,-91.875,121.309,157.721,158.032,157.892,157.634,157.719,158.007,157.551,-91.878,-14.695,-74.034,157.303,-107.038,157.138,157.087,-178.977,157.255,157.812,157.606,157.618,157.76,157.471,157.354,157.487,126.293,-77.718,166.145,138.98,167.231,145.859,141.949,142.185,142.16,71.467,67.324,-175.407,67.763,69.345,-30.462,51.925,83.791,99.866],"name":"","opacity":0.8,"radius":15,"subplot":"mapbox","z":[5.5,5.1,5.0,5.0,5.0,5.0,5.0,5.6,5.5,5.0,5.0,5.2,5.3,5.2,5.0,5.1,5.0,5.2,5.5,6.4,5.0,5.2,5.4,5.1,5.2,5.0,5.2,6.3,5.0,5.0,5.2,5.1,5.1,5.2,5.5,5.6,5.1,5.3,5.0,5.0,5.0,5.3,5.2,5.0,5.0,5.0,5.0,5.0,5.5,5.0,5.3,5.3,5.2,5.3,5.0,5.2,5.4,6.0,5.3,5.1,5.0,5.0,5.1,5.0,5.2,5.1,5.4,5.6,5.3,5.2,5.4,5.0,5.2,5.1,5.1,5.2,5.2,5.0,5.1,5.2,5.3,5.1,5.4,5.0,5.1,5.3,5.5,5.3,7.3,5.0,5.1,5.1,5.2,5.1,5.0,5.0,5.3,5.1,5.9,5.0,5.0,5.0,5.1,5.5,5.6,5.3,5.0,6.4,5.1,5.0,5.0,5.4,5.2,5.0,6.4,5.4,5.1,5.2,5.0,5.1,5.0,5.0,5.0,5.0,5.2,5.1,5.1,5.0,5.1,5.2,5.4,5.4,5.6,5.4,5.0,5.1,5.0,5.0,5.0,5.0,5.0,5.0,5.0,5.2,5.0,5.6,5.3,5.0,5.1,5.0,5.0,5.0,5.0,5.0,5.3,5.5,5.5,5.2,5.1,5.1,5.0,5.2,5.3,7.4,5.8,5.1,5.6,5.3,5.0,6.7,5.1,5.7,5.9,5.0,5.1,5.2,5.0,5.0,5.1,5.2,5.2,5.0,5.0,5.9,5.1,5.3,5.3,5.0,5.0,5.6,5.2,5.5,5.4,5.3,5.0,5.0,5.0,5.0,5.3,5.2,5.1,5.0,5.0,6.0,5.3,5.0,5.0,5.0,5.3,5.3,5.2,5.4,5.0,5.7,5.1,5.0,6.2,5.6,5.4,5.2,5.2,5.4,5.0,5.0,5.1,5.0,5.0,5.0,5.0,5.6,5.0,5.1,5.1,5.5,5.3,5.2,5.2,5.4,5.4,5.0,5.0,5.0,5.1,5.0,5.0,5.5,5.2,5.0,5.4,5.5,5.9,5.3,5.0,6.3,5.0,5.3,5.8,5.4,5.0,5.7,5.9,5.1,5.7,5.1,5.9,5.4,5.0,5.1,5.4,5.1,5.0,5.2,5.4,6.6,5.2,6.1,5.6,5.1,5.0,5.3,5.7,5.1,5.5,5.3,5.1,6.8,5.0,5.2,5.1,5.2,5.0,5.0,5.0,5.0,5.1,5.0,5.3,5.2,5.1,5.7,5.7,5.1,5.0,5.8,5.4,5.5,5.2,5.0,5.0,5.0,5.4,5.1,5.1,5.3,5.0,5.0,5.2,5.2,5.0,5.0,5.1,5.1,5.0,5.3,6.1,5.0,5.9,5.1,5.3,5.0,5.0,5.4,5.6,5.0,5.0,5.1,5.3,6.0,5.1,5.3,5.3,5.2,5.7,5.1,5.0,5.0,5.1,5.2,5.3,5.9,5.4,5.1,5.0,5.4,5.5,5.4,5.1,5.9,5.0,5.0,5.2,5.1,5.1,5.3,5.1,5.0,5.1,5.2,5.1,5.5,5.0,5.2,5.4,5.3,5.1,5.2,5.2,5.0,5.3,5.2,5.3,5.2,5.1,5.5,5.0,5.1,5.4,5.3,5.8,5.2,5.3,5.0,5.5,5.6,5.0,5.4,5.1,5.2,5.7,5.2,5.2,5.3,5.5,6.5,5.3,5.0,5.2,5.2,5.1,5.4,5.4,5.4,5.0,5.2,5.2,5.6,5.1,5.3,5.1,5.0,5.2,5.8,5.0,5.2,5.1,5.0,5.0,5.4,5.0,5.5,5.1,6.1,5.1,5.2,5.0,5.3,6.0,5.3,5.0,5.0,5.0,5.1,5.3,5.5,5.5,5.1,5.5,5.8,5.6,5.5,5.1,5.8,5.1,5.0,5.3,5.1,5.2,6.4,5.0,5.0,5.2,5.2,5.2,5.0,5.1,5.0,5.1,5.3,5.8,5.1,5.6,5.0,5.3,5.0,5.1,5.0,5.1,5.4,5.0,5.1,5.2,5.2,5.0,5.6,5.0,5.9,5.0,5.7,6.3,5.0,7.8,5.8,5.1,5.1,5.2,5.3,5.1,5.0,5.3,5.2,5.1,5.1,5.0,5.1,5.5,5.8,5.6,5.1,5.8,5.1,5.3,6.7,5.0,5.1,5.0,5.5,5.1,5.9,5.1,5.0,5.2,5.8,5.9,5.9,5.2,5.0,5.0,5.0,5.3,5.0,5.0,5.0,5.0,5.0,5.9,5.3,5.9,5.1,5.6,5.0,5.1,5.0,5.6,5.0,5.1,5.0,5.1,5.1,5.9,5.9,5.9,5.1,5.0,5.1,5.2,5.2,5.5,5.0,5.1,5.1,5.2,5.1,5.2,5.2,5.8,5.2,5.1,5.0,5.1,6.2,5.7,6.0,6.4,5.1,5.0,5.0,5.1,5.1,5.3,5.2,5.7,5.2,5.0,5.1,5.1,5.3,5.2,5.1,5.4,5.1,5.0,5.1,5.3,5.2,6.3,5.0,5.1,5.1,5.2,5.5,5.0,5.0,5.3,5.2,5.1,5.1,5.2,5.5,5.0,5.5,5.0,5.0,5.2,5.3,5.0,5.2,5.2,5.0,5.3,5.3,5.2,5.2,5.2,5.0,5.2,5.8,5.6,5.5,5.1,5.8,5.2,5.0,5.2,5.2,5.4,7.0,6.2,5.0,5.0,5.0,5.5,5.4,5.0,5.2,5.3,5.3,5.0,5.0,5.0,5.3,5.0,5.1,5.1,5.9,5.0,5.1,5.4,5.5,5.8,5.3,6.0,5.6,5.0,5.0,5.1,5.0,5.0,5.1,5.4,5.0,5.5,5.0,5.1,5.4,5.6,5.6,5.0,5.2,5.7,5.0,5.3,5.0,5.1,5.1,5.1,5.0,5.2,5.0,5.1,5.0,5.0,5.2,5.0,5.2,5.0,5.2,6.3,5.1,5.4,5.0,5.8,5.2,5.0,5.3,5.1,5.1,5.3,5.1,5.6,5.1,5.0,5.3,5.1,5.2,5.0,5.1,5.1,5.9,5.8,5.2,5.2,5.1,5.2,5.1,5.0,5.2,5.1,5.0,5.2,5.8,5.3,5.0,5.2,5.8,5.1,5.2,5.0,5.1,5.3,5.3,6.2,5.2,5.1,5.5,6.3,5.0,5.6,5.0,5.0,5.1,5.5,6.3,5.4,5.5,5.0,5.2,5.5,5.0,5.0,5.2,5.7,5.1,5.5,5.1,5.0,5.6,5.0,5.3,5.2,5.3,5.1,5.1,5.5,5.4,6.1,5.0,5.2,5.5,5.1,5.6,5.1,5.0,7.0,6.5,5.2,5.7,5.0,5.5,5.1,5.0,5.2,5.1,5.0,5.3,5.2,5.3,5.0,5.0,5.3,5.1,5.1,5.1,5.5,5.0,5.5,5.8,5.4,5.2,5.1,5.0,5.3,5.2,5.4,5.0,5.0,5.0,5.0,5.0,5.1,5.1,5.0,5.0,5.1,5.2,5.0,5.3,6.2,5.0,5.5,5.2,5.5,5.6,5.1,5.0,5.0,5.4,5.1,5.1,5.9,5.2,6.1,5.2,5.2,5.2,5.4,5.2,5.2,5.1,5.5,5.2,5.3,5.4,6.3,5.1,5.3,5.2,5.4,5.0,5.0,6.2,5.0,5.0,5.2,6.3,6.3,5.1,5.1,5.1,5.2,5.1,5.0,5.2,5.0,5.5,5.5,5.0,5.0,6.6,5.1,5.2,5.0,5.0,5.6,5.0,5.6,5.0,5.4,5.2,5.0,5.1,5.0,5.0,5.2,5.7,6.2,5.3,5.6,6.9,5.0,5.0,5.5,5.1,5.3,5.4,5.1,5.2,7.1,5.5,5.1,5.1,5.2,5.1,5.5,5.3,5.0,5.4,5.3,5.9,5.4,5.2,5.9,5.1,5.0,5.2,5.1,5.1,5.1,5.1,5.0,5.3,5.0,5.0,5.0,5.9,7.3,5.0,5.0,5.2,5.2,5.0,5.0,5.3,5.0,5.5,5.1,5.3,5.3,5.0,5.2,5.0,5.4,5.5,5.0,5.2,5.0,5.4,5.9,5.4,5.1,6.0,7.0,5.4,5.0,6.4,5.5,6.5,6.0,5.1,5.6,5.3,5.2,6.3,5.0,5.1,5.1,5.4,5.2,5.3,5.8,5.0,5.2,5.4,5.2,5.5,5.4,5.0,5.4,5.0,5.3,5.2,5.5,5.1,5.5,5.5,5.4,6.3,5.0,5.1,5.0,6.6,5.2,5.2,5.2,5.2,5.6,5.5,5.0,5.0,5.4,5.0,5.6,5.6,5.0,5.0,5.6,5.3,5.1,5.2,5.9,5.1,5.2,5.1,5.0,5.2,5.0,5.1,5.0,5.1,5.1,6.6,5.3,7.5,5.4,5.8,5.8,7.6,5.0,5.2,5.5,7.3,5.2,5.1,5.0,5.3,5.1,6.1,5.0,5.0,5.1,5.0,5.2,5.3,6.1,5.1,5.3,5.0,5.5,5.6,5.1,5.8,6.3,5.8,5.0,5.0,5.0,5.0,5.4,5.2,5.1,5.0,5.5,5.7,5.2,5.0,5.4,5.0,5.1,6.0,7.3,6.9,5.1,6.7,5.0,5.3,5.6,5.5,5.2,5.0,5.0,5.1,5.0,5.1,5.1,5.1,5.0,5.4,5.8,5.6,6.6,5.1,5.7,5.0,5.1,5.2,5.3,6.3,5.2,5.1,5.0,5.0,5.2,5.0,5.7,6.3,5.0,5.2,5.6,5.3,5.0,5.0,5.2,5.1,5.0,5.2,5.0,5.0,5.8,5.2,5.42,5.0,5.0,5.0,5.3,5.9,5.0,5.0,5.3,5.3,5.0,5.0,5.0,5.0,5.2,5.0,5.1,5.3,6.3,5.3,5.0,5.7,5.4,5.0,5.1,5.3,5.0,5.1,5.1,5.1,5.1,5.0,5.4,5.0,5.0,5.2,5.3,5.4,6.3,5.0,5.1,5.8,5.1,5.0,5.3,5.0,5.3,5.0,6.3,5.2,6.4,5.2,5.1,5.5,5.5,5.2,5.0,5.3,5.8,5.8,5.0,5.6,5.3,5.3,5.1,5.1,5.0,5.0,5.4,5.0,5.0,5.0,5.4,5.2,5.9,5.2,6.7,5.2,5.2,5.0,5.1,5.0,6.1,5.5,5.1,5.35,5.0,5.2,5.8,5.0,5.0,5.0,5.0,5.6,5.4,5.3,5.0,5.2,5.9,5.0,6.2,5.1,6.0,5.1,5.1,5.0,6.6,5.1,5.2,5.0,5.0,7.0,6.2,5.6,5.4,5.3,5.0,5.1,5.71,5.3,5.0,5.0,5.0,5.0,5.0,5.0,5.2,5.2,5.2,5.0,5.9,5.0,5.2,5.3,7.5,5.1,5.2,5.3,5.2,5.1,5.3,5.0,5.5,5.7,5.8,5.0,5.1,5.2,5.2,5.0,5.6,6.0,5.0,5.4,5.3,5.0,5.1,5.2,5.1,5.2,5.3,5.1,5.1,5.4,5.1,5.0,5.5,5.0,5.1,5.1,5.1,5.0,5.0,5.4,5.5,5.6,5.6,5.9,5.9,5.7,5.6,6.0,6.5,6.0,5.0,5.0,5.0,5.0,5.0,5.0,5.1,5.1,5.8,5.2,5.3,5.2,5.0,5.4,5.0,5.8,5.2,6.1,5.0,5.3,5.1,5.6,5.1,7.2,5.0,5.1,5.0,6.5,5.0,5.1,5.3,6.3,5.5,5.0,5.3,6.5,6.1,5.4,5.0,5.2,5.2,5.7,5.3,5.1,5.0,5.0,5.1,5.0,5.9,5.9,5.0,5.6,5.0,6.0,5.4,6.0,5.1,6.0,5.4,5.4,5.0,5.3,5.3,5.3,5.2,5.0,5.0,5.3,5.3,5.1,5.1,5.0,5.3,5.1,5.1,5.8,5.3,5.8,5.7,5.1,5.1,5.3,5.2,5.3,5.0,5.1,5.4,5.2,5.2,5.0,7.2,5.0,5.4,5.1,5.0,5.7,5.9,5.2,5.0,5.1,5.5,5.0,5.0,5.6,5.4,5.8,5.1,5.0,5.0,5.2,6.2,5.4,5.7,6.5,5.4,5.9,5.3,5.3,5.1,5.2,5.3,5.1,6.3,5.4,5.5,6.1,5.1,5.0,5.1,5.9,5.0,5.4,5.3,5.0,5.0,5.1,5.0,5.0,5.0,6.3,6.5,5.8,5.2,5.0,5.0,5.1,5.0,5.0,5.0,5.2,5.0,5.0,5.1,5.1,5.6,5.1,5.1,5.0,5.0,5.0,6.5,5.6,5.0,5.1,5.0,5.2,5.4,5.4,6.0,5.2,5.1,6.0,5.4,5.3,5.0,5.1,5.4,5.1,5.3,5.0,6.1,5.0,5.3,5.2,5.2,5.0,5.6,5.1,5.6,5.1,5.1,5.6,5.0,6.2,5.5,5.0,5.0,5.3,5.4,5.3,5.7,5.1,5.7,5.0,5.3,5.4,5.7,5.1,5.6,5.0,5.0,5.2,5.0,6.1,5.1,5.2,5.4,6.9,5.0,5.5,5.2,5.2,5.3,5.1,5.2,5.0,5.0,5.1,5.3,5.7,5.0,5.0,6.3,5.1,6.9,5.4,5.2,5.3,5.3,5.8,5.0,6.0,5.5,5.8,5.3,5.4,5.2,5.8,5.4,5.2,5.0,5.1,5.29,5.2,5.0,6.0,5.2,5.1,5.3,5.1,5.3,7.8,5.1,5.8,5.0,5.1,5.1,6.2,5.1,5.22,5.38,5.43,5.7,5.26,7.2,5.6,5.3,5.0,5.3,5.0,6.0,5.1,5.0,5.0,5.4,5.1,5.6,5.0,5.1,5.0,5.1,5.0,6.6,5.1,5.7,5.4,5.6,6.0,5.1,5.7,5.2,5.1,5.2,5.2,5.0,5.1,5.0,5.0,6.3,5.7,5.0,5.0,5.0,5.0,5.4,5.0,5.3,6.0,5.0,5.0,5.1,5.0,5.1,5.4,5.7,5.1,5.2,5.0,5.3,5.1,5.2,5.1,5.3,5.9,5.0,5.1,5.4,5.3,5.3,5.3,5.1,5.5,5.3,5.0,5.2,5.0,5.2,5.0,5.6,5.1,5.4,6.6,5.0,5.0,5.2,5.2,5.0,5.3,5.5,5.2,5.2,5.0,5.0,5.0,5.2,5.6,5.0,5.0,5.1,5.3,5.6,5.3,5.1,5.2,5.0,5.0,5.1,5.4,5.0,5.0,5.3,5.0,5.4,5.8,5.9,6.7,5.2,5.0,6.2,5.2,5.1,5.6,5.4,5.8,5.6,5.0,5.2,5.1,5.0,5.5,6.5,5.2,6.4,5.3,5.3,5.2,5.8,5.6,5.8,5.1,5.0,5.4,5.3,5.9,5.5,5.2,5.2,5.8,5.0,5.2,5.1,5.1,5.0,5.3,5.0,5.3,5.3,5.2,5.1,5.6,5.4,5.0,5.2,5.3,5.0,5.0,5.3,6.0,5.6,7.0,5.2,6.9,5.1,5.3,5.6,5.1,5.1,5.6,5.2,5.1,5.1,5.3,5.1,5.2,5.2,5.1,5.0,5.0,5.8,5.1,5.0,5.1,5.0,5.3,5.3,5.8,5.0,5.0,5.1,5.1,5.1,5.2,6.1,5.1,5.6,5.0,6.1,5.1,5.2,5.3,5.0,5.0,5.9,5.1,6.3,5.1,5.1,5.0,5.0,5.2,5.2,5.7,5.5,5.0,5.1,5.1,5.0,5.0,5.2,5.4,6.8,5.0,5.2,6.6,5.2,5.0,6.1,5.1,5.3,5.4,5.3,6.3,5.1,5.4,6.5,5.0,5.0,5.0,5.0,5.2,5.1,5.0,5.0,6.0,6.3,5.0,5.8,5.0,6.1,5.0,5.0,5.2,5.1,5.3,5.0,5.3,5.1,5.1,5.0,5.6,5.1,5.0,5.1,5.2,5.0,5.3,5.0,5.0,5.3,5.5,5.4,5.0,5.0,5.8,5.1,5.1,5.0,5.0,5.0,5.1,5.2,5.2,5.1,5.0,5.3,5.0,5.3,5.0,5.0,5.0,5.1,5.0,5.7,5.0,5.2,5.1,5.1,5.2,5.0,5.1,5.9,5.1,5.0,5.4,5.2,5.2,5.0,5.1,5.2,5.0,5.2,5.1,5.2,5.2,6.2,5.0,5.1,5.2,5.2,5.6,5.0,5.0,5.1,5.3,5.1,5.3,5.0,5.3,5.0,5.0,5.1,5.0,5.0,5.1,5.4,5.0,5.2,5.2,5.3,5.0,5.9,5.3,5.1,5.3,5.2,5.7,6.0,5.9,5.3,5.2,5.3,5.1,5.2,5.0,5.1,5.2,5.0,5.2,5.0,5.8,5.0,5.2,5.2,6.2,5.0,5.7,5.6,5.0,5.0,5.3,5.3,5.5,5.0,6.1,5.5,5.1,5.4,5.1,5.5,5.4,5.0,5.1,6.3,5.5,5.2,5.0,5.2,5.1,5.0,5.1,5.0,5.2,5.0,5.0,5.2,5.0,5.3,5.0,5.1,5.1,5.1,5.0,5.2,5.5,5.0,5.4,5.2,5.4,5.9,6.0,5.99,5.6,5.8,5.0,5.2,5.3,5.6,5.0,5.0,5.4,5.0,5.0,5.6,5.0,5.2,5.1,5.2,5.5,5.7,5.2,5.4,6.1,5.2,5.3,5.1,5.6,5.1,7.4,5.3,5.3,5.1,5.0,5.1,5.0,5.0,5.2,5.4,5.2,5.3,5.2,5.5,6.0,5.1,5.5,5.6,5.2,5.4,5.2,5.6,5.1,5.4,5.2,6.0,5.8,5.1,5.3,5.2,5.6,6.2,6.0,5.6,5.6,8.8,5.1,7.0,5.2,5.0,5.7,5.1,5.0,5.5,5.6,5.0,5.1,5.0,5.2,5.1,5.7,5.0,5.0,5.4,5.3,5.0,5.6,5.3,5.3,5.2,5.3,5.0,5.3,5.3,5.5,5.6,6.0,5.2,5.7,5.0,5.1,5.5,5.1,5.0,5.4,5.8,5.3,5.3,5.2,5.4,5.0,5.1,5.0,6.9,5.9,5.3,5.0,5.3,6.2,5.1,5.2,5.1,5.0,5.1,5.4,5.0,5.0,6.1,5.2,5.2,5.0,5.3,5.8,5.3,5.5,5.2,5.8,5.5,5.3,5.1,5.1,5.4,5.1,5.2,5.4,5.5,5.0,5.0,5.0,5.0,5.0,5.0,6.1,5.7,5.0,5.1,5.4,5.2,5.0,5.6,5.9,5.6,5.1,5.1,5.1,5.1,6.3,5.0,5.1,5.5,5.1,6.0,5.1,5.2,6.2,5.2,5.1,5.1,5.88,5.6,5.3,5.2,5.0,5.1,5.2,5.0,5.0,5.1,5.1,6.2,5.3,5.1,5.2,5.0,5.1,5.0,5.3,5.2,5.2,5.0,5.1,5.6,5.4,5.3,5.2,5.0,5.6,5.2,5.0,5.5,5.8,5.2,5.1,5.3,5.0,5.9,5.0,5.1,5.9,5.8,5.0,5.4,5.2,5.0,5.0,5.3,5.0,5.3,5.9,5.6,5.0,5.1,5.5,5.0,5.0,5.0,5.6,5.5,5.5,5.0,5.0,5.0,5.0,5.1,5.0,5.1,5.3,5.3,5.2,5.1,5.3,5.0,5.2,5.0,5.3,5.0,5.4,5.1,5.2,5.2,5.6,5.5,5.1,5.1,5.1,5.9,5.0,5.4,5.0,5.2,5.9,5.1,5.0,5.1,5.6,5.1,5.1,5.2,5.4,5.7,5.5,5.9,5.4,5.1,5.1,5.3,5.3,5.1,5.6,5.0,5.2,6.3,5.1,5.7,5.6,5.0,5.5,5.6,5.2,5.7,5.3,5.9,5.3,5.0,5.5,5.8,5.0,5.8,5.4,5.2,5.5,5.1,5.0,5.2,5.8,5.0,5.4,5.1,5.6,5.6,5.1,5.2,5.0,5.3,5.7,5.0,6.0,7.0,5.5,5.1,5.3,5.0,5.0,5.4,5.0,6.5,5.1,5.0,5.3,6.2,5.0,5.2,5.4,5.0,5.1,5.6,5.3,5.1,5.6,5.6,5.7,5.0,5.0,5.2,5.0,5.2,5.7,6.0,5.3,5.1,5.2,6.8,5.0,6.8,5.1,5.1,5.0,5.3,5.8,5.4,5.2,5.1,5.6,5.2,5.4,5.0,7.1,6.6,5.2,5.7,5.2,5.3,5.1,5.8,6.1,5.2,5.1,5.4,5.0,5.0,5.0,5.2,5.0,5.0,5.2,5.0,5.5,5.1,5.0,5.0,5.0,5.0,5.0,5.6,5.5,5.0,5.0,5.2,5.3,5.2,5.0,5.1,5.0,5.2,5.5,6.4,5.0,5.2,5.4,5.1,5.2,5.0,5.2,6.3,5.0,5.0,5.2,5.1,5.1,5.2,5.5,5.6,5.1,5.3,5.0,5.0,5.0,5.3,5.2,5.0,5.0,5.0,5.0,5.0,5.5,5.0,5.3,5.3,5.2,5.3,5.0,5.2,5.4,6.0,5.3,5.1,5.0,5.0,5.1,5.0,5.2,5.1,5.4,5.6,5.3,5.2,5.4,5.0,5.2,5.1,5.1,5.2,5.2,5.0,5.1,5.2,5.3,5.1,5.4,5.0,5.1,5.3,5.5,5.3,7.3,5.0,5.1,5.1,5.2,5.1,5.0,5.0,5.3,5.1,5.9,5.0,5.0,5.0,5.1,5.5,5.6,5.3,5.0,6.4,5.1,5.0,5.0,5.4,5.2,5.0,6.4,5.4,5.1,5.2,5.0,5.1,5.0,5.0,5.0,5.0,5.2,5.1,5.1,5.0,5.1,5.2,5.4,5.4,5.6,5.4,5.0,5.1,5.0,5.0,5.0,5.0,5.0,5.0,5.0,5.2,5.0,5.6,5.3,5.0,5.1,5.0,5.0,5.0,5.0,5.0,5.3,5.5,5.5,5.2,5.1,5.1,5.0,5.2,5.3,7.4,5.8,5.1,5.6,5.3,5.0,6.7,5.1,5.7,5.9,5.0,5.1,5.2,5.0,5.0,5.1,5.2,5.2,5.0,5.0,5.9,5.1,5.3,5.3,5.0,5.0,5.6,5.2,5.5,5.4,5.3,5.0,5.0,5.0,5.0,5.3,5.2,5.1,5.0,5.0,6.0,5.3,5.0,5.0,5.0,5.3,5.3,5.2,5.4,5.0,5.7,5.1,5.0,6.2,5.6,5.4,5.2,5.2,5.4,5.0,5.0,5.1,5.0,5.0,5.0,5.0,5.6,5.0,5.1,5.1,5.5,5.3,5.2,5.2,5.4,5.4,5.0,5.0,5.0,5.1,5.0,5.0,5.5,5.2,5.0,5.4,5.5,5.9,5.3,5.0,6.3,5.0,5.3,5.8,5.4,5.0,5.7,5.9,5.1,5.7,5.1,5.9,5.4,5.0,5.1,5.4,5.1,5.0,5.2,5.4,6.6,5.2,6.1,5.6,5.1,5.0,5.3,5.7,5.1,5.5,5.3,5.1,6.8,5.0,5.2,5.1,5.2,5.0,5.0,5.0,5.0,5.1,5.0,5.3,5.2,5.1,5.7,5.7,5.1,5.0,5.8,5.4,5.5,5.2,5.0,5.0,5.0,5.4,5.1,5.1,5.3,5.0,5.0,5.2,5.2,5.0,5.0,5.1,5.1,5.0,5.3,6.1,5.0,5.9,5.1,5.3,5.0,5.0,5.4,5.6,5.0,5.0,5.1,5.3,6.0,5.1,5.3,5.3,5.2,5.7,5.1,5.0,5.0,5.1,5.2,5.3,5.9,5.4,5.1,5.0,5.4,5.5,5.4,5.1,5.9,5.0,5.0,5.2,5.1,5.1,5.3,5.1,5.0,5.1,5.2,5.1,5.5,5.0,5.2,5.4,5.3,5.1,5.2,5.2,5.0,5.3,5.2,5.3,5.2,5.1,5.5,5.0,5.1,5.4,5.3,5.8,5.2,5.3,5.0,5.5,5.6,5.0,5.4,5.1,5.2,5.7,5.2,5.2,5.3,5.5,6.5,5.3,5.0,5.2,5.2,5.1,5.4,5.4,5.4,5.0,5.2,5.2,5.6,5.1,5.3,5.1,5.0,5.2,5.8,5.0,5.2,5.1,5.0,5.0,5.4,5.0,5.5,5.1,6.1,5.1,5.2,5.0,5.3,6.0,5.3,5.0,5.0,5.0,5.1,5.3,5.5,5.5,5.1,5.5,5.8,5.6,5.5,5.1,5.8,5.1,5.0,5.3,5.1,5.2,6.4,5.0,5.0,5.2,5.2,5.2,5.0,5.1,5.0,5.1,5.3,5.8,5.1,5.6,5.0,5.3,5.0,5.1,5.0,5.1,5.4,5.0,5.1,5.2,5.2,5.0,5.6,5.0,5.9,5.0,5.7,6.3,5.0,7.8,5.8,5.1,5.1,5.2,5.3,5.1,5.0,5.3,5.2,5.1,5.1,5.0,5.1,5.5,5.8,5.6,5.1,5.8,5.1,5.3,6.7,5.0,5.1,5.0,5.5,5.1,5.9,5.1,5.0,5.2,5.8,5.9,5.9,5.2,5.0,5.0,5.0,5.3,5.0,5.0,5.0,5.0,5.0,5.9,5.3,5.9,5.1,5.6,5.0,5.1,5.0,5.6,5.0,5.1,5.0,5.1,5.1,5.9,5.9,5.9,5.1,5.0,5.1,5.2,5.2,5.5,5.0,5.1,5.1,5.2,5.1,5.2,5.2,5.8,5.2,5.1,5.0,5.1,6.2,5.7,6.0,6.4,5.1,5.0,5.0,5.1,5.1,5.3,5.2,5.7,5.2,5.0,5.1,5.1,5.3,5.2,5.1,5.4,5.1,5.0,5.1,5.3,5.2,6.3,5.0,5.1,5.1,5.2,5.5,5.0,5.0,5.3,5.2,5.1,5.1,5.2,5.5,5.0,5.5,5.0,5.0,5.2,5.3,5.0,5.2,5.2,5.0,5.3,5.3,5.2,5.2,5.2,5.0,5.2,5.8,5.6,5.5,5.1,5.8,5.2,5.0,5.2,5.2,5.4,7.0,6.2,5.0,5.0,5.0,5.5,5.4,5.0,5.2,5.3,5.3,5.0,5.0,5.0,5.3,5.0,5.1,5.1,5.9,5.0,5.1,5.4,5.5,5.8,5.3,6.0,5.6,5.0,5.0,5.1,5.0,5.0,5.1,5.4,5.0,5.5,5.0,5.1,5.4,5.6,5.6,5.0,5.2,5.7,5.0,5.3,5.0,5.1,5.1,5.1,5.0,5.2,5.0,5.1,5.0,5.0,5.2,5.0,5.2,5.0,5.2,6.3,5.1,5.4,5.0,5.8,5.2,5.0,5.3,5.1,5.1,5.3,5.1,5.6,5.1,5.0,5.3,5.1,5.2,5.0,5.1,5.1,5.9,5.8,5.2,5.2,5.1,5.2,5.1,5.0,5.2,5.1,5.0,5.2,5.8,5.3,5.0,5.2,5.8,5.1,5.2,5.0,5.1,5.3,5.3,6.2,5.2,5.1,5.5,6.3,5.0,5.6,5.0,5.0,5.1,5.5,6.3,5.4,5.5,5.0,5.2,5.5,5.0,5.0,5.2,5.7,5.1,5.5,5.1,5.0,5.6,5.0,5.3,5.2,5.3,5.1,5.1,5.5,5.4,6.1,5.0,5.2,5.5,5.1,5.6,5.1,5.0,7.0,6.5,5.2,5.7,5.0,5.5,5.1,5.0,5.2,5.1,5.0,5.3,5.2,5.3,5.0,5.0,5.3,5.1,5.1,5.1,5.5,5.0,5.5,5.8,5.4,5.2,5.1,5.0,5.3,5.2,5.4,5.0,5.0,5.0,5.0,5.0,5.1,5.1,5.0,5.0,5.1,5.2,5.0,5.3,6.2,5.0,5.5,5.2,5.5,5.6,5.1,5.0,5.0,5.4,5.1,5.1,5.9,5.2,6.1,5.2,5.2,5.2,5.4,5.2,5.2,5.1,5.5,5.2,5.3,5.4,6.3,5.1,5.3,5.2,5.4,5.0,5.0,6.2,5.0,5.0,5.2,6.3,6.3,5.1,5.1,5.1,5.2,5.1,5.0,5.2,5.0,5.5,5.5,5.0,5.0,6.6,5.1,5.2,5.0,5.0,5.6,5.0,5.6,5.0,5.4,5.2,5.0,5.1,5.0,5.0,5.2,5.7,6.2,5.3,5.6,6.9,5.0,5.0,5.5,5.1,5.3,5.4,5.1,5.2,7.1,5.5,5.1,5.1,5.2,5.1,5.5,5.3,5.0,5.4,5.3,5.9,5.4,5.2,5.9,5.1,5.0,5.2,5.1,5.1,5.1,5.1,5.0,5.3,5.0,5.0,5.0,5.9,7.3,5.0,5.0,5.2,5.2,5.0,5.0,5.3,5.0,5.5,5.1,5.3,5.3,5.0,5.2,5.0,5.4,5.5,5.0,5.2,5.0,5.4,5.9,5.4,5.1,6.0,7.0,5.4,5.0,6.4,5.5,6.5,6.0,5.1,5.6,5.3,5.2,6.3,5.0,5.1,5.1,5.4,5.2,5.3,5.8,5.0,5.2,5.4,5.2,5.5,5.4,5.0,5.4,5.0,5.3,5.2,5.5,5.1,5.5,5.5,5.4,6.3,5.0,5.1,5.0,6.6,5.2,5.2,5.2,5.2,5.6,5.5,5.0,5.0,5.4,5.0,5.6,5.6,5.0,5.0,5.6,5.3,5.1,5.2,5.9,5.1,5.2,5.1,5.0,5.2,5.0,5.1,5.0,5.1,5.1,6.6,5.3,7.5,5.4,5.8,5.8,7.6,5.0,5.2,5.5,7.3,5.2,5.1,5.0,5.3,5.1,6.1,5.0,5.0,5.1,5.0,5.2,5.3,6.1,5.1,5.3,5.0,5.5,5.6,5.1,5.8,6.3,5.8,5.0,5.0,5.0,5.0,5.4,5.2,5.1,5.0,5.5,5.7,5.2,5.0,5.4,5.0,5.1,6.0,7.3,6.9,5.1,6.7,5.0,5.3,5.6,5.5,5.2,5.0,5.0,5.1,5.0,5.1,5.1,5.1,5.0,5.4,5.8,5.6,6.6,5.1,5.7,5.0,5.1,5.2,5.3,6.3,5.2,5.1,5.0,5.0,5.2,5.0,5.7,6.3,5.0,5.2,5.6,5.3,5.0,5.0,5.2,5.1,5.0,5.2,5.0,5.0,5.8,5.2,5.42,5.0,5.0,5.0,5.3,5.9,5.0,5.0,5.3,5.3,5.0,5.0,5.0,5.0,5.2,5.0,5.1,5.3,6.3,5.3,5.0,5.7,5.4,5.0,5.1,5.3,5.0,5.1,5.1,5.1,5.1,5.0,5.4,5.0,5.0,5.2,5.3,5.4,6.3,5.0,5.1,5.8,5.1,5.0,5.3,5.0,5.3,5.0,6.3,5.2,6.4,5.2,5.1,5.5,5.5,5.2,5.0,5.3,5.8,5.8,5.0,5.6,5.3,5.3,5.1,5.1,5.0,5.0,5.4,5.0,5.0,5.0,5.4,5.2,5.9,5.2,6.7,5.2,5.2,5.0,5.1,5.0,6.1,5.5,5.1,5.35,5.0,5.2,5.8,5.0,5.0,5.0,5.0,5.6,5.4,5.3,5.0,5.2,5.9,5.0,6.2,5.1,6.0,5.1,5.1,5.0,6.6,5.1,5.2,5.0,5.0,7.0,6.2,5.6,5.4,5.3,5.0,5.1,5.71,5.3,5.0,5.0,5.0,5.0,5.0,5.0,5.2,5.2,5.2,5.0,5.9,5.0,5.2,5.3,7.5,5.1,5.2,5.3,5.2,5.1,5.3,5.0,5.5,5.7,5.8,5.0,5.1,5.2,5.2,5.0,5.6,6.0,5.0,5.4,5.3,5.0,5.1,5.2,5.1,5.2,5.3,5.1,5.1,5.4,5.1,5.0,5.5,5.0,5.1,5.1,5.1,5.0,5.0,5.4,5.5,5.6,5.6,5.9,5.9,5.7,5.6,6.0,6.5,6.0,5.0,5.0,5.0,5.0,5.0,5.0,5.1,5.1,5.8,5.2,5.3,5.2,5.0,5.4,5.0,5.8,5.2,6.1,5.0,5.3,5.1,5.6,5.1,7.2,5.0,5.1,5.0,6.5,5.0,5.1,5.3,6.3,5.5,5.0,5.3,6.5,6.1,5.4,5.0,5.2,5.2,5.7,5.3,5.1,5.0,5.0,5.1,5.0,5.9,5.9,5.0,5.6,5.0,6.0,5.4,6.0,5.1,6.0,5.4,5.4,5.0,5.3,5.3,5.3,5.2,5.0,5.0,5.3,5.3,5.1,5.1,5.0,5.3,5.1,5.1,5.8,5.3,5.8,5.7,5.1,5.1,5.3,5.2,5.3,5.0,5.1,5.4,5.2,5.2,5.0,7.2,5.0,5.4,5.1,5.0,5.7,5.9,5.2,5.0,5.1,5.5,5.0,5.0,5.6,5.4,5.8,5.1,5.0,5.0,5.2,6.2,5.4,5.7,6.5,5.4,5.9,5.3,5.3,5.1,5.2,5.3,5.1,6.3,5.4,5.5,6.1,5.1,5.0,5.1,5.9,5.0,5.4,5.3,5.0,5.0,5.1,5.0,5.0,5.0,6.3,6.5,5.8,5.2,5.0,5.0,5.1,5.0,5.0,5.0,5.2,5.0,5.0,5.1,5.1,5.6,5.1,5.1,5.0,5.0,5.0,6.5,5.6,5.0,5.1,5.0,5.2,5.4,5.4,6.0,5.2,5.1,6.0,5.4,5.3,5.0,5.1,5.4,5.1,5.3,5.0,6.1,5.0,5.3,5.2,5.2,5.0,5.6,5.1,5.6,5.1,5.1,5.6,5.0,6.2,5.5,5.0,5.0,5.3,5.4,5.3,5.7,5.1,5.7,5.0,5.3,5.4,5.7,5.1,5.6,5.0,5.0,5.2,5.0,6.1,5.1,5.2,5.4,6.9,5.0,5.5,5.2,5.2,5.3,5.1,5.2,5.0,5.0,5.1,5.3,5.7,5.0,5.0,6.3,5.1,6.9,5.4,5.2,5.3,5.3,5.8,5.0,6.0,5.5,5.8,5.3,5.4,5.2,5.8,5.4,5.2,5.0,5.1,5.29,5.2,5.0,6.0,5.2,5.1,5.3,5.1,5.3,7.8,5.1,5.8,5.0,5.1,5.1,6.2,5.1,5.22,5.38,5.43,5.7,5.26,7.2,5.6,5.3,5.0,5.3,5.0,6.0,5.1,5.0,5.0,5.4,5.1,5.6,5.0,5.1,5.0,5.1,5.0,6.6,5.1,5.7,5.4,5.6,6.0,5.1,5.7,5.2,5.1,5.2,5.2,5.0,5.1,5.0,5.0,6.3,5.7,5.0,5.0,5.0,5.0,5.4,5.0,5.3,6.0,5.0,5.0,5.1,5.0,5.1,5.4,5.7,5.1,5.2,5.0,5.3,5.1,5.2,5.1,5.3,5.9,5.0,5.1,5.4,5.3,5.3,5.3,5.1,5.5,5.3,5.0,5.2,5.0,5.2,5.0,5.6,5.1,5.4,6.6,5.0,5.0,5.2,5.2,5.0,5.3,5.5,5.2,5.2,5.0,5.0,5.0,5.2,5.6,5.0,5.0,5.1,5.3,5.6,5.3,5.1,5.2,5.0,5.0,5.1,5.4,5.0,5.0,5.3,5.0,5.4,5.8,5.9,6.7,5.2,5.0,6.2,5.2,5.1,5.6,5.4,5.8,5.6,5.0,5.2,5.1,5.0,5.5,6.5,5.2,6.4,5.3,5.3,5.2,5.8,5.6,5.8,5.1,5.0,5.4,5.3,5.9,5.5,5.2,5.2,5.8,5.0,5.2,5.1,5.1,5.0,5.3,5.0,5.3,5.3,5.2,5.1,5.6,5.4,5.0,5.2,5.3,5.0,5.0,5.3,6.0,5.6,7.0,5.2,6.9,5.1,5.3,5.6,5.1,5.1,5.6,5.2,5.1,5.1,5.3,5.1,5.2,5.2,5.1,5.0,5.0,5.8,5.1,5.0,5.1,5.0,5.3,5.3,5.8,5.0,5.0,5.1,5.1,5.1,5.2,6.1,5.1,5.6,5.0,6.1,5.1,5.2,5.3,5.0,5.0,5.9,5.1,6.3,5.1,5.1,5.0,5.0,5.2,5.2,5.7,5.5,5.0,5.1,5.1,5.0,5.0,5.2,5.4,6.8,5.0,5.2,6.6,5.2,5.0,6.1,5.1,5.3,5.4,5.3,6.3,5.1,5.4,6.5,5.0,5.0,5.0,5.0,5.2,5.1,5.0,5.0,6.0,6.3,5.0,5.8,5.0,6.1,5.0,5.0,5.2,5.1,5.3,5.0,5.3,5.1,5.1,5.0,5.6,5.1,5.0,5.1,5.2,5.0,5.3,5.0,5.0,5.3,5.5,5.4,5.0,5.0,5.8,5.1,5.1,5.0,5.0,5.0,5.1,5.2,5.2,5.1,5.0,5.3,5.0,5.3,5.0,5.0,5.0,5.1,5.0,5.7,5.0,5.2,5.1,5.1,5.2,5.0,5.1,5.9,5.1,5.0,5.4,5.2,5.2,5.0,5.1,5.2,5.0,5.2,5.1,5.2,5.2,6.2,5.0,5.1,5.2,5.2,5.6,5.0,5.0,5.1,5.3,5.1,5.3,5.0,5.3,5.0,5.0,5.1,5.0,5.0,5.1,5.4,5.0,5.2,5.2,5.3,5.0,5.9,5.3,5.1,5.3,5.2,5.7,6.0,5.9,5.3,5.2,5.3,5.1,5.2,5.0,5.1,5.2,5.0,5.2,5.0,5.8,5.0,5.2,5.2,6.2,5.0,5.7,5.6,5.0,5.0,5.3,5.3,5.5,5.0,6.1,5.5,5.1,5.4,5.1,5.5,5.4,5.0,5.1,6.3,5.5,5.2,5.0,5.2,5.1,5.0,5.1,5.0,5.2,5.0,5.0,5.2,5.0,5.3,5.0,5.1,5.1,5.1,5.0,5.2,5.5,5.0,5.4,5.2,5.4,5.9,6.0,5.99,5.6,5.8,5.0,5.2,5.3,5.6,5.0,5.0,5.4,5.0,5.0,5.6,5.0,5.2,5.1,5.2,5.5,5.7,5.2,5.4,6.1,5.2,5.3,5.1,5.6,5.1,7.4,5.3,5.3,5.1,5.0,5.1,5.0,5.0,5.2,5.4,5.2,5.3,5.2,5.5,6.0,5.1,5.5,5.6,5.2,5.4,5.2,5.6,5.1,5.4,5.2,6.0,5.8,5.1,5.3,5.2,5.6,6.2,6.0,5.6,5.6,8.8,5.1,7.0,5.2,5.0,5.7,5.1,5.0,5.5,5.6,5.0,5.1,5.0,5.2,5.1,5.7,5.0,5.0,5.4,5.3,5.0,5.6,5.3,5.3,5.2,5.3,5.0,5.3,5.3,5.5,5.6,6.0,5.2,5.7,5.0,5.1,5.5,5.1,5.0,5.4,5.8,5.3,5.3,5.2,5.4,5.0,5.1,5.0,6.9,5.9,5.3,5.0,5.3,6.2,5.1,5.2,5.1,5.0,5.1,5.4,5.0,5.0,6.1,5.2,5.2,5.0,5.3,5.8,5.3,5.5,5.2,5.8,5.5,5.3,5.1,5.1,5.4,5.1,5.2,5.4,5.5,5.0,5.0,5.0,5.0,5.0,5.0,6.1,5.7,5.0,5.1,5.4,5.2,5.0,5.6,5.9,5.6,5.1,5.1,5.1,5.1,6.3,5.0,5.1,5.5,5.1,6.0,5.1,5.2,6.2,5.2,5.1,5.1,5.88,5.6,5.3,5.2,5.0,5.1,5.2,5.0,5.0,5.1,5.1,6.2,5.3,5.1,5.2,5.0,5.1,5.0,5.3,5.2,5.2,5.0,5.1,5.6,5.4,5.3,5.2,5.0,5.6,5.2,5.0,5.5,5.8,5.2,5.1,5.3,5.0,5.9,5.0,5.1,5.9,5.8,5.0,5.4,5.2,5.0,5.0,5.3,5.0,5.3,5.9,5.6,5.0,5.1,5.5,5.0,5.0,5.0,5.6,5.5,5.5,5.0,5.0,5.0,5.0,5.1,5.0,5.1,5.3,5.3,5.2,5.1,5.3,5.0,5.2,5.0,5.3,5.0,5.4,5.1,5.2,5.2,5.6,5.5,5.1,5.1,5.1,5.9,5.0,5.4,5.0,5.2,5.9,5.1,5.0,5.1,5.6,5.1,5.1,5.2,5.4,5.7,5.5,5.9,5.4,5.1,5.1,5.3,5.3,5.1,5.6,5.0,5.2,6.3,5.1,5.7,5.6,5.0,5.5,5.6,5.2,5.7,5.3,5.9,5.3,5.0,5.5,5.8,5.0,5.8,5.4,5.2,5.5,5.1,5.0,5.2,5.8,5.0,5.4,5.1,5.6,5.6,5.1,5.2,5.0,5.3,5.7,5.0,6.0,7.0,5.5,5.1,5.3,5.0,5.0,5.4,5.0,6.5,5.1,5.0,5.3,6.2,5.0,5.2,5.4,5.0,5.1,5.6,5.3,5.1,5.6,5.6,5.7,5.0,5.0,5.2,5.0,5.2,5.7,6.0,5.3,5.1,5.2,6.8,5.0,6.8,5.1,5.1,5.0,5.3,5.8,5.4,5.2,5.1,5.6,5.2,5.4,5.0,7.1,6.6,5.2,5.7,5.2,5.3,5.1,5.8,6.1,5.2,5.1,5.4,5.0,5.0,5.0,5.2,5.0,5.0,5.2,5.0],"type":"densitymapbox"},{"lat":[-19.702,26.901,-3.487,-1.266,-17.541,6.776,6.497,6.718,-5.931,7.881,-13.698,3.748,2.383,32.2861667,-37.773,-36.122,-8.783,-19.702,26.901,-3.487,-1.266,-17.541,6.776,6.497,6.718,-5.931,7.881,-13.698,3.748,2.383,32.2861667,-37.773,-36.122,-8.783],"lon":[167.947,143.698,100.082,-77.306,168.069,123.259,123.48,123.409,150.59,91.936,166.643,96.018,97.048,-115.2953333,-75.048,-72.898,157.354,167.947,143.698,100.082,-77.306,168.069,123.259,123.48,123.409,150.59,91.936,166.643,96.018,97.048,-115.2953333,-75.048,-72.898,157.354],"marker":{"color":"blue","size":5},"opacity":0.1,"text":[7.3,7.4,7.8,7.1,7.3,7.5,7.6,7.3,7.3,7.5,7.2,7.2,7.8,7.2,7.4,8.8,7.1,7.3,7.4,7.8,7.1,7.3,7.5,7.6,7.3,7.3,7.5,7.2,7.2,7.8,7.2,7.4,8.8,7.1],"type":"scattermapbox"},{"lat":[-19.661,-23.407,-19.702,53.127,26.81,26.901,28.412,-6.534,-6.001,-15.888,28.349,-33.625,-45.464,-20.466,-56.586,-2.958,-3.487,24.696,2.831,51.374,24.27,-4.963,-4.909,36.443,-20.671,-15.879,-17.368,-43.522,51.451,-6.57,12.234,-20.799,-5.692,12.273,12.348,12.487,-1.266,-17.541,45.98,-5.746,51.423,-5.486,-26.916,1.239,52.498,6.548,6.218,6.776,6.497,6.718,-15.132,3.039,-5.902,-5.931,-5.966,52.876,-38.067,11.143,39.697,-13.643,16.396,-23.307,-10.627,44.448,-33.168,-2.329,-2.174,-2.386,7.881,11.132,6.948,-13.658,-13.698,25.773,-8.087,3.748,-4.054,29.645,60.478,60.473,22.18,-15.271,-6.669,33.165,-10.878,2.383,-0.183,32.2861667,13.667,13.827,18.451,-3.361,-36.217,37.745,-1.692,-34.326,-34.29,-3.762,-36.665,-13.571,22.918,-37.773,-36.122,25.93,-23.626,42.587,-21.902,-15.053,23.488,-6.112,-57.664,-31.728,18.443,40.652,-9.131,-9.019,-58.173,-8.783,-8.726,-19.661,-23.407,-19.702,53.127,26.81,26.901,28.412,-6.534,-6.001,-15.888,28.349,-33.625,-45.464,-20.466,-56.586,-2.958,-3.487,24.696,2.831,51.374,24.27,-4.963,-4.909,36.443,-20.671,-15.879,-17.368,-43.522,51.451,-6.57,12.234,-20.799,-5.692,12.273,12.348,12.487,-1.266,-17.541,45.98,-5.746,51.423,-5.486,-26.916,1.239,52.498,6.548,6.218,6.776,6.497,6.718,-15.132,3.039,-5.902,-5.931,-5.966,52.876,-38.067,11.143,39.697,-13.643,16.396,-23.307,-10.627,44.448,-33.168,-2.329,-2.174,-2.386,7.881,11.132,6.948,-13.658,-13.698,25.773,-8.087,3.748,-4.054,29.645,60.478,60.473,22.18,-15.271,-6.669,33.165,-10.878,2.383,-0.183,32.2861667,13.667,13.827,18.451,-3.361,-36.217,37.745,-1.692,-34.326,-34.29,-3.762,-36.665,-13.571,22.918,-37.773,-36.122,25.93,-23.626,42.587,-21.902,-15.053,23.488,46.836,-6.112,-57.664,-31.728,18.443,40.652,-9.131,-9.019,-58.173,-8.783,-8.726],"lon":[168.14,-179.802,167.947,171.161,143.595,143.698,59.18,155.647,149.977,-178.956,139.187,-178.918,96.394,-174.28,-142.292,100.372,100.082,-109.156,128.217,-175.361,125.154,133.76,133.712,70.774,169.818,-179.306,-173.999,171.83,-175.87,154.246,141.514,-178.826,148.342,141.429,141.487,141.474,-77.306,168.069,153.175,150.765,-178.649,146.822,-177.245,126.213,159.843,123.222,123.519,123.259,123.48,123.409,168.162,128.222,150.712,150.59,150.428,-169.848,-73.31,145.999,142.369,166.485,-97.782,179.116,161.447,148.689,179.719,136.484,136.543,136.635,91.936,93.471,124.025,166.745,166.643,129.944,-71.558,96.018,101.096,140.951,-177.65,-177.877,123.623,-173.219,147.291,96.548,161.116,97.048,125.009,-115.2953333,92.831,120.071,120.742,152.245,-73.257,141.59,128.135,-71.799,-71.891,100.991,-73.374,167.227,120.795,-75.048,-72.898,128.425,-176.036,130.703,-174.767,-173.492,123.615,154.463,-65.879,-177.612,-72.571,-124.6925,157.626,157.551,-14.695,157.354,157.487,168.14,-179.802,167.947,171.161,143.595,143.698,59.18,155.647,149.977,-178.956,139.187,-178.918,96.394,-174.28,-142.292,100.372,100.082,-109.156,128.217,-175.361,125.154,133.76,133.712,70.774,169.818,-179.306,-173.999,171.83,-175.87,154.246,141.514,-178.826,148.342,141.429,141.487,141.474,-77.306,168.069,153.175,150.765,-178.649,146.822,-177.245,126.213,159.843,123.222,123.519,123.259,123.48,123.409,168.162,128.222,150.712,150.59,150.428,-169.848,-73.31,145.999,142.369,166.485,-97.782,179.116,161.447,148.689,179.719,136.484,136.543,136.635,91.936,93.471,124.025,166.745,166.643,129.944,-71.558,96.018,101.096,140.951,-177.65,-177.877,123.623,-173.219,147.291,96.548,161.116,97.048,125.009,-115.2953333,92.831,120.071,120.742,152.245,-73.257,141.59,128.135,-71.799,-71.891,100.991,-73.374,167.227,120.795,-75.048,-72.898,128.425,-176.036,130.703,-174.767,-173.492,123.615,152.731,154.463,-65.879,-177.612,-72.571,-124.6925,157.626,157.551,-14.695,157.354,157.487],"marker":{"color":"red","size":40},"opacity":0.8,"text":[6.4,6.3,7.3,6.4,6.4,7.4,6.7,6.2,6.6,6.1,6.8,5.9,6.5,6.1,6.4,6.3,7.8,6.7,6.2,6.4,6.3,7.0,6.2,6.3,6.3,6.3,6.1,7.0,6.5,6.1,6.3,6.2,6.3,6.6,6.2,6.9,7.1,7.3,6.0,7.0,6.4,6.5,6.0,6.3,6.3,6.6,6.6,7.5,7.6,7.3,6.1,6.1,6.3,7.3,6.9,6.7,6.6,6.3,6.3,6.3,6.3,6.4,6.7,6.2,6.0,6.6,7.0,6.2,7.5,6.5,6.0,6.1,7.2,6.5,6.5,7.2,6.5,6.1,6.3,6.5,6.5,6.1,6.2,6.9,6.9,7.8,6.2,7.2,6.6,6.0,5.9,6.6,6.7,6.5,6.4,7.0,6.9,6.8,6.6,6.5,6.3,7.4,8.8,7.0,6.0,6.9,6.1,6.1,6.3,6.2,6.3,5.9,7.0,6.5,6.2,6.8,6.8,7.1,6.6,6.4,6.3,7.3,6.4,6.4,7.4,6.7,6.2,6.6,6.1,6.8,5.9,6.5,6.1,6.4,6.3,7.8,6.7,6.2,6.4,6.3,7.0,6.2,6.3,6.3,6.3,6.1,7.0,6.5,6.1,6.3,6.2,6.3,6.6,6.2,6.9,7.1,7.3,6.0,7.0,6.4,6.5,6.0,6.3,6.3,6.6,6.6,7.5,7.6,7.3,6.1,6.1,6.3,7.3,6.9,6.7,6.6,6.3,6.3,6.3,6.3,6.4,6.7,6.2,6.0,6.6,7.0,6.2,7.5,6.5,6.0,6.1,7.2,6.5,6.5,7.2,6.5,6.1,6.3,6.5,6.5,6.1,6.2,6.9,6.9,7.8,6.2,7.2,6.6,6.0,5.9,6.6,6.7,6.5,6.4,7.0,6.9,6.8,6.6,6.5,6.3,7.4,8.8,7.0,6.0,6.9,6.1,6.1,6.3,6.0,6.2,6.3,5.9,7.0,6.5,6.2,6.8,6.8,7.1,6.6],"type":"scattermapbox"},{"lat":[-19.661,-23.407,-19.702,53.127,26.81,26.901,28.412,-6.534,-6.001,-15.888,28.349,-33.625,-45.464,-20.466,-56.586,-2.958,-3.487,24.696,2.831,51.374,24.27,-4.963,-4.909,36.443,-20.671,-15.879,-17.368,-43.522,51.451,-6.57,12.234,-20.799,-5.692,12.273,12.348,12.487,-1.266,-17.541,45.98,-5.746,51.423,-5.486,-26.916,1.239,52.498,6.548,6.218,6.776,6.497,6.718,-15.132,3.039,-5.902,-5.931,-5.966,52.876,-38.067,11.143,39.697,-13.643,16.396,-23.307,-10.627,44.448,-33.168,-2.329,-2.174,-2.386,7.881,11.132,6.948,-13.658,-13.698,25.773,-8.087,3.748,-4.054,29.645,60.478,60.473,22.18,-15.271,-6.669,33.165,-10.878,2.383,-0.183,32.2861667,13.667,13.827,18.451,-3.361,-36.217,37.745,-1.692,-34.326,-34.29,-3.762,-36.665,-13.571,22.918,-37.773,-36.122,25.93,-23.626,42.587,-21.902,-15.053,23.488,-6.112,-57.664,-31.728,18.443,40.652,-9.131,-9.019,-58.173,-8.783,-8.726,-19.661,-23.407,-19.702,53.127,26.81,26.901,28.412,-6.534,-6.001,-15.888,28.349,-33.625,-45.464,-20.466,-56.586,-2.958,-3.487,24.696,2.831,51.374,24.27,-4.963,-4.909,36.443,-20.671,-15.879,-17.368,-43.522,51.451,-6.57,12.234,-20.799,-5.692,12.273,12.348,12.487,-1.266,-17.541,45.98,-5.746,51.423,-5.486,-26.916,1.239,52.498,6.548,6.218,6.776,6.497,6.718,-15.132,3.039,-5.902,-5.931,-5.966,52.876,-38.067,11.143,39.697,-13.643,16.396,-23.307,-10.627,44.448,-33.168,-2.329,-2.174,-2.386,7.881,11.132,6.948,-13.658,-13.698,25.773,-8.087,3.748,-4.054,29.645,60.478,60.473,22.18,-15.271,-6.669,33.165,-10.878,2.383,-0.183,32.2861667,13.667,13.827,18.451,-3.361,-36.217,37.745,-1.692,-34.326,-34.29,-3.762,-36.665,-13.571,22.918,-37.773,-36.122,25.93,-23.626,42.587,-21.902,-15.053,23.488,46.836,-6.112,-57.664,-31.728,18.443,40.652,-9.131,-9.019,-58.173,-8.783,-8.726],"lon":[168.14,-179.802,167.947,171.161,143.595,143.698,59.18,155.647,149.977,-178.956,139.187,-178.918,96.394,-174.28,-142.292,100.372,100.082,-109.156,128.217,-175.361,125.154,133.76,133.712,70.774,169.818,-179.306,-173.999,171.83,-175.87,154.246,141.514,-178.826,148.342,141.429,141.487,141.474,-77.306,168.069,153.175,150.765,-178.649,146.822,-177.245,126.213,159.843,123.222,123.519,123.259,123.48,123.409,168.162,128.222,150.712,150.59,150.428,-169.848,-73.31,145.999,142.369,166.485,-97.782,179.116,161.447,148.689,179.719,136.484,136.543,136.635,91.936,93.471,124.025,166.745,166.643,129.944,-71.558,96.018,101.096,140.951,-177.65,-177.877,123.623,-173.219,147.291,96.548,161.116,97.048,125.009,-115.2953333,92.831,120.071,120.742,152.245,-73.257,141.59,128.135,-71.799,-71.891,100.991,-73.374,167.227,120.795,-75.048,-72.898,128.425,-176.036,130.703,-174.767,-173.492,123.615,154.463,-65.879,-177.612,-72.571,-124.6925,157.626,157.551,-14.695,157.354,157.487,168.14,-179.802,167.947,171.161,143.595,143.698,59.18,155.647,149.977,-178.956,139.187,-178.918,96.394,-174.28,-142.292,100.372,100.082,-109.156,128.217,-175.361,125.154,133.76,133.712,70.774,169.818,-179.306,-173.999,171.83,-175.87,154.246,141.514,-178.826,148.342,141.429,141.487,141.474,-77.306,168.069,153.175,150.765,-178.649,146.822,-177.245,126.213,159.843,123.222,123.519,123.259,123.48,123.409,168.162,128.222,150.712,150.59,150.428,-169.848,-73.31,145.999,142.369,166.485,-97.782,179.116,161.447,148.689,179.719,136.484,136.543,136.635,91.936,93.471,124.025,166.745,166.643,129.944,-71.558,96.018,101.096,140.951,-177.65,-177.877,123.623,-173.219,147.291,96.548,161.116,97.048,125.009,-115.2953333,92.831,120.071,120.742,152.245,-73.257,141.59,128.135,-71.799,-71.891,100.991,-73.374,167.227,120.795,-75.048,-72.898,128.425,-176.036,130.703,-174.767,-173.492,123.615,152.731,154.463,-65.879,-177.612,-72.571,-124.6925,157.626,157.551,-14.695,157.354,157.487],"marker":{"color":"rgb(255, 255, 255)","opacity":0.4,"size":20},"mode":"markers","type":"scattermapbox"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"mapbox":{"domain":{"x":[0.0,1.0],"y":[0.0,1.0]},"center":{"lat":37.7749,"lon":-122.4194},"zoom":5,"style":"stamen-terrain"},"coloraxis":{"colorbar":{"title":{"text":"f"}},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"cmin":-3,"cmax":3},"legend":{"tracegroupgap":0},"margin":{"t":0,"r":0,"l":0,"b":0},"height":900},                        {"responsive": true}                    ).then(function(){
                             
 var gd = document.getElementById('88d5feff-68c0-494e-b598-ff4c452b86cb');
@@ -741,10 +756,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
-  function tippyHover(el, contentFn) {
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -754,8 +768,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -770,6 +793,233 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      return note.innerHTML;
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
@@ -810,6 +1060,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+
 
 
 
