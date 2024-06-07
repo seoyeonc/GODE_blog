@@ -25,9 +25,6 @@ from haversine import haversine
 
 from .utils import Conf_matrx
 
-from .ebayesthresh import ebayesthresh_nn
-thresh_layer = ebayesthresh_nn()
-
 def make_w(n):
     w = np.zeros((n,n))
     for i in range(n):
@@ -71,9 +68,8 @@ class Linear:
         self.lamb, self.Psi = eigen(self.W)
         self.ybar = self.Psi.T @ self.df.y # fbar := graph fourier transform of f
         self.power = self.ybar**2 
-        # ebayesthresh = importr('EbayesThresh').ebayesthresh
-        # self.power_threshed=np.array(ebayesthresh(FloatVector(self.power),sd=sd))
-        self.power_threshed = np.array(thresh_layer(self.power,sdev=sd))
+        ebayesthresh = importr('EbayesThresh').ebayesthresh
+        self.power_threshed=np.array(ebayesthresh(FloatVector(self.power),sd=sd))
         self.ybar_threshed = np.where(self.power_threshed>0,self.ybar,0)
         self.yhat = self.Psi@self.ybar_threshed
     def __call__(self, df):
@@ -91,9 +87,8 @@ class Orbit:
         self.lamb, self.Psi = eigen(self.W)
         self.fbar = self.Psi.T @ self.df.f # fbar := graph fourier transform of f
         self.power = self.fbar**2 
-        # ebayesthresh = importr('EbayesThresh').ebayesthresh
-        # self.power_threshed=np.array(ebayesthresh(FloatVector(self.power),sd=sd))
-        self.power_threshed = np.array(thresh_layer(self.power,sdev=sd))
+        ebayesthresh = importr('EbayesThresh').ebayesthresh
+        self.power_threshed=np.array(ebayesthresh(FloatVector(self.power),sd=sd))
         self.fbar_threshed = np.where(self.power_threshed>0,self.fbar,0)
         self.fhat = self.Psi@self.fbar_threshed
     def __call__(self, df):
@@ -113,9 +108,8 @@ class BUNNY:
         self.lamb, self.Psi = eigen(self.W)
         self.fbar = self.Psi.T @ self.df.f # fbar := graph fourier transform of f
         self.power = self.fbar**2 
-        # ebayesthresh = importr('EbayesThresh').ebayesthresh
-        # self.power_threshed=np.array(ebayesthresh(FloatVector(self.power),sd=sd))
-        self.power_threshed = np.array(thresh_layer(self.power,sdev=sd))
+        ebayesthresh = importr('EbayesThresh').ebayesthresh
+        self.power_threshed=np.array(ebayesthresh(FloatVector(self.power),sd=sd))
         self.fbar_threshed = np.where(self.power_threshed>0,self.fbar,0)
         self.fhat = self.Psi@self.fbar_threshed
     def __call__(self, df):
