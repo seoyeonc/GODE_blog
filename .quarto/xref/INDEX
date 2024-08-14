@@ -1,0 +1,107 @@
+{
+  "posts/post-with-code/index.qmd": {
+    "index.html": "8c6aa8cc"
+  },
+  "posts/welcome/index.qmd": {
+    "index.html": "8d017fb5"
+  },
+  "index.qmd": {
+    "index.html": "226b1511"
+  },
+  "about.qmd": {
+    "about.html": "19739d57"
+  },
+  "4_figure.qmd": {
+    "4_figure.html": "ad19c4a6"
+  },
+  "2_research.qmd": {
+    "2_research.html": "6ee4568a"
+  },
+  "3_table.qmd": {
+    "3_table.html": "13500fa5"
+  },
+  "1_studies.qmd": {
+    "1_studies.html": "5a21a83b"
+  },
+  "posts/Result/3_table/2023-11-03-final_graph_code_for_paper.ipynb": {
+    "2023-11-03-final_graph_code_for_paper.html": "029185e9"
+  },
+  "posts/2_research/2023-06-27-Linear_graph_code_for_paper.ipynb": {
+    "2023-06-27-Linear_graph_code_for_paper.html": "9e75fd33"
+  },
+  "posts/2_research/2023-10-20-final_GODE_code.ipynb": {
+    "2023-10-20-final_GODE_code.html": "3aa4304e"
+  },
+  "posts/2_research/2022-09-02-paper_simulation.ipynb": {
+    "2022-09-02-paper_simulation.html": "2a0ff392"
+  },
+  "posts/2_research/2022-12-27-DFT_study.ipynb": {
+    "2022-12-27-DFT_study.html": "9722c3a6"
+  },
+  "posts/2_research/2023-11-29-PR_Other Methods.ipynb": {
+    "2023-11-29-PR_Other Methods.html": "ac217df7"
+  },
+  "posts/2_research/index.qmd": {
+    "index.html": "1d8b1faf"
+  },
+  "posts/2_research/2023-08-16-final GODE code(paper).ipynb": {
+    "2023-08-16-final GODE code(paper).html": "65d4f5db"
+  },
+  "posts/2_research/2022-10-02-Earthquake_real.ipynb": {
+    "2022-10-02-Earthquake_real.html": "e9206e2b"
+  },
+  "posts/2_research/2023-07-03-other_outlier_detection.ipynb": {
+    "2023-07-03-other_outlier_detection.html": "a38aa617"
+  },
+  "posts/2_research/2023-06-22-comparison_earthquake.ipynb": {
+    "2023-06-22-comparison_earthquake.html": "58d6a386"
+  },
+  "posts/2_research/2023-08-05-semifinal_simulation_code.ipynb": {
+    "2023-08-05-semifinal_simulation_code.html": "2ded0129"
+  },
+  "posts/2_research/2023-11-27-GODE_Tutorial.ipynb": {
+    "2023-11-27-GODE_Tutorial.html": "b68aca5f"
+  },
+  "posts/2_research/2022-11-19-class_code_for_paper.ipynb": {
+    "2022-11-19-class_code_for_paper.html": "41ddd253"
+  },
+  "posts/2_research/2022-12-01-graph_code_guebin.ipynb": {
+    "2022-12-01-graph_code_guebin.html": "f6ff43f2"
+  },
+  "posts/2_research/2022-12-16-linspace.ipynb": {
+    "2022-12-16-linspace.html": "d363ed32"
+  },
+  "posts/2_research/2023-08-16-options.ipynb": {
+    "2023-08-16-options.html": "046249b3"
+  },
+  "posts/1_studies/2023-07-01-graph_spectral_domain.ipynb": {
+    "2023-07-01-graph_spectral_domain.html": "57e07e35"
+  },
+  "posts/1_studies/2023-07-01-NonEuclidean_data_of_GODE.ipynb": {
+    "2023-07-01-NonEuclidean_data_of_GODE.html": "7514fdd6"
+  },
+  "posts/1_studies/2023-05-20-EbayesThresh toy ex.ipynb": {
+    "2023-05-20-EbayesThresh toy ex.html": "38b12f2a"
+  },
+  "posts/Result/4_figure/2023-11-03-final_graph_code_for_paper.ipynb": {
+    "2023-11-03-final_graph_code_for_paper.html": "79b10a12"
+  },
+  "posts/Result/3_table/2023-10-20-final_GODE_code.ipynb": {
+    "2023-10-20-final_GODE_code.html": "a5ae2ee2"
+  },
+  "posts/Result/4_figure/2023-12-28-final_earth_for_visualization.ipynb": {
+    "2023-12-28-final_earth_for_visualization.html": "40017431"
+  },
+  "posts/2_research/2024-06-05-GODE_Tutorial_Python.ipynb": {
+    "2024-06-05-GODE_Tutorial_Python.html": "c3a198f0"
+  },
+  "posts/Result/4_figure/2024-06-22-graph_code_JKSS_review.ipynb": {
+    "2024-06-22-graph_code_JKSS_review.html": "48578935"
+  },
+  "posts/Result/3_table/2024-06-22-final_GODE_code_JKSS_review.ipynb": {
+    "2024-06-22-final_GODE_code_JKSS_review.html": "17d85b20"
+  },
+  "posts/2_research/2024-06-18-revision_review.ipynb": {
+    "2024-06-18-revision_review.html": "ce5cb27c"
+  }
+}
