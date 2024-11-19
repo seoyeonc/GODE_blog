@@ -148,7 +148,7 @@ def Earthquake_plot(df,outlier_index, *args, lat_center=37.7749, lon_center=-122
                     zoom= adjzoom,
                     height=900,
                     opacity = 0.8,
-                    mapbox_style="stamen-terrain",
+                    mapbox_style="open-street-map",
                     range_color=[-3,3])
     fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
     fig.add_scattermapbox(lat = df.query('f > @fThresh')['x'],
