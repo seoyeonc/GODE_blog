@@ -25,6 +25,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/2_research/2024-11-18-Package.html",
       "/posts/Result/4_figure/2024-06-22-graph_code_JKSS_review.html",
       "/posts/Result/3_table/2024-06-22-final_GODE_code_JKSS_review.html",
       "/posts/2_research/2024-06-18-revision_review.html",
@@ -55,6 +56,7 @@
   {
     "listing": "/2_research.html",
     "items": [
+      "/posts/2_research/2024-11-18-Package.html",
       "/posts/2_research/2024-06-18-revision_review.html",
       "/posts/2_research/2024-06-05-GODE_Tutorial_Python.html",
       "/posts/2_research/2023-11-29-PR_Other Methods.html",
